@@ -1,0 +1,96 @@
+
+import sys
+import time
+import argparse
+import traceback
+
+from pyndn import Interest
+from pyndn import encoding
+from pyndn import Name
+from pyndn import Face
+from pyndn.security import KeyChain
+from pyndn.util.blob import Blob
+from pyndn.encoding.wire_format import WireFormat
+
+class Consumer(object):
+    '''Hello '''
+    def __init__(self, prefix):
+        self.prefix = Name(prefix)
+        self.outstanding = dict()  #a dictionary to keep track of outstanding Interests and retransmissions.
+        self.isDone = False
+        #self.face = Face("127.0.0.1")
+        self.face = Face()
+        self.keyChain = KeyChain()
+
+    def run(self):
+        try:
+            self._sendNextInterest(self.prefix)
+
+            while not self.isDone:
+                self.face.processEvents()
+                time.sleep(0.01)
+
+        except RuntimeError as e:
+            print("ERROR: %s" %  e)
+
+
+    def _sendNextInterest(self, name):
+        interest = Interest(name)
+        uri = name.toUri()
+
+        interest.setMustBeFresh(True)
+        para = Blob(b'aabd')
+        interest.setApplicationParameters(para)
+        interest.appendParametersDigestToName()
+        #self.keyChain.
+
+
+        interest.setInterestLifetimeMilliseconds(4000)
+        #interest.setCanBePrefix(True)
+        #interest.setNonce('704119647')
+        #self.face.setCommandSigningInfo(self.keyChain, self.keyChain.getDefaultCertificateName())
+
+        if uri not in self.outstanding:
+            self.outstanding[uri] = 1
+        self.face.expressInterest(interest, self._onData, self._onTimeout,None,)
+        #self.face.send(interest.wireEncode())
+
+        print("--------Sent Interest for %s" % uri)
+
+
+    def _onData(self, interest, data):
+        payload = data.getContent()
+        name = data.getName()
+
+        print("Received data: ", payload.toRawStr())
+        del self.outstanding[name.toUri()]
+
+        self.isDone = True
+
+
+    def _onTimeout(self, interest):
+        name = interest.getName()
+        uri = name.toUri()
+
+        print("TIMEOUT #%d: %s" % (self.outstanding[uri], uri))
+        self.outstanding[uri] += 1
+
+        if self.outstanding[uri] <= 3:
+            self._sendNextInterest(name)
+        else:
+            self.isDone = True
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Parse command line args for ndn consumer')
+    parser.add_argument("-u", "--uri", required=True, help='ndn name to retrieve')
+    args = parser.parse_args()
+
+    try:
+        uri = args.uri
+        Consumer(uri).run()
+
+    except:
+        traceback.print_exc(file=sys.stdout)
+        print("Error parsing command line arguments")
+        sys.exit(1)
