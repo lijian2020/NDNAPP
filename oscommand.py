@@ -11,8 +11,6 @@ class OSCommand(object):
         return nodeid
 
 
-
-
     @staticmethod
     def getface():
         nodeid=OSCommand.getnodeid()
@@ -28,4 +26,16 @@ class OSCommand(object):
                                 format(nodeid)], shell=True)
         return command_output
 
+    @staticmethod
+    def facemod(FaceMod_suffix_list):
+        nodeid = OSCommand.getnodeid()
+        if (FaceMod_suffix_list[1] == '0x0001'):  # destroy a face
+            command_output = subprocess.check_output(["export HOME=/tmp/minindn/{0} && nfdc face destroy {1}". \
+                                                     format(nodeid, FaceMod_suffix_list[0])], shell=True)
+            return command_output
 
+        elif (FaceMod_suffix_list[1] == '0x0000'):  # add a create
+            command_output = subprocess.check_output(["export HOME=/tmp/minindn/{0} && nfdc face create {1}". \
+                                                     format(nodeid, FaceMod_suffix_list[0])], shell=True)
+            print("=========333333333===========")
+            return command_output

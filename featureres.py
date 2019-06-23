@@ -90,9 +90,10 @@ class FeatureRes(object):
 
     def onInterest_FaceMod(self, mainPrefix, interest, transport, registeredPrefixId):
         print("--------Received <<<FaceMod>>> interest Msg" )
-        FaceMod_suffix = NdnFlowTable.parse_FaceMod_Interest(interest)
-        #todo(facemod) to deal with the facemod message：create /destroy face
+        FaceMod_suffix_list = NdnFlowTable.parse_FaceMod_Interest(interest)
+        # FaceMod_suffix_list pattern:[faceid, action]
 
+        print(OSCommand.facemod(FaceMod_suffix_list))  # modify the face and print the command output
         self.isDone = True  #
 
 
