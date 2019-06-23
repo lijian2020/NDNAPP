@@ -61,5 +61,5 @@ class Controller_Setter(object):
 
     def facemodsender(self):
         '''This section is used to send facemod msg if necessary'''
-        facemod_suffix = "faceid255---0x0000"
+        facemod_suffix = "255---0x0001"  # "faceid---Action"; Action ={create=0x0000, destroy=0x0001}
         FaceModMsg().run(facemod_suffix)

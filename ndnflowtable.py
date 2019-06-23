@@ -118,13 +118,14 @@ class NdnFlowTable(object):
     """search if the entry existed in the table. p"""
     @staticmethod
     def searchitem(prefix):
+        # NFT:[EthernetPrefix, Face, Prefix, Priority,Counter,Idle-Lifetime,Hard-lifetime,Action,Out-faces,Flag]
         if (prefix in NdnFlowTable.NFT[:, 2:3]):
             num = np.argwhere(NdnFlowTable.NFT == prefix)[0][0]  # line number:
             return num
         else:
             return None
 
-    '''parse the resived FlowMod Data to a list '''
+    '''parse the received FlowMod Data to a list '''
     @staticmethod
     def parse_FlowMod_Data(original_FlowMod_Data):
         FlowMod_Data = original_FlowMod_Data.toRawStr()
@@ -133,6 +134,7 @@ class NdnFlowTable(object):
         #  buffer_id(8),out_port(9),flag(10), action(11)]
         return FlowMod_Data_list
 
+    @staticmethod
     def parse_PacketOut_Interest(original_PacketOut_Interest):
         PacketOut_Interest_Name = original_PacketOut_Interest.getName().toUri()
 
@@ -140,10 +142,11 @@ class NdnFlowTable(object):
         PacketOut_suffix_list=PacketOut_suffix.split('---')
         return PacketOut_suffix_list
 
+    @staticmethod
     def parse_FaceMod_Interest(original_FaceMod_Interest):
         FaceMod_Interest_Name = original_FaceMod_Interest.getName().toUri()
 
-        FaceMod_suffix =FaceMod_Interest_Name.split('-----')[1]
-        FaceMod_suffix_list=FaceMod_suffix.split('---')
+        FaceMod_suffix = FaceMod_Interest_Name.split('-----')[1]
+        FaceMod_suffix_list = FaceMod_suffix.split('---')
         return FaceMod_suffix_list
 

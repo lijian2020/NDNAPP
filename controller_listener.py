@@ -78,7 +78,6 @@ class Controller_Listener(object):
         #     self.face.processEvents()
         #     time.sleep(0.01)
         #     countnumber += 1
-        #TEST for git
 
 
 
