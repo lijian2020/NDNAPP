@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46d7361f-1b5d-44d3-adf0-90728ae67349" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller_setter.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller_setter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/featureres.py" beforeDir="false" afterPath="$PROJECT_DIR$/featureres.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ndnflowtable.py" beforeDir="false" afterPath="$PROJECT_DIR$/ndnflowtable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oscommand.py" beforeDir="false" afterPath="$PROJECT_DIR$/oscommand.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,13 +39,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller_setter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="63" column="79" selection-start-line="63" selection-start-column="79" selection-end-line="63" selection-end-column="79" />
+            <state relative-caret-position="81">
+              <caret line="3" column="19" selection-end-line="22" />
               <folding>
-                <element signature="n#!!doc" />
                 <element signature="e#1084#1094#0" expanded="true" />
               </folding>
             </state>
@@ -70,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/oscommand.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="328">
@@ -164,9 +158,29 @@
               </list>
             </value>
           </entry>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/after-facemod" />
+              </list>
+            </value>
+          </entry>
         </map>
       </branch-storage>
     </favorite-branches>
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -213,13 +227,13 @@
         <option value="$PROJECT_DIR$/controller_listener.py" />
         <option value="$PROJECT_DIR$/controller.py" />
         <option value="$PROJECT_DIR$/ndnflowtable.py" />
-        <option value="$PROJECT_DIR$/controller_setter.py" />
         <option value="$PROJECT_DIR$/featureres.py" />
         <option value="$PROJECT_DIR$/oscommand.py" />
+        <option value="$PROJECT_DIR$/controller_setter.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-16" />
     <option name="y" value="-21" />
     <option name="width" value="1936" />
@@ -533,7 +547,7 @@
       <workItem from="1560855395417" duration="41832000" />
       <workItem from="1560974003432" duration="48208000" />
       <workItem from="1561229520410" duration="3495000" />
-      <workItem from="1561292544560" duration="3373000" />
+      <workItem from="1561292544560" duration="4041000" />
     </task>
     <task id="LOCAL-00001" summary="try to commit the first time">
       <created>1561230024143</created>
@@ -563,11 +577,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561232171750</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="finish FaceMod msg. but didn't set multiple arguments. Only used an example.">
+      <created>1561298766939</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1561298766939</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="409515000" />
+    <option name="totallyTimeSpent" value="410183000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -579,7 +600,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5232936" visible="true" weight="0.16204691" />
@@ -588,12 +609,12 @@
       <window_info id="Repositories" order="3" weight="0.32995737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.4934924" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3177874" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3177874" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.41495124" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.24052005" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.329718" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286334" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.23861171" />
@@ -665,7 +686,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="try to commit the first time" />
-    <option name="LAST_COMMIT_MESSAGE" value="try to commit the first time" />
+    <MESSAGE value="finish FaceMod msg. but didn't set multiple arguments. Only used an example." />
+    <option name="LAST_COMMIT_MESSAGE" value="finish FaceMod msg. but didn't set multiple arguments. Only used an example." />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -674,11 +697,6 @@
           <url>file://$PROJECT_DIR$/test and learn/test3.py</url>
           <line>5</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/controller_setter.py</url>
-          <line>63</line>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1091,17 +1109,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller_setter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="63" column="79" selection-start-line="63" selection-start-column="79" selection-end-line="63" selection-end-column="79" />
-          <folding>
-            <element signature="n#!!doc" />
-            <element signature="e#1084#1094#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -1127,6 +1134,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller_setter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="19" selection-end-line="22" />
+          <folding>
+            <element signature="e#1084#1094#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
