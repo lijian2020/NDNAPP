@@ -1,27 +1,24 @@
 #!/usr/bin/python
-
-# Copyright (c) 2013-2014 Regents of the University of California.
-# Copyright (c) 2014 Susmit Shannigrahi, Steve DiBenedetto
-
-# This file is part of ndn-cxx library (NDN C++ library with eXperimental eXtensions).
 #
-# ndn-cxx library is free software: you can redistribute it and/or modify it under the
-# terms of the GNU Lesser General Public License as published by the Free Software
-# Foundation, either version 3 of the License, or (at your option) any later version.
+# Copyright (C) 2019 Regents of the Trinity College of Dublin, the University of Dublin.
+# Copyright (c) 2019 Susmit Li Jian
 #
-# ndn-cxx library is distributed in the hope that it will be useful, but WITHOUT ANY
-# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-# PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
+# Author: Li Jian <lij12@tcd.ie>
 #
-# You should have received copies of the GNU General Public License and GNU Lesser
-# General Public License along with ndn-cxx, e.g., in COPYING.md file.  If not, see
-# <http://www.gnu.org/licenses/>.
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
 #
-# See AUTHORS.md for complete list of ndn-cxx authors and contributors.
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 #
-# @author Wentao Shang <http://irl.cs.ucla.edu/~wentao/>
-# @author Steve DiBenedetto <http://www.cs.colostate.edu/~dibenede>
-# @author Susmit Shannigrahi <http://www.cs.colostate.edu/~susmit>
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# A copy of the GNU General Public License is in the file COPYING.
+#
 
 import sys
 from pyndn import Interest
