@@ -117,6 +117,7 @@ class OFMSG(object):
     # create a Controller_Listener message using interest and feature data . reture a Data
     def create_hello_res_data(self, interest, hello_data):  #
         '''the hello_data here indicates the result of fetch feature from node'''
+        return self.set_returndata(interest, hello_data, )
 
     # create a _ctrlinfo_res message using interest and feature data . reture a Data
     def create_ctrlinfo_res_data(self, interest, CtrlInfo_data):  #

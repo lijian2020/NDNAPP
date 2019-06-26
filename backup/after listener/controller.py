@@ -31,7 +31,7 @@ from pyndn import Face
 from pyndn.security import KeyChain
 from oscommand import OSCommand
 from ofmsg import OFMSG
-from controller_listener import Controller_Listener
+from listener import Listener
 from featurereq import FeatureReq
 from multiprocessing import Process
 from node_prefix_table import NodePrefixTable

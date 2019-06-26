@@ -75,8 +75,8 @@ class Node(object):
     def Hellorequest(self):
         if(HelloReq().run()):
             FeatureRes().run()
-            time.sleep(6)
-            CtrlInfoReq().run()
+            time.sleep(3)
+            CtrlInfoReq().run()  # here need other thread.
 
 
     def prefixinquire(self,unknown_prefix):

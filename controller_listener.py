@@ -1,9 +1,11 @@
-#!/usr/bin/python
+# -*- Mode:python; c-file-style:"gnu"; indent-tabs-mode:nil -*- */
 #
-# Copyright (C) 2019 Regents of the Trinity College of Dublin, the University of Dublin.
-# Copyright (c) 2019 Susmit Li Jian
+# Copyright (C) 2014 Regents of the University of California.
+# Copyright (c) 2014 Susmit Shannigrahi, Steve DiBenedetto
 #
-# Author: Li Jian <lij12@tcd.ie>
+# Author: Jeff Thompson <jefft0@remap.ucla.edu>
+# Author Steve DiBenedetto <http://www.cs.colostate.edu/~dibenede>
+# Author Susmit Shannigrahi <http://www.cs.colostate.edu/~susmit>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -18,10 +20,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 # A copy of the GNU General Public License is in the file COPYING.
-#
-
-
-
 
 import sys
 import time
@@ -69,12 +67,8 @@ class Controller_Listener(object):
         FlowRemoved_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/11/0/0/')
         self.face.setInterestFilter(FlowRemoved_msg_prefix,self.onInterest_FlowRemoved)   #for FlowRemoved msg
 
-        CtrlInfoReq_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/36/0/0/')
-        self.face.setInterestFilter(CtrlInfoReq_msg_prefix, self.onInterest_CtrlInfoReq)  # for CtrlInfoReq msg
-
-
-
-
+        CtrlInfo_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/36/0/0/')
+        self.face.setInterestFilter(CtrlInfo_msg_prefix, self.onInterest_CtrlInfo)  # for CtrlInfo msg
 
         # Run the event loop forever. Use a short sleep to
         # prevent the Producer from using 100% of the CPU.
@@ -104,13 +98,17 @@ class Controller_Listener(object):
 
         print("------Received: <<<FlowRemoved>>> Msg ------")  # for test
 
-    def onInterest_CtrlInfoReq(self, mainPrefix, interest, transport, registeredPrefixId):
-        print("------Received: <<<CtrlInfo Req>>> Msg ------")  # for test
-        # todo(ctrlInfo) how to hold this massage and waiting other input?
-        #
+    def onInterest_CtrlInfo(self, mainPrefix, interest, transport, registeredPrefixId):
+        print("--------received <<<CtrlInfo Req>>> interest:\n" + interest.getName().toUri())  # for test
+        # print(self.NPT.node_prefix_table)
+
+        #todo(CtrlInfo) how to hold this interest until get the configure information
+
         CtrlInfo_data = 'this is the CtrlInfo response data'
         data = self.ofmsg.create_ctrlinfo_res_data(interest, CtrlInfo_data)
         transport.send(data.wireEncode().toBuffer())
+
+
 
     def onInterest_Hello(self, mainPrefix, interest, transport, registeredPrefixId):
         print("--------received <<<HelloReq>>> interest:\n" + interest.getName().toUri())  # for test

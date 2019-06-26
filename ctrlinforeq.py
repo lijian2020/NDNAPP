@@ -68,7 +68,7 @@ class CtrlInfoReq(object):
         print("Received New <<<Control Information>>>------- \n", payload.toRawStr())
         del self.outstanding[name.toUri()]
         self.isDone = True
-        self._sendCtrlInfoInterest()  # Send a new one after receiving the data.
+        self.run()  # Send a new one after receiving the data. #todo(ctrlinfo) how to repeat to sent this interest
 
     def _onTimeout(self, interest):
         name = interest.getName()
