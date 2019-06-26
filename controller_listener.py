@@ -69,6 +69,12 @@ class Controller_Listener(object):
         FlowRemoved_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/11/0/0/')
         self.face.setInterestFilter(FlowRemoved_msg_prefix,self.onInterest_FlowRemoved)   #for FlowRemoved msg
 
+        CtrlInfoReq_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/36/0/0/')
+        self.face.setInterestFilter(CtrlInfoReq_msg_prefix, self.onInterest_CtrlInfoReq)  # for CtrlInfoReq msg
+
+
+
+
 
         # Run the event loop forever. Use a short sleep to
         # prevent the Producer from using 100% of the CPU.
@@ -98,7 +104,13 @@ class Controller_Listener(object):
 
         print("------Received: <<<FlowRemoved>>> Msg ------")  # for test
 
-
+    def onInterest_CtrlInfoReq(self, mainPrefix, interest, transport, registeredPrefixId):
+        print("------Received: <<<CtrlInfo Req>>> Msg ------")  # for test
+        # todo(ctrlInfo) how to hold this massage and waiting other input?
+        #
+        CtrlInfo_data = 'this is the CtrlInfo response data'
+        data = self.ofmsg.create_ctrlinfo_res_data(interest, CtrlInfo_data)
+        transport.send(data.wireEncode().toBuffer())
 
     def onInterest_Hello(self, mainPrefix, interest, transport, registeredPrefixId):
         print("--------received <<<HelloReq>>> interest:\n" + interest.getName().toUri())  # for test

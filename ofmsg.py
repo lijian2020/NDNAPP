@@ -60,6 +60,16 @@ class OFMSG(object):
         interest.setInterestLifetimeMilliseconds(4000)
         return interest
 
+    # create a ctrlinfo message using local node-id and feature number. reture an Interest
+    def create_ctrlinfo_req_interest(self, node_id, ctrlinfo_SN=100001):
+        hello_name = self.add_of_head(self.prefix_controller, 36) + \
+                     str("--{0}--{1}".format(node_id, ctrlinfo_SN))
+        interest = Interest(hello_name)
+        interest.setMustBeFresh(True)
+        interest.setInterestLifetimeMilliseconds(999999999999)
+        return interest
+
+
 
     # create a FeatureReq message using local node-id . reture an Interest
     def create_feature_req_interest(self,feature_req_interest_name):
@@ -105,19 +115,19 @@ class OFMSG(object):
 
 
     # create a Controller_Listener message using interest and feature data . reture a Data
-    def create_hello_res_data(self,interest,hello_data): #todo need to check the hello_response
-        return self.set_returndata(interest,hello_data,)
-    '''the hello_data here indicates the result of fetch feature from node'''
+    def create_hello_res_data(self, interest, hello_data):  #
+        '''the hello_data here indicates the result of fetch feature from node'''
+
+    # create a _ctrlinfo_res message using interest and feature data . reture a Data
+    def create_ctrlinfo_res_data(self, interest, CtrlInfo_data):  #
+        return self.set_returndata(interest, CtrlInfo_data,)
+
+
 
 
     # create a Controller_Listener message using interest and feature data . reture a Data
-    def create_flowmod_data(self,interest,flowmod_data): #todo need to check the hello_response
+    def create_flowmod_data(self, interest, flowmod_data):  #
         return self.set_returndata(interest,flowmod_data,)
-    '''the hello_data here indicates the result of fetch feature from node'''
-
-
-
-
 
     def error_msg(self):  #reserve mst_type = 1
         pass

@@ -33,6 +33,7 @@ from helloreq import HelloReq
 from flowremoved import FlowRemovedMsg
 from packetin import PacketIn
 from featureres import FeatureRes
+from ctrlinforeq import CtrlInfoReq
 from threading import Thread
 
 class Node(object):
@@ -74,6 +75,9 @@ class Node(object):
     def Hellorequest(self):
         if(HelloReq().run()):
             FeatureRes().run()
+            time.sleep(6)
+            CtrlInfoReq().run()
+
 
     def prefixinquire(self,unknown_prefix):
         if(PacketIn().run(unknown_prefix)):
