@@ -45,6 +45,8 @@ class Controller_Listener(object):
         self.face = Face()
         self.featurereq = FeatureReq()
         self.helloreq_name_list = []
+        self.new_CtrlInfo_data = "---default CtrlInfo data---"  # used to get new ctrlinfo data and send to nodes.
+        self.CtrlInfo_data = ""  # used to record used ctrlinfo data
 
 
     def run(self):
@@ -93,10 +95,10 @@ class Controller_Listener(object):
 
     def onInterest_CtrlInfo(self, mainPrefix, interest, transport, registeredPrefixId):
         print("--------received <<<CtrlInfo Req>>> interest:\n" + interest.getName().toUri())  # for test
-        #todo(CtrlInfo) how to hold this interest until get the configure information
-        time.sleep(15)
-        CtrlInfo_data = '========this is the CtrlInfo response data============'
-        data = self.ofmsg.create_ctrlinfo_res_data(interest, CtrlInfo_data)
+        while (self.new_CtrlInfo_data == self.CtrlInfo_data):  # wait for new data.
+            time.sleep(15)
+        self.CtrlInfo_data = self.new_CtrlInfo_data
+        data = self.ofmsg.create_ctrlinfo_res_data(interest, self.CtrlInfo_data)
         transport.send(data.wireEncode().toBuffer())
 
     def onInterest_Hello(self, mainPrefix, interest, transport, registeredPrefixId):
