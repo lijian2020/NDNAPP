@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46d7361f-1b5d-44d3-adf0-90728ae67349" name="Default Changelist" comment="finish FaceMod msg. but didn't set multiple arguments. Only used an example.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller_listener.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller_listener.py" afterDir="false" />
-    </list>
+    <list default="true" id="46d7361f-1b5d-44d3-adf0-90728ae67349" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -553,7 +550,7 @@
       <workItem from="1561292544560" duration="4041000" />
       <workItem from="1561300108201" duration="417000" />
       <workItem from="1561576617580" duration="7384000" />
-      <workItem from="1561590490750" duration="10492000" />
+      <workItem from="1561590490750" duration="10775000" />
     </task>
     <task id="LOCAL-00001" summary="try to commit the first time">
       <created>1561230024143</created>
@@ -625,11 +622,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561609986169</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="finish FaceMod msg. but didn't set multiple arguments. Only used an example.">
+      <created>1561614223446</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1561614223446</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="430371000" />
+    <option name="totallyTimeSpent" value="430654000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -642,7 +646,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5232936" visible="true" weight="0.16684435" />
       <window_info id="Structure" order="1" sideWeight="0.4767064" side_tool="true" weight="0.10714286" />
@@ -729,7 +732,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="try to commit the first time" />
     <MESSAGE value="finish FaceMod msg. but didn't set multiple arguments. Only used an example." />
-    <option name="LAST_COMMIT_MESSAGE" value="finish FaceMod msg. but didn't set multiple arguments. Only used an example." />
+    <MESSAGE value="finish CtrlInfo" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish CtrlInfo" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
