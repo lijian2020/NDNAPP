@@ -65,11 +65,11 @@ class FeatureRes(object):
         #     self.face.processEvents()
         #     time.sleep(0.01)
         countnumber = 0
-        while countnumber < 1000:
+        while countnumber < 10000:
             self.face.processEvents()
             time.sleep(0.01)
             countnumber += 1
-        print("10s feature response listening stop")
+        # print("10s feature response listening stop")
 
 
 

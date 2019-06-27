@@ -53,10 +53,14 @@ class Node(object):
         subprocess.call(["export HOME=/tmp/minindn/{0} && nlsrc advertise {1} ".\
                                         format(self.nodeid,NodePrefixString)],shell=True)
 
-
-        hello_threed = Thread(target=self.Hellorequest)
+        ########   Basic function  #######
+        hello_threed = Thread(target=self.Hellorequest)  # send helloreq
         hello_threed.start()
 
+        ctrlinfo_threed = Thread(target=self._sendCtrlInfoReqMsg)  # send ctrlinfo
+        ctrlinfo_threed.start()
+
+        ########   Advanced function  #######
         time.sleep(3)
         '''This section is used to send packetin msg if necessary'''
         unknown_prefix = "/abcd/dfgh/tcd"
@@ -70,13 +74,9 @@ class Node(object):
             flowremoved_threed = Thread(target=self._sendFlowRemovedMsg, args=(removed_prefix,))
             flowremoved_threed.start()
 
-
-
     def Hellorequest(self):
         if(HelloReq().run()):
             FeatureRes().run()
-            time.sleep(3)
-            CtrlInfoReq().run()  # here need other thread.
 
 
     def prefixinquire(self,unknown_prefix):
@@ -86,6 +86,9 @@ class Node(object):
     def _sendFlowRemovedMsg(self,removed_prefix):
         FlowRemovedMsg().run(removed_prefix)
 
+    def _sendCtrlInfoReqMsg(self):
+        time.sleep(3)
+        CtrlInfoReq().run()  # here need other thread.
 
 
 

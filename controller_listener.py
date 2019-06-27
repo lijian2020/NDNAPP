@@ -75,13 +75,6 @@ class Controller_Listener(object):
         while not self.isDone:             #listen hello cannot stop
             self.face.processEvents()
             time.sleep(0.01)
-        # countnumber = 0
-        # while countnumber < 600:
-        #     self.face.processEvents()
-        #     time.sleep(0.01)
-        #     countnumber += 1
-
-
 
     def onInterest_PacketIn(self, mainPrefix, interest, transport, registeredPrefixId):
         print("------Received: <<<PacketIn>>> Msg for: \n" + interest.getName().toUri())  # for test
@@ -100,15 +93,11 @@ class Controller_Listener(object):
 
     def onInterest_CtrlInfo(self, mainPrefix, interest, transport, registeredPrefixId):
         print("--------received <<<CtrlInfo Req>>> interest:\n" + interest.getName().toUri())  # for test
-        # print(self.NPT.node_prefix_table)
-
         #todo(CtrlInfo) how to hold this interest until get the configure information
-
-        CtrlInfo_data = 'this is the CtrlInfo response data'
+        time.sleep(15)
+        CtrlInfo_data = '========this is the CtrlInfo response data============'
         data = self.ofmsg.create_ctrlinfo_res_data(interest, CtrlInfo_data)
         transport.send(data.wireEncode().toBuffer())
-
-
 
     def onInterest_Hello(self, mainPrefix, interest, transport, registeredPrefixId):
         print("--------received <<<HelloReq>>> interest:\n" + interest.getName().toUri())  # for test

@@ -40,17 +40,26 @@ class CtrlInfoReq(object):
         # self.face = Face("127.0.0.1")
         self.face = Face()
         self.nodeid = OSCommand.getnodeid()
+        self.send_ctrlinfo_interest = True
 
     def run(self):
-        try:
-            self._sendCtrlInfoInterest()
+        ctrlinfo_version_number = 100001
+        while True:
+            if (self.send_ctrlinfo_interest):
+                try:
+                    self._sendCtrlInfoInterest(ctrlinfo_version_number)
+                    ctrlinfo_version_number += 1
+                    self.send_ctrlinfo_interest = False  # repeat to send this interest.
+                    self.isDone = False
 
-            while not self.isDone:
-                self.face.processEvents()
-                time.sleep(0.01)
-        except RuntimeError as e:
-            print("ERROR: %s" % e)
-        return self.isDone
+                    while not self.isDone:
+                        self.face.processEvents()
+                        time.sleep(0.01)
+                except RuntimeError as e:
+                    print("ERROR: %s" % e)
+
+            time.sleep(0.1)
+
 
     def _sendCtrlInfoInterest(self, ctrlinfo_version_number=100001):
         interest = self.ofmsg.create_ctrlinfo_req_interest(self.nodeid, ctrlinfo_version_number)
@@ -68,7 +77,7 @@ class CtrlInfoReq(object):
         print("Received New <<<Control Information>>>------- \n", payload.toRawStr())
         del self.outstanding[name.toUri()]
         self.isDone = True
-        self.run()  # Send a new one after receiving the data. #todo(ctrlinfo) how to repeat to sent this interest
+        self.send_ctrlinfo_interest = True
 
     def _onTimeout(self, interest):
         name = interest.getName()
