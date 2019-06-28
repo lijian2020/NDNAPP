@@ -75,10 +75,11 @@ class Node(object):
             flowremoved_threed.start()
 
         '''This section is used to send error msg if necessary'''
-        error_prefix = "h3--0x0004--0x0000--faceid255 down"
+        error_prefix = "{}--0x0004--0x0000--faceid255 down".format(self.nodeid)
         if (error):
-            flowremoved_threed = Thread(target=self._errormsg, args=(error_prefix,))
-            flowremoved_threed.start()
+            time.sleep(10)
+            errormsg_threed = Thread(target=self._errormsg, args=(error_prefix,))
+            errormsg_threed.start()
 
 
 
@@ -117,7 +118,8 @@ if __name__ == "__main__":
     try:
         packetin = args.packetin
         fr = args.flowremoved
-        Node().run(packetin,fr)
+        error = args.error
+        Node().run(packetin, fr, error)
 
     except:
         traceback.print_exc(file=sys.stdout)

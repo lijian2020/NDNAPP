@@ -42,9 +42,7 @@ class PacketIn(object):
         self.face = Face()
         #self.nodeid = OSCommand.getnodeid()
 
-
-
-    def run(self,unknown_prefix):
+    def run(self, unknown_prefix="/abcd/dfgh/tcd"):
         try:
             self._sendPacketinInterest(unknown_prefix)
 
@@ -92,7 +90,7 @@ class PacketIn(object):
         self.outstanding[uri] += 1
 
         if self.outstanding[uri] <= 3:
-            self._sendPacketinInterest()
+            self.run()
         else:
             self.isDone = True
 

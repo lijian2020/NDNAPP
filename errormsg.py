@@ -40,9 +40,9 @@ class ErrorMsg(object):
         self.outstanding = dict()  # a dictionary to keep track of outstanding Interests and retransmissions.
         # self.face = Face("127.0.0.1")
         self.face = Face()
-        # self.nodeid = OSCommand.getnodeid()
+        self.nodeid = OSCommand.getnodeid()
 
-    def run(self, unknown_prefix):
+    def run(self, unknown_prefix="h0--0x0004--0x0000--faceid255 down"):
         try:
             self._sendErrorMsgInterest(unknown_prefix)
 
@@ -66,13 +66,7 @@ class ErrorMsg(object):
     def _onData(self, interest, data):
         payload = data.getContent()
         name = data.getName()
-        print("Received <<<<FlowMod data>>>>from Controller ")
-        # todo(lijian)  add this item to flow table.
-        self.nodeid = OSCommand.getnodeid()
-
-        FlowModDataList = NdnFlowTable.parse_FlowMod_Data(payload)
-        NdnFlowTable.updatendnflowtable(FlowModDataList, self.nodeid)
-        print(NdnFlowTable)
+        print("Received <<<<Error Msg ACK>>>>from Controller ")
 
         del self.outstanding[name.toUri()]
         self.isDone = True
@@ -85,10 +79,10 @@ class ErrorMsg(object):
         self.outstanding[uri] += 1
 
         if self.outstanding[uri] <= 3:
-            self._sendPacketinInterest()
+            self.run()
         else:
             self.isDone = True
 
 
 if __name__ == '__main__':
-    PacketIn().run()
+    ErrorMsg().run()
