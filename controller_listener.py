@@ -1,11 +1,9 @@
-# -*- Mode:python; c-file-style:"gnu"; indent-tabs-mode:nil -*- */
+#!/usr/bin/python
 #
-# Copyright (C) 2014 Regents of the University of California.
-# Copyright (c) 2014 Susmit Shannigrahi, Steve DiBenedetto
+# Copyright (C) 2019 Regents of the Trinity College of Dublin, the University of Dublin.
+# Copyright (c) 2019 Submit Li Jian
 #
-# Author: Jeff Thompson <jefft0@remap.ucla.edu>
-# Author Steve DiBenedetto <http://www.cs.colostate.edu/~dibenede>
-# Author Susmit Shannigrahi <http://www.cs.colostate.edu/~susmit>
+# Author: Li Jian <lij12@tcd.ie>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -20,6 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 # A copy of the GNU General Public License is in the file COPYING.
+#
 
 import sys
 import time
@@ -63,6 +62,9 @@ class Controller_Listener(object):
         hello_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/0/0/0/')
         self.face.setInterestFilter(hello_msg_prefix,self.onInterest_Hello)   #for HelloReq msg
 
+        error_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/1/0/0/')
+        self.face.setInterestFilter(error_msg_prefix, self.onInterest_ErrorMsg)  # for Error msg
+
         packetin_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/10/0/0/')
         self.face.setInterestFilter(packetin_msg_prefix,self.onInterest_PacketIn)   #for packetin msg
 
@@ -103,7 +105,6 @@ class Controller_Listener(object):
 
     def onInterest_Hello(self, mainPrefix, interest, transport, registeredPrefixId):
         print("--------received <<<HelloReq>>> interest:\n" + interest.getName().toUri())  # for test
-        #print(self.NPT.node_prefix_table)
 
         #todo(lijian) should check the helloreq_name_list and determine what action should do
 
@@ -111,6 +112,15 @@ class Controller_Listener(object):
         data = self.ofmsg.create_hello_res_data(interest,hello_data)
         transport.send(data.wireEncode().toBuffer())
         NodePrefixTable.updatenodeprefixtable(interest)       #to add NPT and fetch feature
+
+    def onInterest_ErrorMsg(self, mainPrefix, interest, transport, registeredPrefixId):
+        print("--------received <<<Error Msg>>> interest:\n" + interest.getName().toUri())  # for test
+        errormsg_data = 'Error Report Acknowledge'
+        data = self.ofmsg.create_errorAck_data(interest, errormsg_data)
+        transport.send(data.wireEncode().toBuffer())
+
+        # todo(errorMsg) maybe this msg can trigger some other actions.
+        #parse the errorMsg interest to get error information.
 
 
 

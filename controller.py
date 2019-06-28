@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #
 # Copyright (C) 2019 Regents of the Trinity College of Dublin, the University of Dublin.
-# Copyright (c) 2019 Susmit Li Jian
+# Copyright (c) 2019 Submit Li Jian
 #
 # Author: Li Jian <lij12@tcd.ie>
 #

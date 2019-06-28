@@ -87,7 +87,16 @@ class OFMSG(object):
         interest.setInterestLifetimeMilliseconds(4000)
         return interest
 
-    #create a packetin message using unknown prefix. reture an Interest
+    # create a error message using unknown prefix. reture an Interest
+    def create_error_msg_interest(self, error_prefix):
+        packetin_name = self.add_of_head(self.prefix_controller, 1) + "/--" + error_prefix
+        # /ndn/ie/tcd/controller01/ofndn/--/n1.0/10/0/0/--/unknown_prefix
+        interest = Interest(packetin_name)
+        interest.setMustBeFresh(True)
+        interest.setInterestLifetimeMilliseconds(4000)
+        return interest
+
+    # create a flowremoved message using unknown prefix. reture an Interest
     def create_flowremoved_msg_interest(self,removed_prefix):
         frmsg_name = self.add_of_head(self.prefix_controller,11) + "/--" + removed_prefix
                         #/ndn/ie/tcd/controller01/ofndn/--/n1.0/11/0/0/--/removed_prefix
@@ -112,21 +121,20 @@ class OFMSG(object):
         interest.setInterestLifetimeMilliseconds(1000)
         return interest
 
-
-
-    # create a Controller_Listener message using interest and feature data . reture a Data
+    # create a Hello_res_data message using interest and data . reture a Data
     def create_hello_res_data(self, interest, hello_data):  #
         '''the hello_data here indicates the result of fetch feature from node'''
         return self.set_returndata(interest, hello_data, )
 
-    # create a _ctrlinfo_res message using interest and feature data . reture a Data
+    # create a ErrorACK message using interest  . reture a Data
+    def create_errorAck_data(self, interest, errormsg_data):  #
+        return self.set_returndata(interest, errormsg_data, )
+
+    # create a _ctrlinfo_res message using interest  . reture a Data
     def create_ctrlinfo_res_data(self, interest, CtrlInfo_data):  #
         return self.set_returndata(interest, CtrlInfo_data,)
 
-
-
-
-    # create a Controller_Listener message using interest and feature data . reture a Data
+    # create a flowmod data message using interest and data . reture a Data
     def create_flowmod_data(self, interest, flowmod_data):  #
         return self.set_returndata(interest,flowmod_data,)
 
