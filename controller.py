@@ -36,6 +36,7 @@ from controller_listener import Controller_Listener
 from controller_setter import Controller_Setter
 from featurereq import FeatureReq
 from multiprocessing import Process
+from threading import Thread
 
 
 class Controller(object):
@@ -61,6 +62,12 @@ class Controller(object):
 
         self.controller_listener.run()  # other thread for hello msg
 
+    '''This ctrl_info function has to be imployment in a separated process, since it will
+    conflict with hello process it they are in the same thread/process'''
+
+    def ctrl_info_function(self):  # a separated process for ctrl_info function
+        time.sleep(7)
+        self.controller_listener.ctrl_info_run()
 
 
     def control_function(self,functionlist):
@@ -83,6 +90,11 @@ if __name__ == '__main__':    ##### Multiprocess must start from here (__name__ 
         controller = Controller()
         t1 = Process(target=controller.monitoring_function)
         t1.start()
+        t2 = Process(target=controller.ctrl_info_function)  # a separated process for ctrl_info function
+        t2.start()
+
+
+
         time.sleep(10)
         functionlist = []
         if(args.packetout):
@@ -90,8 +102,8 @@ if __name__ == '__main__':    ##### Multiprocess must start from here (__name__ 
         if(args.facemod):
             functionlist.append("facemod")
 
-        t2 = Process(target=controller.control_function,args=(functionlist,))
-        t2.start()
+        t3 = Process(target=controller.control_function, args=(functionlist,))
+        t3.start()
 
     except:
         traceback.print_exc(file=sys.stdout)

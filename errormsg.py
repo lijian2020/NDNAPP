@@ -42,7 +42,7 @@ class ErrorMsg(object):
         self.face = Face()
         self.nodeid = OSCommand.getnodeid()
 
-    def run(self, unknown_prefix="h0--0x0004--0x0000--faceid255 down"):
+    def run(self, unknown_prefix="h1--0x0004--0x0000--faceid255-down"):
         try:
             self._sendErrorMsgInterest(unknown_prefix)
 
@@ -60,7 +60,6 @@ class ErrorMsg(object):
         if uri not in self.outstanding:
             self.outstanding[uri] = 1
         self.face.expressInterest(interest, self._onData, self._onTimeout)
-
         print("--------Sent <<<Error Msg>>> Interest for \n %s" % uri)
 
     def _onData(self, interest, data):

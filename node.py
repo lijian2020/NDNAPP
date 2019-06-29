@@ -75,9 +75,9 @@ class Node(object):
             flowremoved_threed.start()
 
         '''This section is used to send error msg if necessary'''
-        error_prefix = "{}--0x0004--0x0000--faceid255 down".format(self.nodeid)
+        error_prefix = "{}--0x0004--0x0000--faceid255-down".format(self.nodeid)
         if (error):
-            time.sleep(10)
+            time.sleep(7)
             errormsg_threed = Thread(target=self._errormsg, args=(error_prefix,))
             errormsg_threed.start()
 
@@ -95,8 +95,8 @@ class Node(object):
             print("NDN FlowTable has been updated")
 
     def _errormsg(self, error_prefix):
-        if (ErrorMsg().run(error_prefix)):
-            print("Error has been reported to Controller")
+        ErrorMsg().run(error_prefix)
+
 
     def _sendFlowRemovedMsg(self,removed_prefix):
         FlowRemovedMsg().run(removed_prefix)
