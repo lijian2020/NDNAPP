@@ -30,57 +30,45 @@ from ofmsg import OFMSG
 from ndnflowtable import NdnFlowTable
 
 
-class PacketIn(object):
-    '''PacketIn message is an interest for inquiring unknown prefix '''
+class ErrorMsg(object):
+    '''Error report message is an interest for report error to controller'''
 
     def __init__(self):
         self.keyChain = KeyChain()
         self.isDone = False
         self.ofmsg = OFMSG()
-        self.outstanding = dict()  #a dictionary to keep track of outstanding Interests and retransmissions.
-        #self.face = Face("127.0.0.1")
+        self.outstanding = dict()  # a dictionary to keep track of outstanding Interests and retransmissions.
+        # self.face = Face("127.0.0.1")
         self.face = Face()
-        #self.nodeid = OSCommand.getnodeid()
+        self.nodeid = OSCommand.getnodeid()
 
-    def run(self, unknown_prefix="/abcd/dfgh/tcd"):
+    def run(self, unknown_prefix="h1--0x0004--0x0000--faceid255-down"):
         try:
-            self._sendPacketinInterest(unknown_prefix)
+            self._sendErrorMsgInterest(unknown_prefix)
 
             while not self.isDone:
                 self.face.processEvents()
                 time.sleep(0.01)
         except RuntimeError as e:
-            print("ERROR: %s" %  e)
+            print("ERROR: %s" % e)
         return self.isDone
 
-
-    def _sendPacketinInterest(self,unknown_prefix):
-        interest = self.ofmsg.create_packetin_msg_interest(unknown_prefix)
+    def _sendErrorMsgInterest(self, error_prefix):
+        interest = self.ofmsg.create_error_msg_interest(error_prefix)
         uri = interest.getName().toUri()
 
         if uri not in self.outstanding:
             self.outstanding[uri] = 1
         self.face.expressInterest(interest, self._onData, self._onTimeout)
-
-        print("--------Sent <<<PacketIn>>> Interest for \n %s" % uri)
-
-
+        print("--------Sent <<<Error Msg>>> Interest for \n %s" % uri)
 
     def _onData(self, interest, data):
         payload = data.getContent()
         name = data.getName()
-        print("Received <<<<FlowMod data>>>>from Controller ")
-        #todo(lijian)  add this item to flow table.
-        self.nodeid = OSCommand.getnodeid()
-
-        FlowModDataList = NdnFlowTable.parse_FlowMod_Data(payload)
-        NdnFlowTable.updatendnflowtable(FlowModDataList,self.nodeid)
-        print(NdnFlowTable)
-
+        print("Received <<<<Error Msg ACK>>>>from Controller ")
 
         del self.outstanding[name.toUri()]
         self.isDone = True
-
 
     def _onTimeout(self, interest):
         name = interest.getName()
@@ -95,8 +83,5 @@ class PacketIn(object):
             self.isDone = True
 
 
-
-
 if __name__ == '__main__':
-    PacketIn().run()
-
+    ErrorMsg().run()

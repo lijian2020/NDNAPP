@@ -35,6 +35,7 @@ from packetin import PacketIn
 from featureres import FeatureRes
 from ctrlinforeq import CtrlInfoReq
 from threading import Thread
+from errormsg import ErrorMsg
 
 class Node(object):
     '''Hello '''
@@ -46,8 +47,7 @@ class Node(object):
         self.face = Face()
         self.nodeid = OSCommand.getnodeid()
 
-
-    def run(self,packetin=False,fr=False):
+    def run(self, packetin=False, fr=False, error=False):
         #advertise a prefix for offering feature request
         NodePrefixString = '/ndn/{}-site/{}/ofndn'.format(self.nodeid,self.nodeid)
         subprocess.call(["export HOME=/tmp/minindn/{0} && nlsrc advertise {1} ".\
@@ -74,6 +74,17 @@ class Node(object):
             flowremoved_threed = Thread(target=self._sendFlowRemovedMsg, args=(removed_prefix,))
             flowremoved_threed.start()
 
+        '''This section is used to send error msg if necessary'''
+        error_prefix = "{}--0x0004--0x0000--faceid255-down".format(self.nodeid)
+        if (error):
+            time.sleep(7)
+            errormsg_threed = Thread(target=self._errormsg, args=(error_prefix,))
+            errormsg_threed.start()
+
+
+
+
+
     def Hellorequest(self):
         if(HelloReq().run()):
             FeatureRes().run()
@@ -82,6 +93,10 @@ class Node(object):
     def prefixinquire(self,unknown_prefix):
         if(PacketIn().run(unknown_prefix)):
             print("NDN FlowTable has been updated")
+
+    def _errormsg(self, error_prefix):
+        ErrorMsg().run(error_prefix)
+
 
     def _sendFlowRemovedMsg(self,removed_prefix):
         FlowRemovedMsg().run(removed_prefix)
@@ -97,12 +112,14 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Parse command line args for ndn consumer')
     parser.add_argument("-p", "--packetin", nargs='?', const=True, help='True | False send PacketIn msg?')
     parser.add_argument("-fr", "--flowremoved", nargs='?', const=True, help='True | False send FlowRemoved msg?')
+    parser.add_argument("-e", "--error", nargs='?', const=True, help='True | False send Error msg?')
     args = parser.parse_args()
 
     try:
         packetin = args.packetin
         fr = args.flowremoved
-        Node().run(packetin,fr)
+        error = args.error
+        Node().run(packetin, fr, error)
 
     except:
         traceback.print_exc(file=sys.stdout)

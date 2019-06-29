@@ -1,11 +1,9 @@
-# -*- Mode:python; c-file-style:"gnu"; indent-tabs-mode:nil -*- */
+#!/usr/bin/python
 #
-# Copyright (C) 2014 Regents of the University of California.
-# Copyright (c) 2014 Susmit Shannigrahi, Steve DiBenedetto
+# Copyright (C) 2019 Regents of the Trinity College of Dublin, the University of Dublin.
+# Copyright (c) 2019 Submit Li Jian
 #
-# Author: Jeff Thompson <jefft0@remap.ucla.edu>
-# Author Steve DiBenedetto <http://www.cs.colostate.edu/~dibenede>
-# Author Susmit Shannigrahi <http://www.cs.colostate.edu/~susmit>
+# Author: Li Jian <lij12@tcd.ie>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -20,6 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 # A copy of the GNU General Public License is in the file COPYING.
+#
 
 import sys
 import time
@@ -63,20 +62,50 @@ class Controller_Listener(object):
         hello_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/0/0/0/')
         self.face.setInterestFilter(hello_msg_prefix,self.onInterest_Hello)   #for HelloReq msg
 
+        error_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/1/0/0/')
+        self.face.setInterestFilter(error_msg_prefix, self.onInterest_ErrorMsg)  # for Error msg
+
         packetin_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/10/0/0/')
         self.face.setInterestFilter(packetin_msg_prefix,self.onInterest_PacketIn)   #for packetin msg
 
         FlowRemoved_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/11/0/0/')
         self.face.setInterestFilter(FlowRemoved_msg_prefix,self.onInterest_FlowRemoved)   #for FlowRemoved msg
 
-        CtrlInfo_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/36/0/0/')
-        self.face.setInterestFilter(CtrlInfo_msg_prefix, self.onInterest_CtrlInfo)  # for CtrlInfo msg
+        # cannot be here, conflict with helloreq, since both of them occupy the 'listening channel' and will not release.
+        # CtrlInfo_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/36/0/0/')
+        # self.face.setInterestFilter(CtrlInfo_msg_prefix, self.onInterest_CtrlInfo)
 
         # Run the event loop forever. Use a short sleep to
         # prevent the Producer from using 100% of the CPU.
         while not self.isDone:             #listen hello cannot stop
             self.face.processEvents()
             time.sleep(0.01)
+
+    def ctrl_info_run(self):
+
+        ControllerPrefixString = '/ndn/ie/tcd/controller01/ofndn/'
+        ControllerPrefix = Name(ControllerPrefixString)
+        self.face.setCommandSigningInfo(self.keyChain, \
+                                        self.keyChain.getDefaultCertificateName())
+
+        self.face.registerPrefix(ControllerPrefix, self.onInterest_Mian, self.onRegisterFailed)  # main prefix
+
+        # filters:
+        CtrlInfo_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/36/0/0/')
+        self.face.setInterestFilter(CtrlInfo_msg_prefix, self.onInterest_CtrlInfo)  # for CtrlInfo msg
+
+        # Run the event loop forever. Use a short sleep to
+        # prevent the Producer from using 100% of the CPU.
+        while not self.isDone:  # listen hello cannot stop
+            self.face.processEvents()
+            time.sleep(0.01)
+
+
+
+
+
+
+
 
     def onInterest_PacketIn(self, mainPrefix, interest, transport, registeredPrefixId):
         print("------Received: <<<PacketIn>>> Msg for: \n" + interest.getName().toUri())  # for test
@@ -103,7 +132,6 @@ class Controller_Listener(object):
 
     def onInterest_Hello(self, mainPrefix, interest, transport, registeredPrefixId):
         print("--------received <<<HelloReq>>> interest:\n" + interest.getName().toUri())  # for test
-        #print(self.NPT.node_prefix_table)
 
         #todo(lijian) should check the helloreq_name_list and determine what action should do
 
@@ -112,10 +140,20 @@ class Controller_Listener(object):
         transport.send(data.wireEncode().toBuffer())
         NodePrefixTable.updatenodeprefixtable(interest)       #to add NPT and fetch feature
 
+    def onInterest_ErrorMsg(self, mainPrefix, interest, transport, registeredPrefixId):
+        print("--------received <<<Error Msg>>> interest:\n" + interest.getName().toUri())  # for test
+        errormsg_data = 'Error Report Acknowledge'
+        data = self.ofmsg.create_errorAck_data(interest, errormsg_data)
+        transport.send(data.wireEncode().toBuffer())
+        print("--------sent <<<Error Msg ACK>>>---------")
+
+        # todo(errorMsg) maybe this msg can trigger some other actions.
+        #parse the errorMsg interest to get error information.
+
 
 
     def onInterest_Mian(self, mainPrefix, interest, transport, registeredPrefixId):
-        # TODO(lijian): check what should do.
+        # TODO(onInterest_Mian): check what should do.
         pass
 
     def onRegisterFailed(self, ControllerPrefix):
