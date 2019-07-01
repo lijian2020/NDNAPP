@@ -33,6 +33,7 @@ from pyndn.security import KeyChain
 from oscommand import OSCommand
 from ofmsg import OFMSG
 from controller_listener import Controller_Listener
+from controller_listener_ctrlinfo import Controller_Listener_CtrlInfo
 from controller_setter import Controller_Setter
 from featurereq import FeatureReq
 from multiprocessing import Process
@@ -48,6 +49,7 @@ class Controller(object):
         #self.face = Face()# Create a connection to the local forwarder over a Unix socket
         #self.outstanding = dict()  # a dictionary to keep track of outstanding Interests and retransmissions.
         self.controller_listener = Controller_Listener()
+        self.controller_listener_ctrlinfo = Controller_Listener_CtrlInfo()
         self.controller_setter = Controller_Setter()
         #self.featurereq = FeatureReq()
         #self.RLock = threading.RLock()
@@ -66,8 +68,7 @@ class Controller(object):
     conflict with hello process it they are in the same thread/process'''
 
     def ctrl_info_function(self):  # a separated process for ctrl_info function
-        time.sleep(7)
-        self.controller_listener.ctrl_info_run()
+        self.controller_listener_ctrlinfo.ctrl_info_run()
 
 
     def control_function(self,functionlist):

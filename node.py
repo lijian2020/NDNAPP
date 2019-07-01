@@ -102,7 +102,7 @@ class Node(object):
         FlowRemovedMsg().run(removed_prefix)
 
     def _sendCtrlInfoReqMsg(self):
-        time.sleep(3)
+        # time.sleep(3)
         CtrlInfoReq().run()  # here need other thread.
 
 
