@@ -74,7 +74,7 @@ class NdnFlowTable(object):
             print("Wrong Flow Entry Command Code")
         print("==============NFT==================")
         #print("EP, Face, Prefix, Priority,Counter,Idle-Lifetime,Hard-lifetime,Action,Out-faces,Flag")
-        print(NdnFlowTable.NFT)   #todo(print NFT) for test
+        print(NdnFlowTable.NFT)  # print NFT for test
         print("===================================")
         np.savetxt(r'/tmp/minindn/{}/NFT.txt'.format(nodeid), NdnFlowTable.NFT, fmt='%s %s %s %s %s %s %s %s %s %s')
 
@@ -87,7 +87,7 @@ class NdnFlowTable(object):
 
         print("==============NFT==================")
         #print("EP, Face, Prefix, Priority,Counter,Idle-Lifetime,Hard-lifetime,Action,Out-faces,Flag")
-        print(NdnFlowTable.NFT)   #todo(print NFT) for test
+        print(NdnFlowTable.NFT)  # rint NFT for test
         print("===================================")
         np.savetxt(r'/tmp/minindn/{}/NFT.txt'.format(nodeid), NdnFlowTable.NFT, fmt='%s %s %s %s %s %s %s %s %s %s')
 
@@ -109,7 +109,7 @@ class NdnFlowTable(object):
             Fulltable = np.delete(Fulltable,number,axis=0)
         except:
             return ("delete faild")
-        return (Fulltable)   #TODO(lijian),printer for test, could be deleted
+        return (Fulltable)
 
 
     """search if the entry existed in the table. p"""

@@ -65,8 +65,11 @@ class Controller(object):
     '''This ctrl_info function has to be imployment in a separated process, since it will
     conflict with hello process it they are in the same thread/process'''
 
-    def ctrl_info_function(self):  # a separated process for ctrl_info function
-        time.sleep(7)
+    def ctrl_info_function(self, ctrlinfo_parameter):  # a separated process for ctrl_info function
+        if (ctrlinfo_parameter):
+            self.controller_listener.new_CtrlInfo_data = '0x0001--0x0001--255'
+            # facemod--destroy--faceid
+        print("$$$$$$$$$$$$$$$$$$$$$$$$$$")
         self.controller_listener.ctrl_info_run()
 
 
@@ -83,6 +86,8 @@ if __name__ == '__main__':    ##### Multiprocess must start from here (__name__ 
     parser = argparse.ArgumentParser(description='Parse command line args for ndn producer')
     parser.add_argument("-p", "--packetout", nargs='?', const=True, help='True | False send PacketOut msg?')
     parser.add_argument("-f", "--facemod", nargs='?', const=True, help='True | False send FaceMod msg?') #todo(facemod)May need more arguments
+    parser.add_argument("-c", "--ctrlinfo", nargs='?', const=True,
+                        help='True | False test ctrlinfo response function?')  # todo(ctrlinfo)May need more arguments
     args = parser.parse_args()
 
     try:
@@ -90,9 +95,10 @@ if __name__ == '__main__':    ##### Multiprocess must start from here (__name__ 
         controller = Controller()
         t1 = Process(target=controller.monitoring_function)
         t1.start()
-        t2 = Process(target=controller.ctrl_info_function)  # a separated process for ctrl_info function
-        t2.start()
 
+        t2 = Process(target=controller.ctrl_info_function,
+                     args=(args.ctrlinfo,))  # a separated process for ctrl_info function
+        t2.start()
 
 
         time.sleep(10)

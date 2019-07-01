@@ -44,7 +44,7 @@ class Controller_Listener(object):
         self.face = Face()
         self.featurereq = FeatureReq()
         self.helloreq_name_list = []
-        self.new_CtrlInfo_data = "---default CtrlInfo data---"  # used to get new ctrlinfo data and send to nodes.
+        self.new_CtrlInfo_data = "---Initial CtrlInfo data---"  # used to get new ctrlinfo data and send to nodes.
         self.CtrlInfo_data = ""  # used to record used ctrlinfo data
 
 
@@ -103,10 +103,6 @@ class Controller_Listener(object):
 
 
 
-
-
-
-
     def onInterest_PacketIn(self, mainPrefix, interest, transport, registeredPrefixId):
         print("------Received: <<<PacketIn>>> Msg for: \n" + interest.getName().toUri())  # for test
         #print(self.NPT.node_prefix_table)
@@ -129,6 +125,7 @@ class Controller_Listener(object):
         self.CtrlInfo_data = self.new_CtrlInfo_data
         data = self.ofmsg.create_ctrlinfo_res_data(interest, self.CtrlInfo_data)
         transport.send(data.wireEncode().toBuffer())
+        print("--------sent <<<New CtrlInfo Res>>> Data--------")
 
     def onInterest_Hello(self, mainPrefix, interest, transport, registeredPrefixId):
         print("--------received <<<HelloReq>>> interest:\n" + interest.getName().toUri())  # for test
