@@ -70,9 +70,9 @@ class PacketIn(object):
         payload = data.getContent()
         name = data.getName()
         print("Received <<<<FlowMod data>>>>from Controller ")
-        #todo(lijian)  add this item to flow table.
         self.nodeid = OSCommand.getnodeid()
 
+        # add this item to flow table.
         FlowModDataList = NdnFlowTable.parse_FlowMod_Data(payload)
         NdnFlowTable.updatendnflowtable(FlowModDataList,self.nodeid)
         print(NdnFlowTable)

@@ -48,15 +48,17 @@ class OSCommand(object):
         return command_output
 
     @staticmethod
-    def facemod(FaceMod_suffix_list):
+    def facemod(FaceMod_Operate_list):  # the list pattern:  [faceid   operation_code]
         nodeid = OSCommand.getnodeid()
-        if (FaceMod_suffix_list[1] == '0x0001'):  # destroy a face
+        if (FaceMod_Operate_list[1] == '0x0001'):  # destroy a face
             command_output = subprocess.check_output(["export HOME=/tmp/minindn/{0} && nfdc face destroy {1}". \
-                                                     format(nodeid, FaceMod_suffix_list[0])], shell=True)
+                                                     format(nodeid, FaceMod_Operate_list[0])], shell=True)
             return command_output
 
-        elif (FaceMod_suffix_list[1] == '0x0000'):  # add a create
+        elif (FaceMod_Operate_list[1] == '0x0000'):  # add a create
             command_output = subprocess.check_output(["export HOME=/tmp/minindn/{0} && nfdc face create {1}". \
-                                                     format(nodeid, FaceMod_suffix_list[0])], shell=True)
-            print("=========333333333===========")
+                                                     format(nodeid, FaceMod_Operate_list[0])], shell=True)
             return command_output
+
+        else:  # Wrong code
+            return "Wrong FaceMod Option Id"

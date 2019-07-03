@@ -34,7 +34,7 @@ from featurereq import FeatureReq
 from node_prefix_table import NodePrefixTable
 
 
-class Controller_Listener_CtrlInfo(object):
+class Controller_Listener_Hello(object):
     def __init__(self):
         self.keyChain = KeyChain()
         self.isDone = False
@@ -46,18 +46,13 @@ class Controller_Listener_CtrlInfo(object):
         self.new_CtrlInfo_data = "---Initial CtrlInfo data---"  # used to get new ctrlinfo data and send to nodes.
         self.CtrlInfo_data = ""  # used to record used ctrlinfo data
 
-    def ctrl_info_run(self):
-
-        ControllerPrefixString = '/ndn/ie/tcd/controller01/ofndn/--/n1.0/36/0/0/'
+    def hello_run(self):
+        ControllerPrefixString = '/ndn/ie/tcd/controller01/ofndn/--/n1.0/0/0/0/'
         ControllerPrefix = Name(ControllerPrefixString)
         self.face.setCommandSigningInfo(self.keyChain, \
                                         self.keyChain.getDefaultCertificateName())
 
-        self.face.registerPrefix(ControllerPrefix, self.onInterest_CtrlInfo, self.onRegisterFailed)  # main prefix
-        #
-        # # filters:
-        # CtrlInfo_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/36/0/0/')
-        # self.face.setInterestFilter(CtrlInfo_msg_prefix, self.onInterest_CtrlInfo)  # for CtrlInfo msg
+        self.face.registerPrefix(ControllerPrefix, self.onInterest_Hello, self.onRegisterFailed)  # main prefix
 
         # Run the event loop forever. Use a short sleep to
         # prevent the Producer from using 100% of the CPU.
@@ -65,14 +60,15 @@ class Controller_Listener_CtrlInfo(object):
             self.face.processEvents()
             time.sleep(0.01)
 
-    def onInterest_CtrlInfo(self, mainPrefix, interest, transport, registeredPrefixId):
-        print("--------received <<<CtrlInfo Req>>> interest:\n" + interest.getName().toUri())  # for test
-        while (self.new_CtrlInfo_data == self.CtrlInfo_data):  # wait for new data.
-            time.sleep(15)
-        self.CtrlInfo_data = self.new_CtrlInfo_data
-        data = self.ofmsg.create_ctrlinfo_res_data(interest, self.CtrlInfo_data)
+    def onInterest_Hello(self, mainPrefix, interest, transport, registeredPrefixId):
+        print("--------received <<<HelloReq>>> interest:\n" + interest.getName().toUri())  # for test
+
+        # todo(lijian) should check the helloreq_name_list and determine what action should do
+
+        hello_data = 'this is the hello response data'
+        data = self.ofmsg.create_hello_res_data(interest, hello_data)
         transport.send(data.wireEncode().toBuffer())
-        print("--------sent <<<New CtrlInfo Res>>> Data--------")
+        NodePrefixTable.updatenodeprefixtable(interest)  # to add NPT and fetch feature
 
     def onInterest_Mian(self, mainPrefix, interest, transport, registeredPrefixId):
         # TODO(onInterest_Mian): check what should do.

@@ -44,7 +44,7 @@ class Controller_Listener(object):
         self.face = Face()
         self.featurereq = FeatureReq()
         self.helloreq_name_list = []
-        self.new_CtrlInfo_data = "---default CtrlInfo data---"  # used to get new ctrlinfo data and send to nodes.
+        self.new_CtrlInfo_data = "---Initial CtrlInfo data---"  # used to get new ctrlinfo data and send to nodes.
         self.CtrlInfo_data = ""  # used to record used ctrlinfo data
 
 
@@ -56,11 +56,10 @@ class Controller_Listener(object):
                                    self.keyChain.getDefaultCertificateName())
 
         self.face.registerPrefix(ControllerPrefix, self.onInterest_Mian, self.onRegisterFailed) #main prefix
-        #print(ControllerPrefix.toUri())
 
         #filters:
-        hello_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/0/0/0/')
-        self.face.setInterestFilter(hello_msg_prefix,self.onInterest_Hello)   #for HelloReq msg
+        # hello_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/0/0/0/')
+        # self.face.setInterestFilter(hello_msg_prefix,self.onInterest_Hello)   #for HelloReq msg
 
         error_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/1/0/0/')
         self.face.setInterestFilter(error_msg_prefix, self.onInterest_ErrorMsg)  # for Error msg
@@ -99,10 +98,6 @@ class Controller_Listener(object):
         while not self.isDone:  # listen hello cannot stop
             self.face.processEvents()
             time.sleep(0.01)
-
-
-
-
 
 
 

@@ -27,13 +27,13 @@ import time
 import argparse
 import traceback
 import subprocess
-import numpy as np
 from pyndn import Face
 from pyndn.security import KeyChain
 from oscommand import OSCommand
 from ofmsg import OFMSG
 from controller_listener import Controller_Listener
 from controller_listener_ctrlinfo import Controller_Listener_CtrlInfo
+from controller_listener_hello import Controller_Listener_Hello
 from controller_setter import Controller_Setter
 from featurereq import FeatureReq
 from multiprocessing import Process
@@ -50,25 +50,39 @@ class Controller(object):
         #self.outstanding = dict()  # a dictionary to keep track of outstanding Interests and retransmissions.
         self.controller_listener = Controller_Listener()
         self.controller_listener_ctrlinfo = Controller_Listener_CtrlInfo()
+        self.controller_listener_hello = Controller_Listener_Hello()
         self.controller_setter = Controller_Setter()
         #self.featurereq = FeatureReq()
         #self.RLock = threading.RLock()
 
+    '''This hello function has to be imployment in a separated process, since it will
+    conflict with other process if they are in the same thread/process'''
 
-
-
-    def monitoring_function(self):
+    def hello_function(self):
         ControllerPrefixString = '/ndn/ie/tcd/controller01/ofndn/'
         subprocess.call(["export HOME=/tmp/minindn/{0} && nlsrc advertise {1} ". \
                         format(self.nodeid,ControllerPrefixString)],shell=True)
 
-        self.controller_listener.run()  # other thread for hello msg
+        self.controller_listener_hello.hello_run()  # other thread for hello msg
+
+
 
     '''This ctrl_info function has to be imployment in a separated process, since it will
-    conflict with hello process it they are in the same thread/process'''
+    conflict with other process if they are in the same thread/process'''
 
-    def ctrl_info_function(self):  # a separated process for ctrl_info function
+    def ctrl_info_function(self, ctrlinfo_parameter):  # a separated process for ctrl_info function
+        if (ctrlinfo_parameter):
+            self.controller_listener_ctrlinfo.new_CtrlInfo_data = '0x0001--0x0001--355'
+            # facemod--destroy--faceid
         self.controller_listener_ctrlinfo.ctrl_info_run()
+
+    # def ctrl_info_function(self):  # a separated process for ctrl_info function
+    #     time.sleep(7)
+    #     self.controller_listener.ctrl_info_run()
+
+    def monitoring_function(self):
+        self.controller_listener.run()  # other thread for hello msg
+
 
 
     def control_function(self,functionlist):
@@ -84,16 +98,22 @@ if __name__ == '__main__':    ##### Multiprocess must start from here (__name__ 
     parser = argparse.ArgumentParser(description='Parse command line args for ndn producer')
     parser.add_argument("-p", "--packetout", nargs='?', const=True, help='True | False send PacketOut msg?')
     parser.add_argument("-f", "--facemod", nargs='?', const=True, help='True | False send FaceMod msg?') #todo(facemod)May need more arguments
+    parser.add_argument("-c", "--ctrlinfo", nargs='?', const=True,
+                        help='True | False test ctrlinfo response function?')  # todo(ctrlinfo)May need more arguments
     args = parser.parse_args()
 
     try:
         #packetout = args.packetout
         controller = Controller()
-        t1 = Process(target=controller.monitoring_function)
+        t1 = Process(target=controller.hello_function)
         t1.start()
-        t2 = Process(target=controller.ctrl_info_function)  # a separated process for ctrl_info function
+
+        t2 = Process(target=controller.ctrl_info_function,
+                     args=(args.ctrlinfo,))  # a separated process for ctrl_info function
         t2.start()
 
+        t3 = Process(target=controller.monitoring_function, )  # a separated process for ctrl_info function
+        t3.start()
 
 
         time.sleep(10)
@@ -103,8 +123,8 @@ if __name__ == '__main__':    ##### Multiprocess must start from here (__name__ 
         if(args.facemod):
             functionlist.append("facemod")
 
-        t3 = Process(target=controller.control_function, args=(functionlist,))
-        t3.start()
+        t4 = Process(target=controller.control_function, args=(functionlist,))
+        t4.start()
 
     except:
         traceback.print_exc(file=sys.stdout)

@@ -27,6 +27,7 @@ from pyndn import Face
 from pyndn.security import KeyChain
 from oscommand import OSCommand
 from ofmsg import OFMSG
+from ctrlinfo_operation import CtrlInfo_Operation
 
 
 class CtrlInfoReq(object):
@@ -41,6 +42,7 @@ class CtrlInfoReq(object):
         self.face = Face()
         self.nodeid = OSCommand.getnodeid()
         self.send_ctrlinfo_interest = True
+        self.ctrlinfo_operation = CtrlInfo_Operation()
 
     def run(self):
         ctrlinfo_version_number = 100001
@@ -68,7 +70,6 @@ class CtrlInfoReq(object):
         if uri not in self.outstanding:
             self.outstanding[uri] = 1
         self.face.expressInterest(interest, self._onData, self._onTimeout)
-
         print("--------Sent <<<CtrlInfoReq>>> Interest for \n %s" % uri)
 
     def _onData(self, interest, data):
@@ -78,6 +79,9 @@ class CtrlInfoReq(object):
         del self.outstanding[name.toUri()]
         self.isDone = True
         self.send_ctrlinfo_interest = True
+        self.ctrlinfo_operation.run(payload)
+
+
 
     def _onTimeout(self, interest):
         name = interest.getName()

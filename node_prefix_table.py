@@ -89,8 +89,7 @@ class NodePrefixTable(object):
             prefixtable = np.delete(prefixtable,number,axis=0)
         except:
             return ("delete faild")
-        return (prefixtable)   #TODO(lijian),printer for test, could be deleted
-
+        return (prefixtable)
 
     """search if the prefix existed in the table. parameter prefix must be string started with "/"."""
     @staticmethod
