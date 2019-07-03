@@ -56,7 +56,6 @@ class Controller_Listener(object):
                                    self.keyChain.getDefaultCertificateName())
 
         self.face.registerPrefix(ControllerPrefix, self.onInterest_Mian, self.onRegisterFailed) #main prefix
-        #print(ControllerPrefix.toUri())
 
         #filters:
         hello_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/0/0/0/')

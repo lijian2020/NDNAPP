@@ -70,8 +70,6 @@ class FeatureReq(object):
         self.isDone = True
 
 
-        #print('========1111==============\n', FeatureDate.FIB_array)
-        print('==========222222============\n', FeatureDate.Face_array)
 
 
     def _onTimeout(self, interest):
