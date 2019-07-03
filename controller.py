@@ -75,6 +75,10 @@ class Controller(object):
             # facemod--destroy--faceid
         self.controller_listener_ctrlinfo.ctrl_info_run()
 
+    # def ctrl_info_function(self):  # a separated process for ctrl_info function
+    #     time.sleep(7)
+    #     self.controller_listener.ctrl_info_run()
+
     def monitoring_function(self):
         self.controller_listener.run()  # other thread for hello msg
 

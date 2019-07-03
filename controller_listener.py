@@ -58,8 +58,8 @@ class Controller_Listener(object):
         self.face.registerPrefix(ControllerPrefix, self.onInterest_Mian, self.onRegisterFailed) #main prefix
 
         #filters:
-        hello_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/0/0/0/')
-        self.face.setInterestFilter(hello_msg_prefix,self.onInterest_Hello)   #for HelloReq msg
+        # hello_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/0/0/0/')
+        # self.face.setInterestFilter(hello_msg_prefix,self.onInterest_Hello)   #for HelloReq msg
 
         error_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/1/0/0/')
         self.face.setInterestFilter(error_msg_prefix, self.onInterest_ErrorMsg)  # for Error msg
