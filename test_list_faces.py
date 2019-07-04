@@ -52,7 +52,7 @@ def main():
 
     def onComplete(content):
         enabled[0] = False
-        printFaceStatuses(content)
+        printfaces(content)
 
     def onError(errorCode, message):
         enabled[0] = False
@@ -66,6 +66,13 @@ def main():
 
         # We need to sleep for a few milliseconds so we don't use 100% of the CPU.
         time.sleep(0.01)
+
+
+def printfaces(content):
+    faceStatusMessage = face_status_pb2.FaceStatusMessage()
+    ProtobufTlv.decode(faceStatusMessage, content)
+
+
 
 
 def printFaceStatuses(encodedMessage):
