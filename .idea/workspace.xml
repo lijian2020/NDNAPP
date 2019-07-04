@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46d7361f-1b5d-44d3-adf0-90728ae67349" name="Default Changelist" comment="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
+    <list default="true" id="46d7361f-1b5d-44d3-adf0-90728ae67349" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/face_status_pb2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_list_faces.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,11 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_list_faces.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-478">
-              <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-              <folding>
-                <element signature="e#1132#1143#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="478">
+              <caret line="85" column="46" lean-forward="true" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -194,7 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/producer.py" />
         <option value="$PROJECT_DIR$/backup/controller_after_update_and_inquire.py" />
         <option value="$PROJECT_DIR$/test and learn/wechat.py" />
         <option value="$PROJECT_DIR$/prefixroutetable.py" />
@@ -244,6 +241,7 @@
         <option value="$PROJECT_DIR$/controller.py" />
         <option value="$PROJECT_DIR$/controller_listener_hello.py" />
         <option value="$PROJECT_DIR$/trigger.py" />
+        <option value="$PROJECT_DIR$/face_status_pb2.py" />
         <option value="$PROJECT_DIR$/test_list_faces.py" />
       </list>
     </option>
@@ -595,7 +593,7 @@
       <workItem from="1561576617580" duration="7384000" />
       <workItem from="1561590490750" duration="28488000" />
       <workItem from="1562024356922" duration="8876000" />
-      <workItem from="1562174118275" duration="10221000" />
+      <workItem from="1562174118275" duration="12477000" />
     </task>
     <task id="LOCAL-00001" summary="try to commit the first time">
       <created>1561230024143</created>
@@ -730,11 +728,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562208034014</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
+      <created>1562234532958</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1562234532958</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="475394000" />
+    <option name="totallyTimeSpent" value="477650000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -749,13 +754,13 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5214286" visible="true" weight="0.15511727" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5214286" visible="true" weight="0.15511727" />
       <window_info id="Structure" order="1" sideWeight="0.47857141" side_tool="true" weight="0.15511727" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Repositories" order="3" weight="0.32995737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.4934924" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.1637744" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.1637744" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4143167" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -862,7 +867,7 @@
     <SUITE FILE_PATH="coverage/NDNAPP$consumer.coverage" NAME="consumer Coverage Results" MODIFIED="1561591001919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NDNAPP$test_interest_methods.coverage" NAME="test_interest_methods Coverage Results" MODIFIED="1559794368788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NDNAPP$test_2.coverage" NAME="test 2 Coverage Results" MODIFIED="1560899440289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test and learn" />
-    <SUITE FILE_PATH="coverage/NDNAPP$test_list_faces_py.coverage" NAME="test_list_faces.py Coverage Results" MODIFIED="1562234509273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NDNAPP$test_list_faces_py.coverage" NAME="test_list_faces.py Coverage Results" MODIFIED="1562236374572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NDNAPP$oscommand.coverage" NAME="oscommand Coverage Results" MODIFIED="1560735522373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NDNAPP$producer.coverage" NAME="controller Coverage Results" MODIFIED="1560643878844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/NDNAPP$test_3.coverage" NAME="test 3 Coverage Results" MODIFIED="1560898897541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test and learn" />
@@ -1247,6 +1252,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/channel_status_pb2.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/face_status_pb2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="94" column="39" selection-start-line="94" selection-end-line="94" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ctrlinfo_operation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="818">
@@ -1257,23 +1272,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/channel_status_pb2.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/face_status_pb2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <caret line="180" column="68" lean-forward="true" selection-start-line="180" selection-start-column="68" selection-end-line="180" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_list_faces.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-478">
-          <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-          <folding>
-            <element signature="e#1132#1143#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="478">
+          <caret line="85" column="46" lean-forward="true" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
         </state>
       </provider>
     </entry>
