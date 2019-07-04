@@ -74,8 +74,8 @@ class Notice(object):
         print("Received data========: \n", type(contentx))
         print(contentx)
 
-        del self.outstanding[name.toUri()]
-        self.isDone = True
+        # del self.outstanding[name.toUri()]
+        # self.isDone = True
 
     def _onTimeout(self, interest):
         name = interest.getName()

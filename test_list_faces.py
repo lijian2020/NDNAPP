@@ -32,13 +32,11 @@ from pyndn.util.segment_fetcher import SegmentFetcher
 # This module is produced by: protoc --python_out=. face-status.proto
 import face_status_pb2
 
-
 def dump(*list):
     result = ""
     for element in list:
         result += (element if type(element) is str else str(element)) + " "
     print(result)
-
 
 def main():
     # The default Face connects to the local NFD.
@@ -52,7 +50,7 @@ def main():
 
     def onComplete(content):
         enabled[0] = False
-        printfaces(content)
+        printFaceStatuses(content)
 
     def onError(errorCode, message):
         enabled[0] = False
@@ -66,14 +64,6 @@ def main():
 
         # We need to sleep for a few milliseconds so we don't use 100% of the CPU.
         time.sleep(0.01)
-
-
-def printfaces(content):
-    faceStatusMessage = face_status_pb2.FaceStatusMessage()
-    ProtobufTlv.decode(faceStatusMessage, content)
-
-
-
 
 def printFaceStatuses(encodedMessage):
     """
@@ -106,6 +96,5 @@ def printFaceStatuses(encodedMessage):
                  " " + ("multi-access" if faceStatus.link_type == 1 else "point-to-point"))
 
         dump(line)
-
 
 main()
