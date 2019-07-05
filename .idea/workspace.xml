@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46d7361f-1b5d-44d3-adf0-90728ae67349" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/trigger/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_list_faces.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_list_faces.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face_status_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/trigger/face_status_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fib_entry_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/trigger/fib_entry_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notice.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rib_entry_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/trigger/rib_entry_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test and learn/featuredata.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test and learn/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test and learn/test2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test and learn/test3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test and learn/test_interest_methods.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test and learn/test_parse_FIB.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test and learn/test_parse_face.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test and learn/test_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_encode_decode_fib_entry.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_list_channels.py" beforeDir="false" afterPath="$PROJECT_DIR$/trigger/test_list_channels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_list_faces.py" beforeDir="false" afterPath="$PROJECT_DIR$/trigger/test_list_faces.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_list_rib.py" beforeDir="false" afterPath="$PROJECT_DIR$/trigger/test_list_rib.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,83 +43,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ctrlinfo_operation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
+            <state relative-caret-position="240">
               <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
               <folding>
                 <element signature="e#893#911#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/face_status_pb2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/facemod.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm2019.1/system/remote_sources/-1286225973/1847893223/pyndn/encoding/protobuf_tlv.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-592">
-              <caret line="143" column="12" selection-start-line="143" selection-start-column="12" selection-end-line="143" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1286225973/builtins.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="169" column="4" selection-start-line="169" selection-start-column="4" selection-end-line="169" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/helloreq.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/featurereq.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1458">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#894#904#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notice.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1161">
-              <caret line="71" column="37" lean-forward="true" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
-              <folding>
-                <element signature="n#!!doc" />
-                <element signature="e#894#904#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -253,8 +199,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="520" />
-    <option name="y" value="-19" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="613" />
     <option name="height" value="584" />
   </component>
@@ -270,6 +216,11 @@
             <path>
               <item name="NDNAPP" type="b2602c69:ProjectViewProjectNode" />
               <item name="NDNAPP" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NDNAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NDNAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="trigger" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -298,6 +249,7 @@
       <recent name="D:\Python\NDNAPP\test and learn" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Python\NDNAPP\trigger" />
       <recent name="D:\Python\NDNAPP\backup" />
       <recent name="D:\Python\NDNAPP\test and learn" />
       <recent name="D:\Python\NDNAPP" />
@@ -572,7 +524,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_list_faces.py" />
+      <option name="SCRIPT_NAME" value="D:\Python\NDNAPP\trigger\test_list_faces.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -622,7 +574,7 @@
       <workItem from="1561576617580" duration="7384000" />
       <workItem from="1561590490750" duration="28488000" />
       <workItem from="1562024356922" duration="8876000" />
-      <workItem from="1562174118275" duration="21710000" />
+      <workItem from="1562174118275" duration="23168000" />
     </task>
     <task id="LOCAL-00001" summary="try to commit the first time">
       <created>1561230024143</created>
@@ -792,11 +744,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562265334144</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
+      <created>1562290531255</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1562290531257</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="486883000" />
+    <option name="totallyTimeSpent" value="488341000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -808,15 +767,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1096" height="1896" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5214286" visible="true" weight="0.1098081" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5214286" visible="true" weight="0.1988417" />
       <window_info id="Structure" order="1" sideWeight="0.47857141" side_tool="true" weight="0.15511727" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Repositories" order="3" weight="0.32995737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.4934924" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.1637744" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.1637744" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4143167" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -826,7 +786,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.23861171" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.20498915" />
+      <window_info anchor="bottom" id="File Transfer" order="12" visible="true" weight="0.107264474" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="GitHub Pull Requests" order="14" weight="0.329718" />
       <window_info anchor="bottom" id="SVN Repositories" order="15" weight="0.329718" />
@@ -911,11 +871,6 @@
           <url>file://$PROJECT_DIR$/test and learn/test3.py</url>
           <line>5</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/notice.py</url>
-          <line>23</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1286,18 +1241,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1161">
-          <caret line="71" column="37" lean-forward="true" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
-          <folding>
-            <element signature="n#!!doc" />
-            <element signature="e#894#904#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_list_rib.py">
+    <entry file="file://$PROJECT_DIR$/trigger/test_list_rib.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="87" column="36" selection-start-line="87" selection-start-column="30" selection-end-line="87" selection-end-column="36" />
@@ -1321,30 +1265,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_list_faces.py">
+    <entry file="file://$PROJECT_DIR$/trigger/face_status_pb2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="791">
-          <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+        <state relative-caret-position="567">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trigger/test_list_faces.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="45" column="55" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="71" column="37" lean-forward="true" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
           <folding>
-            <element signature="e#1132#1143#0" expanded="true" />
+            <element signature="n#!!doc" />
+            <element signature="e#894#904#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ctrlinfo_operation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
+        <state relative-caret-position="240">
           <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
           <folding>
             <element signature="e#893#911#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/face_status_pb2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
         </state>
       </provider>
     </entry>

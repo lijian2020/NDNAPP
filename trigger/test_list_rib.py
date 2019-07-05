@@ -31,7 +31,7 @@ from pyndn.util import Blob
 from pyndn.encoding import ProtobufTlv
 from pyndn.util.segment_fetcher import SegmentFetcher
 # This moudle is produced by: protoc --python_out=. rib-entry.proto
-import rib_entry_pb2
+from trigger import rib_entry_pb2
 
 
 def dump(*list):

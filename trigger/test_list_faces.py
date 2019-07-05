@@ -30,7 +30,8 @@ from pyndn import Interest
 from pyndn.encoding import ProtobufTlv
 from pyndn.util.segment_fetcher import SegmentFetcher
 # This module is produced by: protoc --python_out=. face-status.proto
-import face_status_pb2
+from trigger import face_status_pb2
+
 
 def dump(*list):
     result = ""
