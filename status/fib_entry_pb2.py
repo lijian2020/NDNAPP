@@ -9,7 +9,6 @@ from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf import descriptor_pb2
-
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -19,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package='ndn_message',
     syntax='proto2',
     serialized_pb=_b(
-        '\n\x0f\x66ib-entry.proto\x12\x0bndn_message\"\x9c\x02\n\x0f\x46ibEntryMessage\x12\x39\n\tfib_entry\x18\x80\x01 \x02(\x0b\x32%.ndn_message.FibEntryMessage.FibEntry\x1a\x19\n\x04Name\x12\x11\n\tcomponent\x18\x08 \x03(\x0c\x1a.\n\rNextHopRecord\x12\x0f\n\x07\x66\x61\x63\x65_id\x18i \x02(\r\x12\x0c\n\x04\x63ost\x18j \x02(\r\x1a\x82\x01\n\x08\x46ibEntry\x12/\n\x04name\x18\x07 \x02(\x0b\x32!.ndn_message.FibEntryMessage.Name\x12\x45\n\x10next_hop_records\x18\x81\x01 \x03(\x0b\x32*.ndn_message.FibEntryMessage.NextHopRecord')
+        '\n\x0f\x66ib-entry.proto\x12\x0bndn_message\"\x9c\x02\n\x0f\x46ibEntryMessage\x12\x39\n\tfib_entry\x18\x80\x01 \x03(\x0b\x32%.ndn_message.FibEntryMessage.FibEntry\x1a\x19\n\x04Name\x12\x11\n\tcomponent\x18\x08 \x03(\x0c\x1a.\n\rNextHopRecord\x12\x0f\n\x07\x66\x61\x63\x65_id\x18i \x02(\r\x12\x0c\n\x04\x63ost\x18j \x02(\r\x1a\x82\x01\n\x08\x46ibEntry\x12/\n\x04name\x18\x07 \x02(\x0b\x32!.ndn_message.FibEntryMessage.Name\x12\x45\n\x10next_hop_records\x18\x81\x01 \x03(\x0b\x32*.ndn_message.FibEntryMessage.NextHopRecord')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -136,8 +135,8 @@ _FIBENTRYMESSAGE = _descriptor.Descriptor(
     fields=[
         _descriptor.FieldDescriptor(
             name='fib_entry', full_name='ndn_message.FibEntryMessage.fib_entry', index=0,
-            number=128, type=11, cpp_type=10, label=2,
-            has_default_value=False, default_value=None,
+            number=128, type=11, cpp_type=10, label=3,
+            has_default_value=False, default_value=[],
             message_type=None, enum_type=None, containing_type=None,
             is_extension=False, extension_scope=None,
             options=None),
