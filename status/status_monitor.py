@@ -24,7 +24,7 @@
 import time
 from channels_status_getter import Channels_status_getter
 from faces_status_getter import Faces_status_getter
-# from fib_status_getter import
+from fib_status_getter import Fib_status_getter
 import rib_status_getter
 
 
@@ -39,7 +39,9 @@ class Status_Monitor(object):
 
         faces_status_record = Faces_status_getter().run()
 
-        print(faces_status_record)
+        fib_status_record = Fib_status_getter().run()
+
+        print(fib_status_record)
 
 
 
