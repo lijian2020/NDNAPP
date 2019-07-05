@@ -30,6 +30,7 @@ import subprocess
 from pyndn import Face
 from oscommand import OSCommand
 from helloreq import HelloReq
+from status.status_monitor import Status_Monitor
 from flowremoved import FlowRemovedMsg
 from packetin import PacketIn
 from featureres import FeatureRes
@@ -86,9 +87,9 @@ class Node(object):
 
 
     def Hellorequest(self):
-        if(HelloReq().run()):
-            FeatureRes().run()
-
+        # if(HelloReq().run()):
+        #     FeatureRes().run()
+        Status_Monitor().run()
 
     def prefixinquire(self,unknown_prefix):
         if(PacketIn().run(unknown_prefix)):

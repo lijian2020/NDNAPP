@@ -71,7 +71,7 @@ class Rib_status_getter(object):
             # We need to sleep for a few milliseconds so we don't use 100% of the CPU.
             time.sleep(0.01)
 
-        print('==================run RIB_status_getter finished===================')
+        # print('==================run RIB_status_getter finished===================')
         return (self.total_result)
 
     def printRibEntries(self, encodedMessage):

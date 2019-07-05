@@ -41,11 +41,9 @@ class HelloReq(object):
         self.face = Face()
         self.nodeid = OSCommand.getnodeid()
 
-
-
-    def run(self):
+    def run(self, hello_version_number):
         try:
-            self._sendHelloInterest()
+            self._sendHelloInterest(hello_version_number)
 
             while not self.isDone:
                 self.face.processEvents()
@@ -54,9 +52,8 @@ class HelloReq(object):
             print("ERROR: %s" %  e)
         return self.isDone
 
-
-    def _sendHelloInterest(self,feature_version_number=100001):
-        interest = self.ofmsg.create_hello_req_interest(self.nodeid,feature_version_number)
+    def _sendHelloInterest(self, hello_version_number=100001):
+        interest = self.ofmsg.create_hello_req_interest(self.nodeid, hello_version_number)
         uri = interest.getName().toUri()
 
         if uri not in self.outstanding:

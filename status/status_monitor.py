@@ -20,8 +20,16 @@
 # A copy of the GNU General Public License is in the file COPYING.
 #
 
-
 import time
+
+from ofmsg import OFMSG
+from pyndn import Face
+from oscommand import OSCommand
+from helloreq import HelloReq
+from featureres import FeatureRes
+
+
+
 from channels_status_getter import Channels_status_getter
 from faces_status_getter import Faces_status_getter
 from fib_status_getter import Fib_status_getter
@@ -32,25 +40,48 @@ class Status_Monitor(object):
     '''monitor the status changes '''
 
     def __init__(self):
+        self.ofmsg = OFMSG()
+
+        self.hello_version_number = 100001
+
+        # record the old record, which is used to compare to the new gotten ones
         self.channels_status_record = ""
+        self.faces_status_record = ""
+        self.fib_status_record = ""
+        self.rib_status_record = ""
 
-    def checker(self):
+    def run(self):
+        while True:
+            if self.status_update_checker():
+                if (HelloReq().run(self.hello_version_number)):
+                    FeatureRes().run()
+
+            time.sleep(10)
+
+    def status_update_checker(self):
+        '''check if anything changes'''
+        updated = False
         channels_status_record = Channels_status_getter().run()
-
         faces_status_record = Faces_status_getter().run()
-
         fib_status_record = Fib_status_getter().run()
-
         rib_status_record = Rib_status_getter().run()
 
-        print(rib_status_record)
+        '''anything changes will return True'''
+        if (self.channels_status_record != channels_status_record) or \
+                (self.faces_status_record != faces_status_record) or \
+                (self.fib_status_record != fib_status_record) or \
+                (self.rib_status_record != rib_status_record):
+            print('********************* Node Status Changes **********************')
+            updated = True
+            self.hello_version_number += 1
+            # update the record
+            self.channels_status_record = channels_status_record
+            self.faces_status_record = faces_status_record
+            self.fib_status_record = fib_status_record
+            self.rib_status_record = rib_status_record
+        return updated
 
-
-
-
-
-
-
-
-if __name__ == '__main__':
-    Status_Monitor().checker()
+#
+#
+# if __name__ == '__main__':
+#     Status_Monitor().status_update_checker()
