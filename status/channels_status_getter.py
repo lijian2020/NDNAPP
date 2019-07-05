@@ -30,7 +30,7 @@ from pyndn import Interest
 from pyndn.encoding import ProtobufTlv
 from pyndn.util.segment_fetcher import SegmentFetcher
 # This module is produced by: protoc --python_out=. channel-status.proto
-import channel_status_pb2
+from status import channel_status_pb2
 
 
 class Channels_status_getter(object):
