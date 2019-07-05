@@ -22,9 +22,6 @@
 
 
 import time
-from pyndn import Face
-from pyndn.security import KeyChain
-from ofmsg import OFMSG
 import channels_status_getter
 import faces_status_getter
 import fib_status_getter

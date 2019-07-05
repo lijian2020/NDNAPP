@@ -92,5 +92,4 @@ def printFaceStatuses(encodedMessage):
 
         dump(line)
 
-
-run()
+# run()

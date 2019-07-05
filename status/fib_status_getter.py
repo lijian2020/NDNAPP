@@ -91,5 +91,4 @@ def printFibEntries(encodedMessage):
 
         dump(line)
 
-
-run()
+# run()

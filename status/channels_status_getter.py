@@ -83,5 +83,4 @@ def printChannelStatuses(encodedMessage):
         # Format to look the same as "nfd-status -c".
         dump("  " + channelStatus.local_uri)
 
-
-run()
+# run()

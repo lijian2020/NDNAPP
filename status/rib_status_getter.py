@@ -96,5 +96,4 @@ def printRibEntries(encodedMessage):
 
         dump(line)
 
-
-run()
+# run()
