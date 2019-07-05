@@ -22,9 +22,9 @@
 
 
 import time
-import channels_status_getter
-import faces_status_getter
-import fib_status_getter
+from channels_status_getter import Channels_status_getter
+from faces_status_getter import Faces_status_getter
+# from fib_status_getter import
 import rib_status_getter
 
 
@@ -32,10 +32,20 @@ class Status_Monitor(object):
     '''monitor the status changes '''
 
     def __init__(self):
-        pass
+        self.channels_status_record = ""
 
-    def run(self, removed_prefix):
-        channels_status_getter.run()
+    def Checker(self):
+        channels_status_record = Channels_status_getter().run()
+
+        faces_status_record = Faces_status_getter().run()
+
+        print(faces_status_record)
+
+
+
+
+
+
 
 
 if __name__ == '__main__':

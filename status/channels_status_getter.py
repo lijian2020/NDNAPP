@@ -33,54 +33,58 @@ from pyndn.util.segment_fetcher import SegmentFetcher
 import channel_status_pb2
 
 
-def dump(*list):
-    result = ""
-    for element in list:
-        result += (element if type(element) is str else str(element)) + " "
-    print(result)
+class Channels_status_getter(object):
+    def __init__(self):
+        self.total_result = ''
 
+    def dump(self, *list):
+        result = ""
+        for element in list:
+            result += (element if type(element) is str else str(element)) + " "
+        self.total_result = self.total_result + result + " \n"
 
-def run():
-    # The default Face connects to the local NFD.
-    face = Face()
+    def run(self):
+        # The default Face connects to the local NFD.
+        face = Face()
 
-    interest = Interest(Name("/localhost/nfd/faces/channels"))
-    interest.setInterestLifetimeMilliseconds(4000)
-    dump("Express interest", interest.getName().toUri())
+        interest = Interest(Name("/localhost/nfd/faces/channels"))
+        interest.setInterestLifetimeMilliseconds(4000)
+        self.dump("Express interest", interest.getName().toUri())
 
-    enabled = [True]
+        enabled = [True]
 
-    def onComplete(content):
-        enabled[0] = False
-        printChannelStatuses(content)
+        def onComplete(content):
+            enabled[0] = False
+            self.printChannelStatuses(content)
 
-    def onError(errorCode, message):
-        enabled[0] = False
-        dump(message)
+        def onError(errorCode, message):
+            enabled[0] = False
+            self.dump(message)
 
-    SegmentFetcher.fetch(face, interest, None, onComplete, onError)
+        SegmentFetcher.fetch(face, interest, None, onComplete, onError)
 
-    # Loop calling processEvents until a callback sets enabled[0] = False.
-    while enabled[0]:
-        face.processEvents()
+        # Loop calling processEvents until a callback sets enabled[0] = False.
+        while enabled[0]:
+            face.processEvents()
 
-        # We need to sleep for a few milliseconds so we don't use 100% of the CPU.
-        time.sleep(0.01)
+            # We need to sleep for a few milliseconds so we don't use 100% of the CPU.
+            time.sleep(0.01)
+        print('==================run Channels_status_getter finished===================')
+        return (self.total_result)
 
+    def printChannelStatuses(self, encodedMessage):
+        """
+        This is called when all the segments are received to decode the
+        encodedMessage repeated TLV ChannelStatus messages and display the values.
 
-def printChannelStatuses(encodedMessage):
-    """
-    This is called when all the segments are received to decode the
-    encodedMessage repeated TLV ChannelStatus messages and display the values.
+        :param Blob encodedMessage: The repeated TLV-encoded ChannelStatus.
+        """
+        channelStatusMessage = channel_status_pb2.ChannelStatusMessage()
+        ProtobufTlv.decode(channelStatusMessage, encodedMessage)
 
-    :param Blob encodedMessage: The repeated TLV-encoded ChannelStatus.
-    """
-    channelStatusMessage = channel_status_pb2.ChannelStatusMessage()
-    ProtobufTlv.decode(channelStatusMessage, encodedMessage)
-
-    dump("Channels:");
-    for channelStatus in channelStatusMessage.channel_status:
-        # Format to look the same as "nfd-status -c".
-        dump("  " + channelStatus.local_uri)
+        self.dump("Channels:");
+        for channelStatus in channelStatusMessage.channel_status:
+            # Format to look the same as "nfd-status -c".
+            self.dump("  " + channelStatus.local_uri)
 
 # run()
