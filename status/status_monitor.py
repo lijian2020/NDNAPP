@@ -51,8 +51,9 @@ class Status_Monitor(object):
     def run(self):
         while True:
             if self.status_update_checker():
-                if (HelloReq().run(self.hello_version_number)):
-                    FeatureRes().run()
+                HelloReq().run(self.hello_version_number)
+                # if (HelloReq().run(self.hello_version_number)):
+                #     FeatureRes().run()
 
             time.sleep(10)
 

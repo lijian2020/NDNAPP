@@ -72,7 +72,7 @@ class FeatureRes(object):
         #     self.face.processEvents()
         #     time.sleep(0.01)
         countnumber = 0
-        while countnumber < 200:
+        while countnumber < 200000000:
             self.face.processEvents()
             time.sleep(0.01)
             countnumber += 1

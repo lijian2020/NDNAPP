@@ -58,6 +58,9 @@ class Node(object):
         hello_threed = Thread(target=self.Hellorequest)  # send helloreq
         hello_threed.start()
 
+        feature_threed = Thread(target=self.Feature_service)  # send helloreq
+        feature_threed.start()
+
         ctrlinfo_threed = Thread(target=self._sendCtrlInfoReqMsg)  # send ctrlinfo
         ctrlinfo_threed.start()
 
@@ -90,6 +93,9 @@ class Node(object):
         # if(HelloReq().run()):
         #     FeatureRes().run()
         Status_Monitor().run()
+
+    def Feature_service(self):
+        FeatureRes().run()
 
     def prefixinquire(self,unknown_prefix):
         if(PacketIn().run(unknown_prefix)):
