@@ -41,7 +41,7 @@ def dump(*list):
     print(result)
 
 
-def main():
+def run():
     # The default Face connects to the local NFD.
     face = Face()
 
@@ -92,4 +92,4 @@ def printFibEntries(encodedMessage):
         dump(line)
 
 
-main()
+run()
