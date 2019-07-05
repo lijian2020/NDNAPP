@@ -28,10 +28,10 @@ from oscommand import OSCommand
 from helloreq import HelloReq
 from featureres import FeatureRes
 
-from channels_status_getter import Channels_status_getter
-from faces_status_getter import Faces_status_getter
-from fib_status_getter import Fib_status_getter
-from rib_status_getter import Rib_status_getter
+from status.channels_status_getter import Channels_status_getter
+from status.faces_status_getter import Faces_status_getter
+from status.fib_status_getter import Fib_status_getter
+from status.rib_status_getter import Rib_status_getter
 
 
 class Status_Monitor(object):

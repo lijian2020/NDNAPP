@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46d7361f-1b5d-44d3-adf0-90728ae67349" name="Default Changelist" comment="" />
+    <list default="true" id="46d7361f-1b5d-44d3-adf0-90728ae67349" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/status/status_monitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/status/status_monitor.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +63,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/status/status_monitor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+            <state relative-caret-position="224">
+              <caret line="31" column="58" lean-forward="true" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
               <folding>
                 <element signature="n#!!doc" />
-                <element signature="e#895#906#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -300,7 +302,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/status/status_monitor.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/status/channels_status_getter.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -661,7 +663,7 @@
       <workItem from="1561590490750" duration="28488000" />
       <workItem from="1562024356922" duration="8876000" />
       <workItem from="1562174118275" duration="23168000" />
-      <workItem from="1562296388851" duration="15760000" />
+      <workItem from="1562296388851" duration="16035000" />
     </task>
     <task id="LOCAL-00001" summary="try to commit the first time">
       <created>1561230024143</created>
@@ -964,11 +966,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562360216836</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
+      <created>1562360319003</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1562360319003</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
+      <created>1562360462885</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1562360462885</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="504101000" />
+    <option name="totallyTimeSpent" value="504376000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -983,13 +999,13 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5214286" visible="true" weight="0.20095949" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5214286" visible="true" weight="0.20095949" />
       <window_info id="Structure" order="1" sideWeight="0.47857141" side_tool="true" weight="0.15511727" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Repositories" order="3" weight="0.32995737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.4934924" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.1637744" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1637744" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4143167" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -999,7 +1015,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.23861171" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="File Transfer" order="12" visible="true" weight="0.11171366" />
+      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.19631237" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="GitHub Pull Requests" order="14" weight="0.329718" />
       <window_info anchor="bottom" id="SVN Repositories" order="15" weight="0.329718" />
@@ -1097,7 +1113,7 @@
     <SUITE FILE_PATH="coverage/NDNAPP$consumer.coverage" NAME="consumer Coverage Results" MODIFIED="1561591001919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NDNAPP$test_interest_methods.coverage" NAME="test_interest_methods Coverage Results" MODIFIED="1559794368788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NDNAPP$test_2.coverage" NAME="test 2 Coverage Results" MODIFIED="1560899440289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test and learn" />
-    <SUITE FILE_PATH="coverage/NDNAPP$test_list_faces_py.coverage" NAME="channels_status_getter.py Coverage Results" MODIFIED="1562360164106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/status" />
+    <SUITE FILE_PATH="coverage/NDNAPP$test_list_faces_py.coverage" NAME="channels_status_getter.py Coverage Results" MODIFIED="1562360527193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/status" />
     <SUITE FILE_PATH="coverage/NDNAPP$oscommand.coverage" NAME="oscommand Coverage Results" MODIFIED="1560735522373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NDNAPP$status_monitor_py.coverage" NAME="status_monitor.py Coverage Results" MODIFIED="1562353296068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/status" />
     <SUITE FILE_PATH="coverage/NDNAPP$producer.coverage" NAME="controller Coverage Results" MODIFIED="1560643878844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
@@ -1505,11 +1521,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/status/status_monitor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+        <state relative-caret-position="224">
+          <caret line="31" column="58" lean-forward="true" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
           <folding>
             <element signature="n#!!doc" />
-            <element signature="e#895#906#0" expanded="true" />
           </folding>
         </state>
       </provider>
