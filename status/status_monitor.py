@@ -28,8 +28,6 @@ from oscommand import OSCommand
 from helloreq import HelloReq
 from featureres import FeatureRes
 
-
-
 from channels_status_getter import Channels_status_getter
 from faces_status_getter import Faces_status_getter
 from fib_status_getter import Fib_status_getter
