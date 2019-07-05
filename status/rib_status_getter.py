@@ -18,8 +18,8 @@
 # A copy of the GNU Lesser General Public License is in the file COPYING.
 
 """
-This sends a faces list request to the local NFD and prints the response.
-This is equivalent to the NFD command line command "nfd-status -f".
+This sends a rib list request to the local NFD and prints the response.
+This is equivalent to the NFD command line command "nfd-status -r".
 See http://redmine.named-data.net/projects/nfd/wiki/Management .
 """
 
@@ -27,10 +27,11 @@ import time
 from pyndn import Face
 from pyndn import Name
 from pyndn import Interest
+from pyndn.util import Blob
 from pyndn.encoding import ProtobufTlv
 from pyndn.util.segment_fetcher import SegmentFetcher
-# This module is produced by: protoc --python_out=. face-status.proto
-import face_status_pb2
+# This moudle is produced by: protoc --python_out=. rib-entry.proto
+import rib_entry_pb2
 
 
 def dump(*list):
@@ -40,19 +41,19 @@ def dump(*list):
     print(result)
 
 
-def main():
+def run():
     # The default Face connects to the local NFD.
     face = Face()
 
-    interest = Interest(Name("/localhost/nfd/faces/list"))
+    interest = Interest(Name("/localhost/nfd/rib/list"))
     interest.setInterestLifetimeMilliseconds(4000)
     dump("Express interest", interest.getName().toUri())
 
     enabled = [True]
 
-    def onComplete(content):  # deal with the faces status data
+    def onComplete(content):
         enabled[0] = False
-        printFaceStatuses(content)
+        printRibEntries(content)
 
     def onError(errorCode, message):
         enabled[0] = False
@@ -68,29 +69,32 @@ def main():
         time.sleep(0.01)
 
 
-def printFaceStatuses(encodedMessage):
+def printRibEntries(encodedMessage):
     """
     This is called when all the segments are received to decode the
-    encodedMessage repeated TLV FaceStatus messages and display the values.
+    encodedMessage as repeated TLV RibEntry messages and display the values.
 
-    :param Blob encodedMessage: The repeated TLV-encoded FaceStatus.
+    :param Blob encodedMessage: The repeated TLV-encoded RibEntry.
     """
-    faceStatusMessage = face_status_pb2.FaceStatusMessage()
-    ProtobufTlv.decode(faceStatusMessage, encodedMessage)
+    ribEntryMessage = rib_entry_pb2.RibEntryMessage()
+    ProtobufTlv.decode(ribEntryMessage, encodedMessage)
 
-    dump("Faces:");
-    for faceStatus in faceStatusMessage.face_status:
+    dump("RIB:");
+    for ribEntry in ribEntryMessage.rib_entry:
         line = ""
-        # Format to look the same as "nfd-status -f".
-        line += ("  faceid=" + str(faceStatus.face_id) +
-                 " remote=" + faceStatus.uri +
-                 " local=" + faceStatus.local_uri)
-        line += (" " + ("local" if faceStatus.face_scope == 1 else "non-local") +
-                 " " + ("permanent" if faceStatus.face_persistency == 2 else
-                        ("on-demand" if faceStatus.face_persistency == 1 else "persistent")) +
-                 " " + ("multi-access" if faceStatus.link_type == 1 else "point-to-point"))
+        line += ProtobufTlv.toName(ribEntry.name.component).toUri()
+
+        # Show the routes.
+        for route in ribEntry.routes:
+            line += (" route={faceId=" + str(route.face_id) + " (origin=" +
+                     str(route.origin) + " cost=" + str(route.cost))
+            if (route.flags & 1) != 0:
+                line += " ChildInherit"
+            if (route.flags & 2) != 0:
+                line += " Capture"
+            line += ")}"
 
         dump(line)
 
 
-main()
+run()

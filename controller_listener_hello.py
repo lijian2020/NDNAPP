@@ -52,7 +52,7 @@ class Controller_Listener_Hello(object):
         self.face.setCommandSigningInfo(self.keyChain, \
                                         self.keyChain.getDefaultCertificateName())
 
-        self.face.registerPrefix(ControllerPrefix, self.onInterest_Hello, self.onRegisterFailed)  # main prefix
+        self.face.registerPrefix(ControllerPrefix, self.onInterest_Hello, self.onRegisterFailed)  # run prefix
 
         # Run the event loop forever. Use a short sleep to
         # prevent the Producer from using 100% of the CPU.

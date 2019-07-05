@@ -55,7 +55,7 @@ class Controller_Listener(object):
         self.face.setCommandSigningInfo(self.keyChain, \
                                    self.keyChain.getDefaultCertificateName())
 
-        self.face.registerPrefix(ControllerPrefix, self.onInterest_Mian, self.onRegisterFailed) #main prefix
+        self.face.registerPrefix(ControllerPrefix, self.onInterest_Mian, self.onRegisterFailed)  # run prefix
 
         #filters:
         # hello_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/0/0/0/')
@@ -87,7 +87,7 @@ class Controller_Listener(object):
         self.face.setCommandSigningInfo(self.keyChain, \
                                         self.keyChain.getDefaultCertificateName())
 
-        self.face.registerPrefix(ControllerPrefix, self.onInterest_Mian, self.onRegisterFailed)  # main prefix
+        self.face.registerPrefix(ControllerPrefix, self.onInterest_Mian, self.onRegisterFailed)  # run prefix
         print("--------11111111-----------")
 
         # filters:
@@ -143,7 +143,7 @@ class Controller_Listener(object):
         transport.send(data.wireEncode().toBuffer())
         print("--------sent <<<Error Msg ACK>>>---------")
 
-        # todo(errorMsg) maybe this msg can trigger some other actions.
+        # todo(errorMsg) maybe this msg can status some other actions.
         #parse the errorMsg interest to get error information.
 
 

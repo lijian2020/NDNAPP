@@ -54,7 +54,7 @@ class HelloRes(object):
         self.face.setCommandSigningInfo(self.keyChain, \
                                    self.keyChain.getDefaultCertificateName())
 
-        self.face.registerPrefix(ControllerPrefix, self.onInterest_Mian, self.onRegisterFailed) #main prefix
+        self.face.registerPrefix(ControllerPrefix, self.onInterest_Mian, self.onRegisterFailed)  # run prefix
         #print(ControllerPrefix.toUri())
 
         #filters:

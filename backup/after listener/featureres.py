@@ -48,9 +48,9 @@ class FeatureRes(object):
         NodePrefix = Name(NodePrefixString)
         self.face.setCommandSigningInfo(self.keyChain, \
                                    self.keyChain.getDefaultCertificateName())
-        #self.face.registerPrefix(NodePrefix, self.onInterest, self.onRegisterFailed) #main prefix
+        # self.face.registerPrefix(NodePrefix, self.onInterest, self.onRegisterFailed) #run prefix
 
-        self.face.registerPrefix(NodePrefix, self.onInterest_Mian, self.onRegisterFailed) #main prefix
+        self.face.registerPrefix(NodePrefix, self.onInterest_Mian, self.onRegisterFailed)  # run prefix
 
         # filters:
         hello_msg_prefix = Name('/ndn/{}-site/{}/ofndn/feature'.format(self.nodeid, self.nodeid))
@@ -100,7 +100,7 @@ class FeatureRes(object):
         self.isDone = True  #
 
     def onInterest_Mian(self, mainPrefix, interest, transport, registeredPrefixId):
-        #print("main prefix pass===========")
+        #print("run prefix pass===========")
         pass
 
     def onRegisterFailed(self, ControllerPrefix):

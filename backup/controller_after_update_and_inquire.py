@@ -65,7 +65,7 @@ class Producer(object):
         first call setCommandSigningInfo.'''
         # here I need to register an aggregated prefix,like "/controller"
         #face.registerPrefix(prefix, self.onInterest, self.onRegisterFailed)
-        face.registerPrefix(mainPrefix, self.onInterest_Mian, self.onRegisterFailed) #main prefix
+        face.registerPrefix(mainPrefix, self.onInterest_Mian, self.onRegisterFailed)  # run prefix
         print("Registering prefix", mainPrefixString)
 
         #filters:

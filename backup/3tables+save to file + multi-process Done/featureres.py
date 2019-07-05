@@ -49,7 +49,7 @@ class FeatureRes(object):
         self.face.setCommandSigningInfo(self.keyChain, \
                                    self.keyChain.getDefaultCertificateName())
 
-        self.face.registerPrefix(NodePrefix, self.onInterest, self.onRegisterFailed) #main prefix
+        self.face.registerPrefix(NodePrefix, self.onInterest, self.onRegisterFailed)  # run prefix
         print(NodePrefix.toUri())
 
 

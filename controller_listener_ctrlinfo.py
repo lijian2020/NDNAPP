@@ -53,7 +53,7 @@ class Controller_Listener_CtrlInfo(object):
         self.face.setCommandSigningInfo(self.keyChain, \
                                         self.keyChain.getDefaultCertificateName())
 
-        self.face.registerPrefix(ControllerPrefix, self.onInterest_CtrlInfo, self.onRegisterFailed)  # main prefix
+        self.face.registerPrefix(ControllerPrefix, self.onInterest_CtrlInfo, self.onRegisterFailed)  # run prefix
         #
         # # filters:
         # CtrlInfo_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/36/0/0/')
