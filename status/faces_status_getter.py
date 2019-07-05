@@ -41,7 +41,6 @@ class Faces_status_getter(object):
         result = ""
         for element in list:
             result += (element if type(element) is str else str(element)) + " "
-        print(result)
         self.total_result = self.total_result + result + " \n"
 
     def run(self):
@@ -70,6 +69,10 @@ class Faces_status_getter(object):
 
             # We need to sleep for a few milliseconds so we don't use 100% of the CPU.
             time.sleep(0.01)
+        print('==================run Faces_status_getter finished===================')
+        return (self.total_result)
+
+
 
     def printFaceStatuses(self, encodedMessage):
         """

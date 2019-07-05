@@ -34,7 +34,7 @@ class Status_Monitor(object):
     def __init__(self):
         self.channels_status_record = ""
 
-    def Checker(self):
+    def checker(self):
         channels_status_record = Channels_status_getter().run()
 
         faces_status_record = Faces_status_getter().run()
@@ -49,4 +49,4 @@ class Status_Monitor(object):
 
 
 if __name__ == '__main__':
-    Status_Monitor().run()
+    Status_Monitor().checker()
