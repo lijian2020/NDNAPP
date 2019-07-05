@@ -18,19 +18,21 @@
 # A copy of the GNU Lesser General Public License is in the file COPYING.
 
 """
- * This sends a faces channels request to the local NFD and prints the response.
- * This is equivalent to the NFD command line command "nfd-status -c".
- * See http://redmine.named-data.net/projects/nfd/wiki/Management .
+This sends a fib list request to the local NFD and prints the response.
+This is equivalent to the NFD command line command "nfd-status -r".
+See http://redmine.named-data.net/projects/nfd/wiki/Management .
 """
 
 import time
 from pyndn import Face
 from pyndn import Name
 from pyndn import Interest
+from pyndn.util import Blob
 from pyndn.encoding import ProtobufTlv
 from pyndn.util.segment_fetcher import SegmentFetcher
-# This module is produced by: protoc --python_out=. channel-status.proto
-import channel_status_pb2
+# This moudle is produced by: protoc --python_out=. fib-entry.proto
+import fib_entry_pb2
+
 
 def dump(*list):
     result = ""
@@ -38,11 +40,12 @@ def dump(*list):
         result += (element if type(element) is str else str(element)) + " "
     print(result)
 
+
 def main():
     # The default Face connects to the local NFD.
     face = Face()
 
-    interest = Interest(Name("/localhost/nfd/faces/channels"))
+    interest = Interest(Name("/localhost/nfd/fib/list"))
     interest.setInterestLifetimeMilliseconds(4000)
     dump("Express interest", interest.getName().toUri())
 
@@ -50,7 +53,7 @@ def main():
 
     def onComplete(content):
         enabled[0] = False
-        printChannelStatuses(content)
+        printFibEntries(content)
 
     def onError(errorCode, message):
         enabled[0] = False
@@ -65,19 +68,28 @@ def main():
         # We need to sleep for a few milliseconds so we don't use 100% of the CPU.
         time.sleep(0.01)
 
-def printChannelStatuses(encodedMessage):
+
+def printFibEntries(encodedMessage):
     """
     This is called when all the segments are received to decode the
-    encodedMessage repeated TLV ChannelStatus messages and display the values.
+    encodedMessage as repeated TLV FibEntry messages and display the values.
 
-    :param Blob encodedMessage: The repeated TLV-encoded ChannelStatus.
+    :param Blob encodedMessage: The repeated TLV-encoded FibEntry.
     """
-    channelStatusMessage = channel_status_pb2.ChannelStatusMessage()
-    ProtobufTlv.decode(channelStatusMessage, encodedMessage)
+    fibEntryMessage = fib_entry_pb2.FibEntryMessage()
+    ProtobufTlv.decode(fibEntryMessage, encodedMessage)
 
-    dump("Channels:");
-    for channelStatus in channelStatusMessage.channel_status:
-        # Format to look the same as "nfd-status -c".
-        dump("  " + channelStatus.local_uri)
+    dump("FIB:");
+    for fibEntry in fibEntryMessage.fib_entry:
+        line = ""
+        line += ProtobufTlv.toName(fibEntry.name.component).toUri()
+
+        # Show the routes.
+        for route in fibEntry.routes:
+            line += (" NextHopRecord={faceId=" + str(route.face_id) + " cost=" + str(route.cost))
+            line += ")}"
+
+        dump(line)
+
 
 main()
