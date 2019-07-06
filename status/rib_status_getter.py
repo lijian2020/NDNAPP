@@ -72,6 +72,7 @@ class Rib_status_getter(object):
             time.sleep(0.01)
 
         # print('==================run RIB_status_getter finished===================')
+        face.shutdown()
         return (self.total_result)
 
     def printRibEntries(self, encodedMessage):

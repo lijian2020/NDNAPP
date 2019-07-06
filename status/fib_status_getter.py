@@ -72,6 +72,7 @@ class Fib_status_getter(object):
             time.sleep(0.01)
 
         # print('==================run FIB_status_getter finished===================')
+        face.shutdown()
         return (self.total_result)
 
     def printFibEntries(self, encodedMessage):
