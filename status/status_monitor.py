@@ -65,7 +65,7 @@ class Status_Monitor(object):
         fib_status_record = Fib_status_getter().run()
         rib_status_record = Rib_status_getter().run()
         print('********************* Node Status Checking **********************')
-        print(self.channels_status_record)
+        print(self.faces_status_record)
         print(faces_status_record)
 
         print('********************* Node Status Checking **********************')
