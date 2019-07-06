@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46d7361f-1b5d-44d3-adf0-90728ae67349" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/status/faces_status_getter.py" beforeDir="false" afterPath="$PROJECT_DIR$/status/faces_status_getter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/status/status_monitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/status/status_monitor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/status/status_monitor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="72" column="85" lean-forward="true" selection-start-line="72" selection-start-column="85" selection-end-line="72" selection-end-column="85" />
+            <state relative-caret-position="586">
+              <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
               <folding>
                 <element signature="n#!!doc" />
                 <element signature="e#895#906#0" expanded="true" />
@@ -634,21 +633,7 @@
       <workItem from="1561590490750" duration="28488000" />
       <workItem from="1562024356922" duration="8876000" />
       <workItem from="1562174118275" duration="23168000" />
-      <workItem from="1562296388851" duration="21076000" />
-    </task>
-    <task id="LOCAL-00008" summary="finish FaceMod msg. but didn't set multiple arguments. Only used an example.">
-      <created>1561592295875</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1561592295875</updated>
-    </task>
-    <task id="LOCAL-00009" summary="finish FaceMod msg. but didn't set multiple arguments. Only used an example.">
-      <created>1561609935188</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1561609935188</updated>
+      <workItem from="1562296388851" duration="21381000" />
     </task>
     <task id="LOCAL-00010" summary="finish FaceMod msg. but didn't set multiple arguments. Only used an example.">
       <created>1561609986169</created>
@@ -979,11 +964,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562387756425</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
+      <created>1562388215037</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1562388215038</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
+      <created>1562388373183</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1562388373183</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="509417000" />
+    <option name="totallyTimeSpent" value="509722000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1511,8 +1510,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/status/status_monitor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="72" column="85" lean-forward="true" selection-start-line="72" selection-start-column="85" selection-end-line="72" selection-end-column="85" />
+        <state relative-caret-position="586">
+          <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
           <folding>
             <element signature="n#!!doc" />
             <element signature="e#895#906#0" expanded="true" />
