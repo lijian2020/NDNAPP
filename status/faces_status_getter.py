@@ -86,6 +86,16 @@ class Faces_status_getter(object):
 
         self.dump("Faces:");
         for faceStatus in faceStatusMessage.face_status:
+
+            if (faceStatus.local_uri == 'tcp4://127.0.0.1:6363' and \
+                    faceStatus.face_scope == 1 and \
+                    faceStatus.face_persistency == 1 and \
+                    faceStatus.link_type != 1):
+                continue
+
+
+
+
             line = ""
             # Format to look the same as "nfd-status -f".
             line += ("  faceid=" + str(faceStatus.face_id) +
