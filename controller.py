@@ -42,18 +42,12 @@ from threading import Thread
 
 class Controller(object):
     def __init__(self):
-        #self.keyChain = KeyChain()
-        #self.isDone = False
-        #self.ofmsg = OFMSG()
+
         self.nodeid = OSCommand.getnodeid()
-        #self.face = Face()# Create a connection to the local forwarder over a Unix socket
-        #self.outstanding = dict()  # a dictionary to keep track of outstanding Interests and retransmissions.
         self.controller_listener = Controller_Listener()
         self.controller_listener_ctrlinfo = Controller_Listener_CtrlInfo()
         self.controller_listener_hello = Controller_Listener_Hello()
         self.controller_setter = Controller_Setter()
-        #self.featurereq = FeatureReq()
-        #self.RLock = threading.RLock()
 
     '''This hello function has to be imployment in a separated process, since it will
     conflict with other process if they are in the same thread/process'''

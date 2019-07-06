@@ -41,7 +41,7 @@ class Controller_Listener_Hello(object):
         self.ofmsg = OFMSG()
         self.nodeid = OSCommand.getnodeid()
         self.face = Face()
-        self.featurereq = FeatureReq()
+        # self.featurereq = FeatureReq()
         self.helloreq_name_list = []
         self.new_CtrlInfo_data = "---Initial CtrlInfo data---"  # used to get new ctrlinfo data and send to nodes.
         self.CtrlInfo_data = ""  # used to record used ctrlinfo data
@@ -65,14 +65,11 @@ class Controller_Listener_Hello(object):
 
         # todo(lijian) should check the helloreq_name_list and determine what action should do
 
-        hello_data = 'this is the hello response data'
+        hello_data = 'this is the <<<hello response>>> data'
         data = self.ofmsg.create_hello_res_data(interest, hello_data)
         transport.send(data.wireEncode().toBuffer())
         NodePrefixTable.updatenodeprefixtable(interest)  # to add NPT and fetch feature
 
-    def onInterest_Mian(self, mainPrefix, interest, transport, registeredPrefixId):
-        # TODO(onInterest_Mian): check what should do.
-        pass
 
     def onRegisterFailed(self, ControllerPrefix):
         print("Register failed for prefix", ControllerPrefix.toUri())

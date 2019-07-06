@@ -61,7 +61,7 @@ class Status_Monitor(object):
                 HelloReq().run(self.hello_version_number)
                 # if (HelloReq().run(self.hello_version_number)):
                 #     FeatureRes().run()
-            time.sleep(1)
+            time.sleep(3)
 
             # protect flapping case
             if (self.channels_flapping_time > 20 or \
