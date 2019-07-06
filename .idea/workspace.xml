@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46d7361f-1b5d-44d3-adf0-90728ae67349" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/status/faces_status_getter.py" beforeDir="false" afterPath="$PROJECT_DIR$/status/faces_status_getter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/status/status_monitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/status/status_monitor.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/status/status_monitor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="63" column="54" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
+            <state relative-caret-position="397">
+              <caret line="72" column="85" lean-forward="true" selection-start-line="72" selection-start-column="85" selection-end-line="72" selection-end-column="85" />
               <folding>
                 <element signature="n#!!doc" />
                 <element signature="e#895#906#0" expanded="true" />
@@ -87,27 +87,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="262">
               <caret line="32" selection-start-line="32" selection-end-line="32" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/status/fib_status_getter.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/status/faces_status_getter.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
-              <folding>
-                <element signature="e#1132#1143#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -250,8 +229,8 @@
         <option value="$PROJECT_DIR$/status/rib_status_getter.py" />
         <option value="$PROJECT_DIR$/featureres.py" />
         <option value="$PROJECT_DIR$/node.py" />
-        <option value="$PROJECT_DIR$/status/status_monitor.py" />
         <option value="$PROJECT_DIR$/status/faces_status_getter.py" />
+        <option value="$PROJECT_DIR$/status/status_monitor.py" />
       </list>
     </option>
   </component>
@@ -655,14 +634,7 @@
       <workItem from="1561590490750" duration="28488000" />
       <workItem from="1562024356922" duration="8876000" />
       <workItem from="1562174118275" duration="23168000" />
-      <workItem from="1562296388851" duration="20616000" />
-    </task>
-    <task id="LOCAL-00007" summary="finish FaceMod msg. but didn't set multiple arguments. Only used an example.">
-      <created>1561585036082</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1561585036083</updated>
+      <workItem from="1562296388851" duration="21076000" />
     </task>
     <task id="LOCAL-00008" summary="finish FaceMod msg. but didn't set multiple arguments. Only used an example.">
       <created>1561592295875</created>
@@ -1000,11 +972,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562386702073</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
+      <created>1562387756425</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1562387756425</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="508957000" />
+    <option name="totallyTimeSpent" value="509417000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1482,20 +1461,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/status/channels_status_getter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="32" selection-start-line="32" selection-end-line="32" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/status/fib_status_getter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/status/rib_status_getter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -1520,23 +1485,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/status/status_monitor.py">
+    <entry file="file://$PROJECT_DIR$/status/faces_status_getter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="63" column="54" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
+        <state relative-caret-position="559">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
           <folding>
-            <element signature="n#!!doc" />
-            <element signature="e#895#906#0" expanded="true" />
+            <element signature="e#1132#1143#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/status/faces_status_getter.py">
+    <entry file="file://$PROJECT_DIR$/status/fib_status_getter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/status/channels_status_getter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="32" selection-start-line="32" selection-end-line="32" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/status/status_monitor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="397">
-          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+          <caret line="72" column="85" lean-forward="true" selection-start-line="72" selection-start-column="85" selection-end-line="72" selection-end-column="85" />
           <folding>
-            <element signature="e#1132#1143#0" expanded="true" />
+            <element signature="n#!!doc" />
+            <element signature="e#895#906#0" expanded="true" />
           </folding>
         </state>
       </provider>

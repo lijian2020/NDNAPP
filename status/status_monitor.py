@@ -40,7 +40,7 @@ class Status_Monitor(object):
     def __init__(self):
         self.ofmsg = OFMSG()
 
-        self.hello_version_number = 100001
+        self.hello_version_number = 200001
 
         # record the old record, which is used to compare to the new gotten ones
         self.channels_status_record = ""
