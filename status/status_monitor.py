@@ -48,14 +48,36 @@ class Status_Monitor(object):
         self.fib_status_record = ""
         self.rib_status_record = ""
 
+        # count the flapping time
+        self.channels_flapping_time = 0
+        self.faces_flapping_time = 0
+        self.fib_flapping_time = 0
+        self.rib_flapping_time = 0
+
+
     def run(self):
         while True:
             if self.status_update_checker():
                 HelloReq().run(self.hello_version_number)
                 # if (HelloReq().run(self.hello_version_number)):
                 #     FeatureRes().run()
+            time.sleep(1)
 
-            time.sleep(10)
+            # protect flapping case
+            if (self.channels_flapping_time > 20 or \
+                    self.faces_flapping_time > 20 or \
+                    self.fib_flapping_time > 20 or \
+                    self.rib_flapping_time > 20):
+                time.sleep(300)  # become scient for 5 min
+
+                self.channels_flapping_time = 0
+                self.faces_flapping_time = 0
+                self.fib_flapping_time = 0
+                self.rib_flapping_time = 0
+
+
+
+
 
     def status_update_checker(self):
         '''check if anything changes'''
@@ -66,18 +88,43 @@ class Status_Monitor(object):
         rib_status_record = Rib_status_getter().run()
 
         '''anything changes will return True'''
-        if (self.channels_status_record != channels_status_record) or \
-                (self.faces_status_record != faces_status_record) or \
-                (self.fib_status_record != fib_status_record) or \
-                (self.rib_status_record != rib_status_record):
-            print('********************* Node Status Changes **********************')
+        if (self.channels_status_record != channels_status_record):
             updated = True
+            self.channels_flapping_time += 1
+        else:
+            if (self.channels_flapping_time > 0):
+                self.channels_flapping_time -= 1
+
+        if (self.faces_status_record != faces_status_record):
+            updated = True
+            self.faces_flapping_time += 1
+        else:
+            if (self.faces_flapping_time > 0):
+                self.faces_flapping_time -= 1
+
+        if (self.fib_status_record != fib_status_record):
+            updated = True
+            self.fib_flapping_time += 1
+        else:
+            if (self.fib_flapping_time > 0):
+                self.fib_flapping_time -= 1
+
+        if (self.rib_status_record != rib_status_record):
+            updated = True
+            self.rib_flapping_time += 1
+        else:
+            if (self.rib_flapping_time > 0):
+                self.rib_flapping_time -= 1
+
+        if (updated):
+            print('********************* Node Status Changes **********************')
             self.hello_version_number += 1
             # update the record
             self.channels_status_record = channels_status_record
             self.faces_status_record = faces_status_record
             self.fib_status_record = fib_status_record
             self.rib_status_record = rib_status_record
+
         return updated
 
 #

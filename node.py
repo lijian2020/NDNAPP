@@ -90,8 +90,6 @@ class Node(object):
 
 
     def Hellorequest(self):
-        # if(HelloReq().run()):
-        #     FeatureRes().run()
         Status_Monitor().run()
 
     def Feature_service(self):
