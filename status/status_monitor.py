@@ -68,6 +68,7 @@ class Status_Monitor(object):
         print(self.faces_status_record)
         print(faces_status_record)
 
+        print(self.faces_status_record == faces_status_record)
         print('********************* Node Status Checking **********************')
 
         '''anything changes will return True'''
