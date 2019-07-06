@@ -64,12 +64,6 @@ class Status_Monitor(object):
         faces_status_record = Faces_status_getter().run()
         fib_status_record = Fib_status_getter().run()
         rib_status_record = Rib_status_getter().run()
-        print('********************* Node Status Checking **********************')
-        print(self.faces_status_record)
-        print(faces_status_record)
-
-        print(self.faces_status_record == faces_status_record)
-        print('********************* Node Status Checking **********************')
 
         '''anything changes will return True'''
         if (self.channels_status_record != channels_status_record) or \
