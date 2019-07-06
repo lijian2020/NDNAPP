@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="46d7361f-1b5d-44d3-adf0-90728ae67349" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/status/channels_status_getter.py" beforeDir="false" afterPath="$PROJECT_DIR$/status/channels_status_getter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/status/faces_status_getter.py" beforeDir="false" afterPath="$PROJECT_DIR$/status/faces_status_getter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/status/fib_status_getter.py" beforeDir="false" afterPath="$PROJECT_DIR$/status/fib_status_getter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/status/rib_status_getter.py" beforeDir="false" afterPath="$PROJECT_DIR$/status/rib_status_getter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/status/status_monitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/status/status_monitor.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -670,14 +665,7 @@
       <workItem from="1561590490750" duration="28488000" />
       <workItem from="1562024356922" duration="8876000" />
       <workItem from="1562174118275" duration="23168000" />
-      <workItem from="1562296388851" duration="29348000" />
-    </task>
-    <task id="LOCAL-00014" summary="new branch">
-      <created>1561691612593</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1561691612593</updated>
+      <workItem from="1562296388851" duration="29952000" />
     </task>
     <task id="LOCAL-00015" summary="new branch:adjust_OF_MSG">
       <created>1561774594023</created>
@@ -1015,11 +1003,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562403910934</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="finished status monitor and trigger.&#10;almost finished all functions&#10;&#10;Add flapping protection function">
+      <created>1562404281383</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1562404281383</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="517689000" />
+    <option name="totallyTimeSpent" value="518293000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
