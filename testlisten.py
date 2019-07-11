@@ -18,4 +18,4 @@ while True:
                 if not line.strip():
                     break
     except:
-        pass
+        print('===========')
