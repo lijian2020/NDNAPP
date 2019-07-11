@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46d7361f-1b5d-44d3-adf0-90728ae67349" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/testcontroller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testnode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testlisten.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,23 +30,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testnode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="75" column="30" lean-forward="true" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
+            <state relative-caret-position="621">
+              <caret line="79" column="27" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
               <folding>
-                <element signature="e#1#11#0" expanded="true" />
+                <element signature="e#1413#1423#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testcontroller.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="62">
+              <caret line="43" column="84" selection-start-line="43" selection-start-column="84" selection-end-line="43" selection-end-column="84" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testcontroller.py">
+        <entry file="file://$PROJECT_DIR$/testlisten.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="818">
-              <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="729">
+              <caret line="27" column="11" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -141,7 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/consumer2.py" />
         <option value="$PROJECT_DIR$/hellores.py" />
         <option value="$PROJECT_DIR$/consumer.py" />
         <option value="$PROJECT_DIR$/backup/after listener/node.py" />
@@ -192,12 +199,13 @@
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/testnode.py" />
         <option value="$PROJECT_DIR$/testcontroller.py" />
+        <option value="$PROJECT_DIR$/testlisten.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="1745" />
+    <option name="y" value="302" />
     <option name="width" value="613" />
     <option name="height" value="584" />
   </component>
@@ -214,11 +222,6 @@
             <path>
               <item name="NDNAPP" type="b2602c69:ProjectViewProjectNode" />
               <item name="NDNAPP" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NDNAPP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NDNAPP" type="462c0819:PsiDirectoryNode" />
-              <item name="backup" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -597,14 +600,7 @@
       <workItem from="1562174118275" duration="23168000" />
       <workItem from="1562296388851" duration="30594000" />
       <workItem from="1562587411772" duration="653000" />
-      <workItem from="1562713969702" duration="816000" />
-    </task>
-    <task id="LOCAL-00017" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
-      <created>1562197435388</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1562197435389</updated>
+      <workItem from="1562713969702" duration="4866000" />
     </task>
     <task id="LOCAL-00018" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
       <created>1562207829829</created>
@@ -942,11 +938,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562714162125</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="finished status monitor and trigger.&#10;almost finished all functions&#10;&#10;Add flapping protection function&#10;add face.shutdown">
+      <created>1562715004177</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1562715004177</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="520404000" />
+    <option name="totallyTimeSpent" value="524454000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -958,11 +961,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1096" height="1896" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.51843816" visible="true" weight="0.20522387" />
-      <window_info id="Structure" order="1" sideWeight="0.4810401" side_tool="true" weight="0.20309168" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5178984" weight="0.45752895" />
+      <window_info id="Structure" order="1" sideWeight="0.48210162" side_tool="true" weight="0.45752895" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Repositories" order="3" weight="0.32995737" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -977,7 +980,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053304" side_tool="true" weight="0.19631237" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.23861171" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.49946696" weight="0.19631237" />
+      <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.49946696" visible="true" weight="0.017026106" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="GitHub Pull Requests" order="14" weight="0.329718" />
       <window_info anchor="bottom" id="SVN Repositories" order="15" weight="0.329718" />
@@ -1097,23 +1100,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/controller_setter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="47" column="44" lean-forward="true" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
-          <folding>
-            <element signature="n#!!doc" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/remote_sources/887422675/201545291/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="827" column="8" selection-start-line="827" selection-start-column="8" selection-end-line="827" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ndnflowtable.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3375">
@@ -1451,16 +1437,6 @@
         <state relative-caret-position="-883" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testnode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="75" column="30" lean-forward="true" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
-          <folding>
-            <element signature="e#1#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/status/channels_status_getter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="818">
@@ -1471,13 +1447,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testnode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="79" column="27" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
+          <folding>
+            <element signature="e#1413#1423#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testcontroller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="818">
-          <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+        <state relative-caret-position="62">
+          <caret line="43" column="84" selection-start-line="43" selection-start-column="84" selection-end-line="43" selection-end-column="84" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/remote_sources/-1286225973/-1382175924/pyinotify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="2220" selection-start-line="2220" selection-end-line="2220" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testlisten.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="27" column="11" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
         </state>
       </provider>
     </entry>
