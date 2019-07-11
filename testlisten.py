@@ -62,7 +62,7 @@ class MyEventHandler(pyinotify.ProcessEvent):
     # 当文件被修改时调用函数
     def process_IN_MODIFY(self, event):
         try:
-            printlog()
+            self.printlog()
         except:
             print("error")
 
