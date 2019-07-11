@@ -43,7 +43,7 @@ def main():
     wm = pyinotify.WatchManager()
     wm.add_watch('./abc.txt', pyinotify.ALL_EVENTS, rec=True)
     eh = MyEventHandler()
-
+    print('================')
     # notifier
     notifier = pyinotify.Notifier(wm, eh)
     notifier.loop()
