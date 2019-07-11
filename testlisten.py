@@ -1,23 +1,44 @@
 import pyinotify
-import time
-import os
 
 
-class ProcessTransientFile(pyinotify.ProcessEvent):
+class MyEventHandler(pyinotify.ProcessEvent):
+    def process_IN_ACCESS(self, event):
+        print("ACCESS event:", event.pathname)
+
+    def process_IN_ATTRIB(self, event):
+        print("ATTRIB event:", event.pathname)
+
+    def process_IN_CLOSE_NOWRITE(self, event):
+        print("CLOSE_NOWRITE event:", event.pathname)
+
+    def process_IN_CLOSE_WRITE(self, event):
+        print("CLOSE_WRITE event:", event.pathname)
+
+    def process_IN_CREATE(self, event):
+        print("CREATE event:", event.pathname)
+
+    def process_IN_DELETE(self, event):
+        print("DELETE event:", event.pathname)
+
     def process_IN_MODIFY(self, event):
-        line = file.readline()
-        if line:
-            print(line),  # already has newline
+        print("MODIFY event:", event.pathname)
+
+    def process_IN_OPEN(self, event):
+        print("OPEN event:", event.pathname)
 
 
-filename = './abc.txt'
-file = open(filename, 'r')
-# Find the size of the file and move to the end
-st_results = os.stat(filename)
-st_size = st_results[6]
-file.seek(st_size)
+def main():
+    # watch manager
+    wm = pyinotify.WatchManager()
+    wm.add_watch('/var/log', pyinotify.ALL_EVENTS, rec=True)
 
-wm = pyinotify.WatchManager()
-notifier = pyinotify.Notifier(wm)
-wm.watch_transient_file(filename, pyinotify.ALL_EVENTS, ProcessTransientFile)
-notifier.loop()
+    # event handler
+    eh = MyEventHandler()
+
+    # notifier
+    notifier = pyinotify.Notifier(wm, eh)
+    notifier.loop()
+
+
+if __name__ == '__main__':
+    main()
