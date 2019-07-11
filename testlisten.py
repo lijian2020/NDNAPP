@@ -24,7 +24,7 @@ pos = 0
 def printlog():
     global pos
     try:
-        fd = open(r'/var/log/secure')
+        fd = open(r'./abc.txt')
         if pos != 0:
             fd.seek(pos, 0)
         while True:
@@ -54,7 +54,7 @@ def main():
     printlog()
     # watch manager
     wm = pyinotify.WatchManager()
-    wm.add_watch('/var/log/secure', pyinotify.ALL_EVENTS, rec=True)
+    wm.add_watch('./abc.txt', pyinotify.ALL_EVENTS, rec=True)
     eh = MyEventHandler()
 
     # notifier
