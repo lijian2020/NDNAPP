@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46d7361f-1b5d-44d3-adf0-90728ae67349" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testlisten.py" beforeDir="false" afterPath="$PROJECT_DIR$/testlisten.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,8 +54,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testlisten.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+            <state relative-caret-position="459">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -599,21 +603,7 @@
       <workItem from="1562174118275" duration="23168000" />
       <workItem from="1562296388851" duration="30594000" />
       <workItem from="1562587411772" duration="653000" />
-      <workItem from="1562713969702" duration="6169000" />
-    </task>
-    <task id="LOCAL-00022" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
-      <created>1562236892359</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1562236892359</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
-      <created>1562245294055</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1562245294056</updated>
+      <workItem from="1562713969702" duration="6503000" />
     </task>
     <task id="LOCAL-00024" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
       <created>1562265334144</created>
@@ -944,11 +934,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562882454120</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="finished status monitor and trigger.&#10;almost finished all functions&#10;&#10;Add flapping protection function&#10;add face.shutdown">
+      <created>1562882481996</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1562882481996</updated>
+    </task>
+    <task id="LOCAL-00072" summary="finished status monitor and trigger.&#10;almost finished all functions&#10;&#10;Add flapping protection function&#10;add face.shutdown">
+      <created>1562882602133</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1562882602133</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="525757000" />
+    <option name="totallyTimeSpent" value="526091000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1475,8 +1479,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testlisten.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+        <state relative-caret-position="459">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
