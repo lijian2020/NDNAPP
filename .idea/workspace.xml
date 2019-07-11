@@ -54,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testlisten.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="891">
+              <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -603,14 +603,7 @@
       <workItem from="1562174118275" duration="23168000" />
       <workItem from="1562296388851" duration="30594000" />
       <workItem from="1562587411772" duration="653000" />
-      <workItem from="1562713969702" duration="6503000" />
-    </task>
-    <task id="LOCAL-00024" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
-      <created>1562265334144</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1562265334144</updated>
+      <workItem from="1562713969702" duration="6953000" />
     </task>
     <task id="LOCAL-00025" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
       <created>1562290531255</created>
@@ -948,11 +941,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562882602133</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="finished status monitor and trigger.&#10;almost finished all functions&#10;&#10;Add flapping protection function&#10;add face.shutdown">
+      <created>1562882817221</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1562882817221</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="526091000" />
+    <option name="totallyTimeSpent" value="526541000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1479,8 +1479,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testlisten.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="891">
+          <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
