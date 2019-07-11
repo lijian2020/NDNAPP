@@ -1,44 +1,22 @@
-import pyinotify
+import os
+import time
 
+pos = 0
+while True:
+    fd = open(r'./abc.txt')
+    '''
+    for line in fd:
+        print line.strip()
 
-class MyEventHandler(pyinotify.ProcessEvent):
-    def process_IN_ACCESS(self, event):
-        print("ACCESS event:", event)
-
-    def process_IN_ATTRIB(self, event):
-        print("ATTRIB event:", event)
-
-    def process_IN_CLOSE_NOWRITE(self, event):
-        print("CLOSE_NOWRITE event:", event)
-
-    def process_IN_CLOSE_WRITE(self, event):
-        print("CLOSE_WRITE event:", event)
-
-    def process_IN_CREATE(self, event):
-        print("CREATE event:", event)
-
-    def process_IN_DELETE(self, event):
-        print("DELETE event:", event)
-
-    def process_IN_MODIFY(self, event):
-        print("MODIFY event:", event)
-
-    def process_IN_OPEN(self, event):
-        print("OPEN event:", event)
-
-
-def main():
-    # watch manager
-    wm = pyinotify.WatchManager()
-    wm.add_watch('./abc.txt', pyinotify.ALL_EVENTS, rec=True)
-
-    # event handler
-    eh = MyEventHandler()
-
-    # notifier
-    notifier = pyinotify.Notifier(wm, eh)
-    notifier.loop()
-
-
-if __name__ == '__main__':
-    main()
+    fd.close()
+    '''
+    if pos != 0:
+        fd.seek(pos, 0)
+    while True:
+        line = fd.readline()
+        if line.strip():
+            print(line.strip())
+        pos = pos + len(line)
+        if not line.strip():
+            break
+    fd.close()
