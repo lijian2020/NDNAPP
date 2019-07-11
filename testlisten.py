@@ -45,8 +45,8 @@ def main():
     eh = MyEventHandler()
     # notifier
     notifier = pyinotify.Notifier(wm, eh)
-    print('================')
     notifier.loop()
+    print('================')
 
 
 if __name__ == '__main__':
