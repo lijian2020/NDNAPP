@@ -30,7 +30,7 @@ class MyEventHandler(pyinotify.ProcessEvent):
 def main():
     # watch manager
     wm = pyinotify.WatchManager()
-    wm.add_watch('/var/log', pyinotify.ALL_EVENTS, rec=True)
+    wm.add_watch('./abc.txt', pyinotify.ALL_EVENTS, rec=True)
 
     # event handler
     eh = MyEventHandler()
