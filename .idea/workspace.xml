@@ -53,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testlisten.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+            <state relative-caret-position="378">
+              <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -602,21 +602,7 @@
       <workItem from="1562174118275" duration="23168000" />
       <workItem from="1562296388851" duration="30594000" />
       <workItem from="1562587411772" duration="653000" />
-      <workItem from="1562713969702" duration="9935000" />
-    </task>
-    <task id="LOCAL-00040" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
-      <created>1562355500211</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1562355500211</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
-      <created>1562359992891</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1562359992894</updated>
+      <workItem from="1562713969702" duration="10199000" />
     </task>
     <task id="LOCAL-00042" summary="Merge branch 'adjust_OF_MSG'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;controller.py&#10;#&#9;controller_listener_ctrlinfo.py&#10;#&#9;node.py">
       <created>1562360176389</created>
@@ -947,11 +933,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562890090320</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="finished status monitor and trigger.&#10;almost finished all functions&#10;&#10;Add flapping protection function&#10;add face.shutdown">
+      <created>1562890173808</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1562890173808</updated>
+    </task>
+    <task id="LOCAL-00090" summary="finished status monitor and trigger.&#10;almost finished all functions&#10;&#10;Add flapping protection function&#10;add face.shutdown">
+      <created>1562890199387</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1562890199388</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="529523000" />
+    <option name="totallyTimeSpent" value="529787000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1479,8 +1479,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testlisten.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+        <state relative-caret-position="378">
+          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
