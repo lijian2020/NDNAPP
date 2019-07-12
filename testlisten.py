@@ -28,7 +28,7 @@ def printline():
 
 def parseline(linestr):
     linelist = linestr.split()
-    print(linelist[5])
+    print(linelist[0])
 
 
 if __name__ == '__main__':
