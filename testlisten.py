@@ -31,7 +31,7 @@ def parseline(linestr):
     try:
         if (linelist[5] == 'noNextHop'):
             prefix = (linelist[3].split('?'))[0]
-            print(prefix)
+            print('========={}======='.format(prefix))
     except:
         print('there is no linelist[5]')
 
