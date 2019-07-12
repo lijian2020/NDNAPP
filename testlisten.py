@@ -28,8 +28,10 @@ def printline():
 
 def parseline(linestr):
     linelist = linestr.split()
-    print(linelist[0])
-
+    if (linelist[5]):
+        print(linelist[5])
+    else:
+        print('there is no linelist[5]')
 
 if __name__ == '__main__':
     printline()
