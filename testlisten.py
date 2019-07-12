@@ -29,7 +29,9 @@ def printline():
 def parseline(linestr):
     linelist = linestr.split()
     try:
-        print(linelist[5])
+        if (linelist[5] == 'noNextHop'):
+            prefix = (linelist[3].split('?'))[0]
+            print(prefix)
     except:
         print('there is no linelist[5]')
 
