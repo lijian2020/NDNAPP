@@ -16,7 +16,7 @@ while True:
                     print(line.strip())
                     linestr = line.strip()
                     linelist = linestr.split()
-                    print(linelist)
+                    print(linelist[0])
 
                 pos = pos + len(line)
                 if not line.strip():
