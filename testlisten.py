@@ -28,9 +28,9 @@ def printline():
 
 def parseline(linestr):
     linelist = linestr.split()
-    if (linelist[5]):
+    try:
         print(linelist[5])
-    else:
+    except:
         print('there is no linelist[5]')
 
 if __name__ == '__main__':
