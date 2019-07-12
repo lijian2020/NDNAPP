@@ -5,35 +5,54 @@ import pyinotify
 import logging
 
 
-def printline():
-    pos = 0
-    while True:
+class OF_Route_Processor():
+    '''This class process the case that NDN node has no next hop.
+    It is a trigger that invokes the open flow procedure to search
+    the local openflow table and send packet-in message to controller'''
+
+    def __init__(self):
+        self.nodeid = 'h1'
+
+    def loglistener(self):
+        '''this method listens the file '/tmp/mininet/node_id/nfd.log',
+        if there is new log items indecate 'noNextHop', this method
+        will deal with it'''
+
+        pos = 0
+        while True:
+            try:
+                with open(r'./abc.txt') as f:
+                    if pos != 0:
+                        f.seek(pos, 0)
+                    while True:
+                        line = f.readline()
+                        if line.strip():
+                            print(line.strip())
+                            linestr = line.strip()
+                            self.noNextHopItems_log_checker(linestr)
+
+                        pos = pos + len(line)
+                        if not line.strip():
+                            break
+            except:
+                print('error in open log file')
+
+    def noNextHopItems_log_checker(self, linestr):
+        linelist = linestr.split()
         try:
-            with open(r'./abc.txt') as f:
-                if pos != 0:
-                    f.seek(pos, 0)
-                while True:
-                    line = f.readline()
-                    if line.strip():
-                        print(line.strip())
-                        linestr = line.strip()
-                        parseline(linestr)
-
-                    pos = pos + len(line)
-                    if not line.strip():
-                        break
+            if (linelist[5] == 'noNextHop'):
+                prefix = (linelist[3].split('?'))[0]
+                print('========={}======='.format(prefix))
         except:
-            print('error in open log file')
+            print('there is no linelist[5]')
+
+    def search_NFT(self):
+        pass
+
+    def packetin_sender(self):
+        pass
 
 
-def parseline(linestr):
-    linelist = linestr.split()
-    try:
-        if (linelist[5] == 'noNextHop'):
-            prefix = (linelist[3].split('?'))[0]
-            print('========={}======='.format(prefix))
-    except:
-        print('there is no linelist[5]')
 
 if __name__ == '__main__':
-    printline()
+    OF_Route_Processor().loglistener()
