@@ -38,18 +38,24 @@ class OF_Route_Processor():
                 print('error in open log file')
 
     def noNextHopItems_log_checker(self, linestr):
+        '''select out the log items which include 'noNextHop' mark'''
         linelist = linestr.split()
         try:
             if (linelist[5] == 'noNextHop'):
                 prefix = (linelist[3].split('?'))[0]
                 print('========={}======='.format(prefix))
+                if (self.search_NFT(prefix)):
+                    pass  # todo add item to rib
+                else:
+                    self.packetin_sender(prefix)
         except:
             print('there is no linelist[5]')
 
-    def search_NFT(self):
+    def search_NFT(self, prefix):
+        return True
         pass
 
-    def packetin_sender(self):
+    def packetin_sender(self, prefix):
         pass
 
 
