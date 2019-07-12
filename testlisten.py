@@ -14,8 +14,12 @@ while True:
                 line = fd.readline()
                 if line.strip():
                     print(line.strip())
+                    linestr = line.strip()
+                    linelist = linestr.split()
+                    print(linelist)
+
                 pos = pos + len(line)
                 if not line.strip():
                     break
     except:
-        print('===========')
+        print('error in open log file')
