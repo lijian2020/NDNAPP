@@ -27,4 +27,4 @@ def printline():
             print('error in open log file')
 
 
-print()
+printline()
