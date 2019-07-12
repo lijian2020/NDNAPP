@@ -9,16 +9,15 @@ def printline():
     pos = 0
     while True:
         try:
-            with open(r'./abc.txt') as fd:
+            with open(r'./abc.txt') as f:
                 if pos != 0:
-                    fd.seek(pos, 0)
+                    f.seek(pos, 0)
                 while True:
-                    line = fd.readline()
+                    line = f.readline()
                     if line.strip():
                         print(line.strip())
                         linestr = line.strip()
-                        linelist = linestr.split()
-                        print(linelist[0])
+                        parseline(linestr)
 
                     pos = pos + len(line)
                     if not line.strip():
@@ -27,4 +26,10 @@ def printline():
             print('error in open log file')
 
 
-printline()
+def parseline(linestr):
+    linelist = linestr.split()
+    print(linelist[0])
+
+
+if __name__ == '__main__':
+    printline()
