@@ -54,7 +54,7 @@ class OF_Route_Processor():
                     if (not NdnFlowTable.searchitem(prefix)):
                         self.packetin_sender(prefix)
         except:
-            print('there is no linelist[5]')
+            pass
 
     def packetin_sender(self, unknown_prefix):
         if (PacketIn().run(unknown_prefix)):

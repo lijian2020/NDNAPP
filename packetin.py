@@ -90,7 +90,7 @@ class PacketIn(object):
         print("TIMEOUT #%d: %s" % (self.outstanding[uri], uri))
         self.outstanding[uri] += 1
 
-        if self.outstanding[uri] <= 3:
+        if self.outstanding[uri] <= 2:
             self.run()
         else:
             self.isDone = True
