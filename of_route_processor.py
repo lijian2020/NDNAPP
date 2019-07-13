@@ -22,7 +22,7 @@ class OF_Route_Processor():
         will deal with it'''
 
         pos = 0
-        log_file = r'/tmp/minindn/{}-site/{}/nfd.log'.format(self.nodeid, self.nodeid)
+        log_file = r'/tmp/minindn/{}/nfd.log'.format(self.nodeid, self.nodeid)
         while True:
             try:
                 with open(log_file) as f:
