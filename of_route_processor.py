@@ -49,8 +49,10 @@ class OF_Route_Processor():
         try:
             if (linelist[5] == 'noNextHop'):
                 prefix = (linelist[3].split('?'))[0]
-                if (not (prefix.startswith('/localhop/') or prefix.startswith(
-                        '/ndn/ie/tcd/controller01/ofndn') or prefix in self.unknownprefixtable)):
+                if (not (prefix.startswith('/localhop/') \
+                         or prefix.startswith('/ndn/ie/tcd/controller01/ofndn') \
+                         or prefix.startswith('/ndn/{}-site/{}/ofndn'.format(self.nodeid, self.nodeid)) \
+                         or prefix in self.unknownprefixtable)):
                     self.unknownprefixtable.add(prefix)
                     print('[No Route in RIB ] for \n {}'.format(prefix))
                     if (not NdnFlowTable.searchitem(prefix)):
