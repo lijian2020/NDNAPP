@@ -61,7 +61,7 @@ class OF_Route_Processor():
     #     if (PacketIn().run(unknown_prefix)):
     #         print("NDN FlowTable has been updated")
 
-
-
-if __name__ == '__main__':
-    OF_Route_Processor().loglistener()
+#
+#
+# if __name__ == '__main__':
+#     OF_Route_Processor().loglistener()

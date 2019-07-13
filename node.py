@@ -37,6 +37,7 @@ from featureres import FeatureRes
 from ctrlinforeq import CtrlInfoReq
 from threading import Thread
 from errormsg import ErrorMsg
+from of_route_processor import OF_Route_Processor
 
 class Node(object):
     '''Hello '''
@@ -55,8 +56,12 @@ class Node(object):
                                         format(self.nodeid,NodePrefixString)],shell=True)
 
         ########   Basic function  #######
-        feature_threed = Thread(target=self.Feature_service)  # send helloreq
+        feature_threed = Thread(target=self.Feature_service)  # send reature_data
         feature_threed.start()
+
+        of_route_threed = Thread(target=self.OF_Route)  # listen noNextHop log and send packetin
+        of_route_threed.start()
+
 
         hello_threed = Thread(target=self.Hellorequest)  # send helloreq
         hello_threed.start()
@@ -94,6 +99,9 @@ class Node(object):
 
     def Feature_service(self):
         FeatureRes().run()
+
+    def OF_Route(self):
+        OF_Route_Processor().loglistener()
 
     def prefixinquire(self,unknown_prefix):
         if(PacketIn().run(unknown_prefix)):
