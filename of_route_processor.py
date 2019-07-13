@@ -3,6 +3,9 @@ import time
 import datetime
 import pyinotify
 import logging
+from packetin import PacketIn
+from oscommand import OSCommand
+from ndnflowtable import NdnFlowTable
 
 
 class OF_Route_Processor():
@@ -11,7 +14,7 @@ class OF_Route_Processor():
     the local openflow table and send packet-in message to controller'''
 
     def __init__(self):
-        self.nodeid = 'h1'
+        self.nodeid = OSCommand.getnodeid()
 
     def loglistener(self):
         '''this method listens the file '/tmp/mininet/node_id/nfd.log',
@@ -19,15 +22,16 @@ class OF_Route_Processor():
         will deal with it'''
 
         pos = 0
+        log_file = r'/tmp/minindn/{}-site/{}/nfd.log'.format(self.nodeid, self.nodeid)
         while True:
             try:
-                with open(r'./abc.txt') as f:
+                with open(log_file) as f:
                     if pos != 0:
                         f.seek(pos, 0)
                     while True:
                         line = f.readline()
                         if line.strip():
-                            print(line.strip())
+                            # print(line.strip())
                             linestr = line.strip()
                             self.noNextHopItems_log_checker(linestr)
 
