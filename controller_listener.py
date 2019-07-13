@@ -32,6 +32,7 @@ from oscommand import OSCommand
 from ofmsg import OFMSG
 from featurereq import FeatureReq
 from node_prefix_table import NodePrefixTable
+from ndnflowtable import NdnFlowTable
 
 
 
@@ -88,7 +89,6 @@ class Controller_Listener(object):
                                         self.keyChain.getDefaultCertificateName())
 
         self.face.registerPrefix(ControllerPrefix, self.onInterest_Mian, self.onRegisterFailed)  # run prefix
-        print("--------11111111-----------")
 
         # filters:
         CtrlInfo_msg_prefix = Name('/ndn/ie/tcd/controller01/ofndn/--/n1.0/36/0/0/')
@@ -104,12 +104,12 @@ class Controller_Listener(object):
 
     def onInterest_PacketIn(self, mainPrefix, interest, transport, registeredPrefixId):
         print("------Received: <<<PacketIn>>> Msg for: \n" + interest.getName().toUri())  # for test
-        #print(self.NPT.node_prefix_table)
+        unknown_prefix = NdnFlowTable.parse_Packetin_Interest(interest)
 
-        rand = random.randint(0,10)
-        #todo(flowmod): get data for FlowMod msg from Upper APP
-        flowmod_data = '*---*---/Msc/TCD/node-{}/---None---0x0000---3600---36000\
-        ---1---None---face=245---0x0001---0x0000'.format(str(rand))
+        # FlowModDataList: [ep(0),face(1),prefix(2),cookie(3),command(4),idle_timeout(5),
+        # hard_timeout(6), priority(7),buffer_id(8),out_face(9),flag(10), action(11)]
+        flowmod_data = '*---*---{}---None---0x0000---3600---36000\
+        ---1---None---face=255---0x0001---0x0000'.format(unknown_prefix)
         data = self.ofmsg.create_flowmod_data(interest,flowmod_data)
         transport.send(data.wireEncode().toBuffer())
 

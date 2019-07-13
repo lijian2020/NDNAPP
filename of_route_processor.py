@@ -15,6 +15,7 @@ class OF_Route_Processor():
 
     def __init__(self):
         self.nodeid = OSCommand.getnodeid()
+        self.unknownprefixtable = set()
 
     def loglistener(self):
         '''this method listens the file '/tmp/mininet/node_id/nfd.log',
@@ -47,20 +48,17 @@ class OF_Route_Processor():
         try:
             if (linelist[5] == 'noNextHop'):
                 prefix = (linelist[3].split('?'))[0]
-                print('========={}======='.format(prefix))
-                if (self.search_NFT(prefix)):
-                    pass  # todo add item to rib
-                else:
-                    self.packetin_sender(prefix)
+                if (not (prefix.startswith('/localhop/') or prefix in self.unknownprefixtable)):
+                    self.unknownprefixtable.add(prefix)
+                    print('[No Route in RIB ] for \n {}'.format(prefix))
+                    if (not NdnFlowTable.searchitem(prefix)):
+                        self.packetin_sender(prefix)
         except:
             print('there is no linelist[5]')
 
-    def search_NFT(self, prefix):
-        return True
-        pass
-
-    def packetin_sender(self, prefix):
-        pass
+    def packetin_sender(self, unknown_prefix):
+        if (PacketIn().run(unknown_prefix)):
+            print("NDN FlowTable has been updated")
 
 
 

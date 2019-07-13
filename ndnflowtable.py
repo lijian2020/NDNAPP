@@ -21,13 +21,14 @@
 #
 
 import numpy as np
+from oscommand import OSCommand
 from featurereq import FeatureReq
 
 #This class is used for create a global tables(NFT) and includes some methods
 # which are used for parsing original hello interest name.
 # So this class is normally no need to be instantiated
 class NdnFlowTable(object):
-    '''used to process and record Prefix by controller.  this table is a global table.'''
+    '''used to process and record Prefix by node.  this table is a global table.'''
     NFT = np.empty(shape=[0, 10])  # an array as flow table
     # [EthernetPrefix, Face, Prefix, Priority,Counter,Idle-Lifetime,Hard-lifetime,Action,Out-faces,Flag]
 
@@ -76,8 +77,9 @@ class NdnFlowTable(object):
         #print("EP, Face, Prefix, Priority,Counter,Idle-Lifetime,Hard-lifetime,Action,Out-faces,Flag")
         print(NdnFlowTable.NFT)  # print NFT for test
         print("===================================")
-        np.savetxt(r'/tmp/minindn/{}/NFT.txt'.format(nodeid), NdnFlowTable.NFT, fmt='%s %s %s %s %s %s %s %s %s %s')
 
+        np.savetxt(r'/tmp/minindn/{}/NFT.txt'.format(nodeid), NdnFlowTable.NFT, fmt='%s %s %s %s %s %s %s %s %s %s')
+        # todo add the items to fib
 
 
     """update the table using the original interest from PacketOut Msg. It is can be used directly."""
@@ -97,8 +99,12 @@ class NdnFlowTable(object):
 
     @staticmethod
     def additem(Fulltable,parsedlist):  #add table item with the list including 5 elements
+        # [EthernetPrefix(0), Face(1), Prefix(2), Priority(3),Counter(4),
+        # Idle-Lifetime(5),Hard-lifetime(6),Action(7),Out-faces(8),Flag(9)]
         try:
             Fulltable = np.row_stack((Fulltable, parsedlist))  # insert one line at the end
+            OSCommand.addrouttoRIB(parsedlist[2], parsedlist[8])
+            print('{ New route <{}> has been added to RIB }'.format(parsedlist[2]))
         except:
             return ("add faild")
         return (Fulltable)
@@ -138,6 +144,19 @@ class NdnFlowTable(object):
         PacketOut_suffix = PacketOut_Interest_Name.split('-----')[1]
         PacketOut_suffix_list=PacketOut_suffix.split('---')
         return PacketOut_suffix_list
+
+    @staticmethod
+    def parse_Packetin_Interest(original_Packetin_Interest):
+        # /ndn/ie/tcd/controller01/ofndn/--/n1.0/10/0/0/--/unknown_prefix
+
+        PacketIn_Interest_Name = original_Packetin_Interest.getName().toUri()
+        PacketIn_unknow_prefix = PacketIn_Interest_Name.split('--')[2]
+
+        return PacketIn_unknow_prefix  #return a string
+
+
+
+
 
     @staticmethod
     def parse_FaceMod_Interest(original_FaceMod_Interest):

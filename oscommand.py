@@ -39,6 +39,14 @@ class OSCommand(object):
                                 format(nodeid)], shell=True)
         return command_output
 
+    @staticmethod
+    def addrouttoRIB(prefix, face_id):
+        nodeid = OSCommand.getnodeid()
+        command_output = subprocess.check_output(["export HOME=/tmp/minindn/{0} && nfdc route add {1} {2} ". \
+                                                 format(nodeid, prefix, face_id)], shell=True)
+        return command_output
+
+
 
     @staticmethod
     def getFIB():
