@@ -79,8 +79,6 @@ class NdnFlowTable(object):
         print("===================================")
 
         np.savetxt(r'/tmp/minindn/{}/NFT.txt'.format(nodeid), NdnFlowTable.NFT, fmt='%s %s %s %s %s %s %s %s %s %s')
-        # todo add the items to fib
-
 
     """update the table using the original interest from PacketOut Msg. It is can be used directly."""
     @staticmethod

@@ -53,13 +53,13 @@ class OF_Route_Processor():
                     self.unknownprefixtable.add(prefix)
                     print('[No Route in RIB ] for \n {}'.format(prefix))
                     if (not NdnFlowTable.searchitem(prefix)):
-                        self.packetin_sender(prefix)
+                        PacketIn().run(prefix)
         except:
             pass
 
-    def packetin_sender(self, unknown_prefix):
-        if (PacketIn().run(unknown_prefix)):
-            print("NDN FlowTable has been updated")
+    # def packetin_sender(self, unknown_prefix):
+    #     if (PacketIn().run(unknown_prefix)):
+    #         print("NDN FlowTable has been updated")
 
 
 

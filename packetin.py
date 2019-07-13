@@ -75,7 +75,6 @@ class PacketIn(object):
         # add this item to flow table.
         FlowModDataList = NdnFlowTable.parse_FlowMod_Data(payload)
         NdnFlowTable.updatendnflowtable(FlowModDataList,self.nodeid)
-        # todo add route to RIB: nfdc route add /prefix face-id
         print(NdnFlowTable)
 
 
