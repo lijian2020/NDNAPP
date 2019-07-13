@@ -24,6 +24,7 @@ class OF_Route_Processor():
 
         pos = 0
         log_file = r'/tmp/minindn/{}/nfd.log'.format(self.nodeid, self.nodeid)
+        print('==========2222============')
         while True:
             try:
                 with open(log_file) as f:
