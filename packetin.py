@@ -70,6 +70,7 @@ class PacketIn(object):
         payload = data.getContent()
         name = data.getName()
         print("Received <<<<FlowMod data>>>>from Controller ")
+        print('####################\n' + payload.toRawStr())
         self.nodeid = OSCommand.getnodeid()
 
         # add this item to flow table.
