@@ -5,11 +5,13 @@ import sys
 import time
 import argparse
 import traceback
+import subprocess
 
 from pyndn import Interest
 from pyndn import Name
 from pyndn import Face
 from pyndn.security import KeyChain
+from oscommand import OSCommand
 from pyndn.util.blob import Blob
 
 
@@ -23,8 +25,15 @@ class Consumer(object):
         self.face = Face("127.0.0.1")
         # self.face = Face()
         self.keyChain = KeyChain()
+        self.nodeid = OSCommand.getnodeid()
 
     def run(self):
+
+        nodeid = OSCommand.getnodeid()
+        subprocess.check_output(["export HOME=/tmp/minindn/{0} && nfdc route add / 261 ". \
+                                format(nodeid)], shell=True)
+
+
         try:
             self._sendNextInterest(self.prefix)
 
