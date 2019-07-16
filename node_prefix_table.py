@@ -58,18 +58,20 @@ class NodePrefixTable(object):
                 NodePrefixTable.NPT = NodePrefixTable.additem(NodePrefixTable.NPT, helloreq_name_prefix)
                 try:
                     FeatureReq().run(featurereq_interest_prefix)
-                    print('feature request has been sent out ')
+                    # print('feature request has been sent out ')
                 except:
                     print("FeatureReq send out fail XXXXXXXXXXX")
             else:
                 print("the same hello message received")
         else:
             FeatureReq().run(featurereq_interest_prefix)
-            print('feature request has been sent out ')
+            #print('feature request has been sent out ')
             NodePrefixTable.NPT = NodePrefixTable.additem(NodePrefixTable.NPT, helloreq_name_prefix)
 
         #NodePrefixTable._setter(NodePrefixTable.NPT)
+        print('=================NPT=================')
         print(NodePrefixTable.NPT)
+        print('=====================================')
 
         np.savetxt(r'/tmp/minindn/NPT.txt', NodePrefixTable.NPT,fmt='%s %s %s %s')
 

@@ -176,23 +176,23 @@ class Controller_Listener(object):
         print("------Received: <<<FlowRemoved>>> Msg ------")  # for test
 
     def onInterest_CtrlInfo(self, mainPrefix, interest, transport, registeredPrefixId):
-        print("--------received <<<CtrlInfo Req>>> interest:\n" + interest.getName().toUri())  # for test
+        print("******** Received <<<CtrlInfoReq>>> Interest ******** \n {0} \n".format(interest.getName().toUri()))
         while (self.new_CtrlInfo_data == self.CtrlInfo_data):  # wait for new data.
             time.sleep(5)
         self.CtrlInfo_data = self.new_CtrlInfo_data
         data = self.ofmsg.create_ctrlinfo_res_data(interest, self.CtrlInfo_data)
         transport.send(data.wireEncode().toBuffer())
-        print("--------sent <<<New CtrlInfo Res>>> Data--------")
+        print("******** Sent <<<New CtrlInfo Res>>> Data ******** \n")
 
     def onInterest_Hello(self, mainPrefix, interest, transport, registeredPrefixId):
-        print("--------received <<<HelloReq>>> interest:\n" + interest.getName().toUri())  # for test
+        print(
+            "--------Received <<<HelloReq>>> Interest --------\n {0} \n".format(interest.getName().toUri()))  # for test
 
-        #todo(lijian) should check the helloreq_name_list and determine what action should do
-
-        hello_data = 'this is the hello response data'
+        hello_data = '[This is hello response data]'
         data = self.ofmsg.create_hello_res_data(interest,hello_data)
         transport.send(data.wireEncode().toBuffer())
         NodePrefixTable.updatenodeprefixtable(interest)       #to add NPT and fetch feature
+        print("--------Sent <<<Hellores>>> Data -------- \n")
 
     def onInterest_ErrorMsg(self, mainPrefix, interest, transport, registeredPrefixId):
         print("--------received <<<Error Msg>>> interest:\n" + interest.getName().toUri())  # for test
@@ -201,13 +201,11 @@ class Controller_Listener(object):
         transport.send(data.wireEncode().toBuffer())
         print("--------sent <<<Error Msg ACK>>>---------")
 
-        # todo(errorMsg) maybe this msg can status some other actions.
         #parse the errorMsg interest to get error information.
 
 
 
     def onInterest_Mian(self, mainPrefix, interest, transport, registeredPrefixId):
-        # TODO(onInterest_Mian): check what should do.
         pass
 
     def onRegisterFailed(self, ControllerPrefix):

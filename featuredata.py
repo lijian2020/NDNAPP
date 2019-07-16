@@ -62,7 +62,7 @@ class FeatureDate(object):
 
         temp_Face_array = FeatureDate.parseOriginFace_Date(nodeid,originFace_Data) #get an array including new FIB items
         if(nodeid in FeatureDate.Face_array[:,0:1]):
-            pass  #todo: to check and dele the existing items
+            pass
         FeatureDate.Face_array = np.row_stack((FeatureDate.Face_array, temp_Face_array))
 
         temp_FIB_array = FeatureDate.parseOriginFIB_Data(nodeid, originFIB_Data) #get an array including new FIB items

@@ -91,9 +91,9 @@ if __name__ == '__main__':    ##### Multiprocess must start from here (__name__ 
 
     parser = argparse.ArgumentParser(description='Parse command line args for ndn producer')
     parser.add_argument("-p", "--packetout", nargs='?', const=True, help='True | False send PacketOut msg?')
-    parser.add_argument("-f", "--facemod", nargs='?', const=True, help='True | False send FaceMod msg?') #todo(facemod)May need more arguments
+    parser.add_argument("-f", "--facemod", nargs='?', const=True, help='True | False send FaceMod msg?')
     parser.add_argument("-c", "--ctrlinfo", nargs='?', const=True,
-                        help='True | False test ctrlinfo response function?')  # todo(ctrlinfo)May need more arguments
+                        help='True | False test ctrlinfo response function?')
     args = parser.parse_args()
 
     try:

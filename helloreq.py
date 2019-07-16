@@ -60,14 +60,14 @@ class HelloReq(object):
             self.outstanding[uri] = 1
         self.face.expressInterest(interest, self._onData, self._onTimeout)
 
-        print("--------Sent <<<Helloreq>>> Interest for \n %s" % uri)
+        print("--------Sent <<<Helloreq>>> Interest -------- \n {0} \n".format(uri))
 
 
 
     def _onData(self, interest, data):
         payload = data.getContent()
         name = data.getName()
-        print("Received Controller_Listener data: ", payload.toRawStr())
+        print("--------Received <<<Hellores>>> Data -------- \n {0} \n".format(payload.toRawStr()))
         del self.outstanding[name.toUri()]
         self.isDone = True
 

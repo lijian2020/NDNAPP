@@ -37,7 +37,7 @@ class CtrlInfo_Operation(object):
         CtrlInfo_data_list = self.parse_CtrlInfo_Data(ctrlinfo_raw_data)
 
         if (CtrlInfo_data_list[0] == '0x0000'):  # FlowMod
-            pass  # todo(ctrlinfo)call ndnflowtable's method to deal with this
+            pass
 
 
         elif (CtrlInfo_data_list[0] == '0x0001'):  # FaceMod

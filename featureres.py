@@ -98,7 +98,8 @@ class FeatureRes(object):
 
 
     def onInterest_Feature(self, mainPrefix, interest, transport, registeredPrefixId):
-        print("--------Received <<<FeatureReq>>> interest Msg")
+        print("++++++++ Received <<<FeatureReq>>> interest ++++++++ \n")
+
 
         feature_face = OSCommand.getface()
         feature_FIB = OSCommand.getFIB()
@@ -109,7 +110,7 @@ class FeatureRes(object):
         data = OFMSG().create_feature_res_data(interest,feature_data)
 
         transport.send(data.wireEncode().toBuffer())
-        print("--------Sent <<<FeatureRes>>> Data Msg")
+        print("++++++++ Sent <<<FeatureRes>>> Data ++++++++ \n")
         self.isDone = True  #
 
     def onInterest_Mian(self, mainPrefix, interest, transport, registeredPrefixId):

@@ -66,16 +66,15 @@ class Controller_Listener_CtrlInfo(object):
             time.sleep(0.01)
 
     def onInterest_CtrlInfo(self, mainPrefix, interest, transport, registeredPrefixId):
-        print("--------received <<<CtrlInfo Req>>> interest:\n" + interest.getName().toUri())  # for test
+        print("******** Received <<<CtrlInfoReq>>> Interest ******** \n {0} \n".format(interest.getName().toUri()))
         while (self.new_CtrlInfo_data == self.CtrlInfo_data):  # wait for new data.
             time.sleep(15)
         self.CtrlInfo_data = self.new_CtrlInfo_data
         data = self.ofmsg.create_ctrlinfo_res_data(interest, self.CtrlInfo_data)
         transport.send(data.wireEncode().toBuffer())
-        print("--------sent <<<New CtrlInfo Res>>> Data--------")
+        print("******** Sent <<<New CtrlInfo Res>>> Data ******** \n")
 
     def onInterest_Mian(self, mainPrefix, interest, transport, registeredPrefixId):
-        # TODO(onInterest_Mian): check what should do.
         pass
 
     def onRegisterFailed(self, ControllerPrefix):

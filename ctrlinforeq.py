@@ -70,7 +70,7 @@ class CtrlInfoReq(object):
         if uri not in self.outstanding:
             self.outstanding[uri] = 1
         self.face.expressInterest(interest, self._onData, self._onTimeout)
-        print("--------Sent <<<CtrlInfoReq>>> Interest for \n %s" % uri)
+        print("******** Sent <<<CtrlInfoReq>>> Interest ******** \n {0} \n".format(uri))
 
     def _onData(self, interest, data):
         payload = data.getContent()

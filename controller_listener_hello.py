@@ -61,9 +61,8 @@ class Controller_Listener_Hello(object):
             time.sleep(0.01)
 
     def onInterest_Hello(self, mainPrefix, interest, transport, registeredPrefixId):
-        print("--------received <<<HelloReq>>> interest:\n" + interest.getName().toUri())  # for test
-
-        # todo(lijian) should check the helloreq_name_list and determine what action should do
+        print(
+            "--------Received <<<HelloReq>>> Interest --------\n {0} \n".format(interest.getName().toUri()))  # for test
 
         hello_data = 'this is the <<<hello response>>> data'
         data = self.ofmsg.create_hello_res_data(interest, hello_data)

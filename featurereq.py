@@ -66,7 +66,8 @@ class FeatureReq(object):
             self.outstanding[uri] = 1
         self.face.expressInterest(interest, self._onFeatureData, self._onTimeout)
 
-        print("--------Sent <<<FeatureReq>>> Interest for %s" % uri)
+        print("++++++++ Sent <<<FeatureReq>>> Interest ++++++++ \n {0} \n".format(uri))
+
 
 
 
@@ -85,15 +86,14 @@ class FeatureReq(object):
         payload = data.getContent()
         contentx = payload.toRawStr()
         name = data.getName()
-        #print("Received data========: \n", type(contentx))
+        print("++++++++ Received <<<FeatureRes>>> Data ++++++++ \n")
         FeatureDate.run(contentx)
 
         del self.outstanding[name.toUri()]
         self.isDone = True
+        print('========FIB Database has been updated=======')
+        print('========Face Database has been updated=======\n')
 
-
-        print('========FIB Array has been updated=======\n')
-        print('========Face Array has been updated=======\n')
 
 
     def _onTimeout(self, interest):
