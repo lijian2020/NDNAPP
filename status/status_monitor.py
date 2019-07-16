@@ -64,8 +64,8 @@ class Status_Monitor(object):
             time.sleep(1)
 
             # protect flapping case
-            if (self.channels_flapping_time > 10 or \
-                    self.faces_flapping_time > 10):
+            if (self.channels_flapping_time > 5 or \
+                    self.faces_flapping_time > 5):
                 time.sleep(300)  # become silent for 5 min
 
                 self.channels_flapping_time = 0
