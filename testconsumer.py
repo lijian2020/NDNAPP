@@ -48,7 +48,7 @@ class Consumer(object):
         interest = Interest(name)
         uri = name.toUri()
 
-        interest.setInterestLifetimeMilliseconds(5000)
+        interest.setInterestLifetimeMilliseconds(10000)
         interest.setMustBeFresh(True)
 
         if uri not in self.outstanding:
