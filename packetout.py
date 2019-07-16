@@ -49,7 +49,8 @@ class PacketOutMsg(object):
         interest = self.ofmsg.create_packetout_msg_interest(PacketOut_suffix)
         uri = interest.getName().toUri()
         self.face.expressInterest(interest, self._onData, self._onTimeout)
-        print("--------Sent <<<PacketOut>>> Msg for \n %s" % uri)
+        print("--------Sent <<<PacketOut>>> Interest ---------")
+
 
     def _onData(self, interest, data):
         pass

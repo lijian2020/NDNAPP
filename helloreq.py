@@ -67,7 +67,7 @@ class HelloReq(object):
     def _onData(self, interest, data):
         payload = data.getContent()
         name = data.getName()
-        print("--------Received <<<Hellores>>> Data -------- \n {0} \n".format(payload.toRawStr()))
+        print("--------Received <<<HelloRes>>> Data -------- \n {0} \n".format(payload.toRawStr()))
         del self.outstanding[name.toUri()]
         self.isDone = True
 

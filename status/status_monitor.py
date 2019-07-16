@@ -115,7 +115,7 @@ class Status_Monitor(object):
         #         self.rib_flapping_time -= 1
 
         if (updated):
-            print('********************* Node Status Changes **********************')
+            print('\n ************* Node Status Changes *************\n')
             self.hello_version_number += 1
             # update the record
             self.channels_status_record = channels_status_record

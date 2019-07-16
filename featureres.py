@@ -81,7 +81,7 @@ class FeatureRes(object):
 
 
     def onInterest_PacketOut(self, mainPrefix, interest, transport, registeredPrefixId):
-        print("--------Received <<<PacketOut>>> interest Msg" )
+        print("--------Received <<<PacketOut>>> interest ----------")
         PacketOut_suffix = NdnFlowTable.parse_PacketOut_Interest(interest)
         NdnFlowTable.derectly_updatendnflowtable(PacketOut_suffix,self.nodeid)
         print("--------Updated the NdnFlowTable")

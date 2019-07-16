@@ -61,8 +61,7 @@ class PacketIn(object):
         if uri not in self.outstanding:
             self.outstanding[uri] = 1
         self.face.expressInterest(interest, self._onData, self._onTimeout)
-
-        print("--------Sent <<<PacketIn>>> Interest for \n %s" % uri)
+        print("######### Sent <<<PacketIn>>> Interest #########\n {0} \n".format(uri))
 
 
 

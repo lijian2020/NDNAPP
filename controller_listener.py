@@ -103,7 +103,9 @@ class Controller_Listener(object):
 
 
     def onInterest_PacketIn(self, mainPrefix, interest, transport, registeredPrefixId):
-        print("------Received: <<<PacketIn>>> Msg for: \n" + interest.getName().toUri())  # for test
+        print(
+            "######### Received <<<PacketIn>>> Interest #########\n {0} \n".format(interest.getName().toUri()))
+
         (node_id, unknown_prefix) = NdnFlowTable.parse_Packetin_Interest(interest)
         node_id = node_id.strip('/')
 
@@ -112,7 +114,7 @@ class Controller_Listener(object):
         flowmod_data = self.create_PacketIn_Data(node_id, unknown_prefix)
         data = self.ofmsg.create_flowmod_data(interest,flowmod_data)
         transport.send(data.wireEncode().toBuffer())
-        print('===Send [ FlowMod Msg ] to {0}==='.format(node_id))
+        print('===== Send [ FlowMod Msg ] to {0}====='.format(node_id))
 
     def create_PacketIn_Data(self, node_id, unknown_prefix):
         if node_id == 'h1':
@@ -187,12 +189,11 @@ class Controller_Listener(object):
     def onInterest_Hello(self, mainPrefix, interest, transport, registeredPrefixId):
         print(
             "--------Received <<<HelloReq>>> Interest --------\n {0} \n".format(interest.getName().toUri()))  # for test
-
+        print("--------Sent <<<HelloRes>>> Data -------- \n")
         hello_data = '[This is hello response data]'
         data = self.ofmsg.create_hello_res_data(interest,hello_data)
         transport.send(data.wireEncode().toBuffer())
         NodePrefixTable.updatenodeprefixtable(interest)       #to add NPT and fetch feature
-        print("--------Sent <<<Hellores>>> Data -------- \n")
 
     def onInterest_ErrorMsg(self, mainPrefix, interest, transport, registeredPrefixId):
         print("--------received <<<Error Msg>>> interest:\n" + interest.getName().toUri())  # for test
