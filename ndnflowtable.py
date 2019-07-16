@@ -101,7 +101,7 @@ class NdnFlowTable(object):
         # Idle-Lifetime(5),Hard-lifetime(6),Action(7),Out-faces(8),Flag(9)]
         try:
             Fulltable = np.row_stack((Fulltable, parsedlist))  # insert one line at the end
-            OSCommand.addrouttoRIB(parsedlist[2], parsedlist[8])
+            # OSCommand.addrouttoRIB(parsedlist[2], parsedlist[8])
             print('{ New route <{}> has been added to RIB }'.format(parsedlist[2]))
         except:
             return ("add faild")

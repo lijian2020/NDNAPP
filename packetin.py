@@ -75,6 +75,7 @@ class PacketIn(object):
 
         # add this item to flow table.
         FlowModDataList = NdnFlowTable.parse_FlowMod_Data(payload)
+        # print(FlowModDataList)
         NdnFlowTable.updatendnflowtable(FlowModDataList,self.nodeid)
         print(NdnFlowTable)
 
