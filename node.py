@@ -101,7 +101,7 @@ class Node(object):
         FeatureRes().run()
 
     def OF_Route(self):
-        time.sleep(7)
+        time.sleep(10)
         OF_Route_Processor().loglistener()
 
     def prefixinquire(self,unknown_prefix):
