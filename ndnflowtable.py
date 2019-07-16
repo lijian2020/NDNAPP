@@ -56,7 +56,6 @@ class NdnFlowTable(object):
         # [EthernetPrefix(0), Face(1), Prefix(2), Priority(3),Counter(4),
         # Idle-Lifetime(5),Hard-lifetime(6),Action(7),Out-faces(8),Flag(9)]
         if (FlowEntry[2] not in NdnFlowTable.NFT[:, 2:3]) and (FlowModDataList[4] == '0x0000'):
-            print('=======11111=================')
             NdnFlowTable.NFT = NdnFlowTable.additem(NdnFlowTable.NFT,FlowEntry)  #add
         elif(FlowEntry in NdnFlowTable.NFT):
             num = NdnFlowTable.searchitem(FlowEntry[2])
@@ -100,12 +99,9 @@ class NdnFlowTable(object):
     def additem(Fulltable,parsedlist):  #add table item with the list including 5 elements
         # [EthernetPrefix(0), Face(1), Prefix(2), Priority(3),Counter(4),
         # Idle-Lifetime(5),Hard-lifetime(6),Action(7),Out-faces(8),Flag(9)]
-        print('=======22222=================')
         try:
             Fulltable = np.row_stack((Fulltable, parsedlist))  # insert one line at the end
-            print('=======3333333=================')
             OSCommand.addrouttoRIB(parsedlist[2], parsedlist[8])
-            print('=======4444444=================')
             print('################# Add New Route ################\n')
             print("New route '{0}' has been added to RIB \n".format(parsedlist[2]))
             print('################################################\n')

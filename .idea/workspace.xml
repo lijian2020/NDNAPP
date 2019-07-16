@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="46d7361f-1b5d-44d3-adf0-90728ae67349" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testconsumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/testconsumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/Dissertation Note.docx" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Dissertation Note.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ndnflowtable.py" beforeDir="false" afterPath="$PROJECT_DIR$/ndnflowtable.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+            <state relative-caret-position="2003">
+              <caret line="109" selection-start-line="109" selection-end-line="109" />
               <folding>
                 <element signature="e#893#903#0" expanded="true" />
               </folding>
@@ -39,13 +40,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testconsumer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="204">
+              <caret line="51" column="37" lean-forward="true" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
               <folding>
                 <element signature="e#20#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="47" column="55" lean-forward="true" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
+              <folding>
+                <element signature="e#895#905#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/testproducer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
-              <caret line="32" column="51" lean-forward="true" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
+              <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -80,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/ofmsg.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1674">
-              <caret line="85" column="37" lean-forward="true" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
+              <caret line="85" column="37" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
               <folding>
                 <element signature="e#893#903#0" expanded="true" />
               </folding>
@@ -92,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/featuredata.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="569">
-              <caret line="50" column="37" lean-forward="true" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+              <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -109,8 +122,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ndnflowtable.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1171">
-              <caret line="79" column="52" lean-forward="true" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="52" />
+            <state relative-caret-position="567">
+              <caret line="97" column="17" lean-forward="true" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
               <folding>
                 <element signature="e#893#911#0" expanded="true" />
               </folding>
@@ -129,7 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>node</find>
       <find>main</find>
       <find>main prefix pa</find>
       <find>prefixinquire</find>
@@ -149,7 +161,6 @@
       <find>packetIn msg&gt;&gt;&gt;</find>
       <find>10s</find>
       <find>FaceMod_suffix_list</find>
-      <find>1111</find>
       <find>fibEntryMessage</find>
       <find>fib</find>
       <find>face = Face</find>
@@ -159,6 +170,8 @@
       <find>face=255</find>
       <find>FlowMod</find>
       <find>id</find>
+      <find>1111</find>
+      <find>aa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -256,8 +269,8 @@
         <option value="$PROJECT_DIR$/testcontroller.py" />
         <option value="$PROJECT_DIR$/testproducer.py" />
         <option value="$PROJECT_DIR$/packetin.py" />
-        <option value="$PROJECT_DIR$/ndnflowtable.py" />
         <option value="$PROJECT_DIR$/testconsumer.py" />
+        <option value="$PROJECT_DIR$/ndnflowtable.py" />
       </list>
     </option>
   </component>
@@ -659,14 +672,7 @@
       <workItem from="1562587411772" duration="653000" />
       <workItem from="1562713969702" duration="28936000" />
       <workItem from="1563001575035" duration="7341000" />
-      <workItem from="1563253727717" duration="14746000" />
-    </task>
-    <task id="LOCAL-00077" summary="finished status monitor and trigger.&#10;almost finished all functions&#10;&#10;Add flapping protection function&#10;add face.shutdown">
-      <created>1562883970096</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1562883970096</updated>
+      <workItem from="1563253727717" duration="16434000" />
     </task>
     <task id="LOCAL-00078" summary="finished status monitor and trigger.&#10;almost finished all functions&#10;&#10;Add flapping protection function&#10;add face.shutdown">
       <created>1562884091049</created>
@@ -1004,11 +1010,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563286391678</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="finished status monitor and trigger.&#10;almost finished all functions&#10;&#10;Add flapping protection function&#10;add face.shutdown">
+      <created>1563288811876</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1563288811876</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="570611000" />
+    <option name="totallyTimeSpent" value="572299000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1141,7 +1154,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ndnflowtable.py</url>
-          <line>81</line>
+          <line>80</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1181,13 +1194,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/pyndn/face.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="544" selection-start-line="544" selection-end-line="544" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/remote_sources/-1286225973/1847893223/pyndn/encoding/protobuf_tlv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-592">
@@ -1490,26 +1496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ndnflowtable.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1171">
-          <caret line="79" column="52" lean-forward="true" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="52" />
-          <folding>
-            <element signature="e#893#911#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
-          <folding>
-            <element signature="e#893#903#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/packetin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -1524,7 +1510,7 @@
     <entry file="file://$PROJECT_DIR$/ofmsg.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1674">
-          <caret line="85" column="37" lean-forward="true" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
+          <caret line="85" column="37" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
           <folding>
             <element signature="e#893#903#0" expanded="true" />
           </folding>
@@ -1534,7 +1520,7 @@
     <entry file="file://$PROJECT_DIR$/featuredata.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="569">
-          <caret line="50" column="37" lean-forward="true" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+          <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1548,20 +1534,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="46" column="42" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
-          <folding>
-            <element signature="e#895#905#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testproducer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
-          <caret line="32" column="51" lean-forward="true" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
+          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -1570,10 +1546,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testconsumer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="204">
+          <caret line="51" column="37" lean-forward="true" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
           <folding>
             <element signature="e#20#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ndnflowtable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="97" column="17" lean-forward="true" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
+          <folding>
+            <element signature="e#893#911#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller_listener_ctrlinfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-130">
+          <caret line="45" column="30" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2003">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+          <folding>
+            <element signature="e#893#903#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="47" column="55" lean-forward="true" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
+          <folding>
+            <element signature="e#895#905#0" expanded="true" />
           </folding>
         </state>
       </provider>
