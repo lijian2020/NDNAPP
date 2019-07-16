@@ -104,14 +104,72 @@ class Controller_Listener(object):
 
     def onInterest_PacketIn(self, mainPrefix, interest, transport, registeredPrefixId):
         print("------Received: <<<PacketIn>>> Msg for: \n" + interest.getName().toUri())  # for test
-        unknown_prefix = NdnFlowTable.parse_Packetin_Interest(interest)
+        (node_id, unknown_prefix) = NdnFlowTable.parse_Packetin_Interest(interest)
+        node_id = node_id.strip('/')
 
         # FlowModDataList: [ep(0),face(1),prefix(2),cookie(3),command(4),idle_timeout(5),
         # hard_timeout(6), priority(7),buffer_id(8),out_face(9),flag(10), action(11)]
-        flowmod_data = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
-            unknown_prefix)
+        flowmod_data = self.create_PacketIn_Data(node_id, unknown_prefix)
         data = self.ofmsg.create_flowmod_data(interest,flowmod_data)
         transport.send(data.wireEncode().toBuffer())
+        print('===Send [ FlowMod Msg ] to {0}==='.format(node_id))
+
+    def create_PacketIn_Data(self, node_id, unknown_prefix):
+        if node_id == 'h1':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        elif node_id == 'h2':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        elif node_id == 'h3':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        elif node_id == 'h4':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        elif node_id == 'h5':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        elif node_id == 'h6':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        elif node_id == 'h7':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        elif node_id == 'h8':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        elif node_id == 'h9':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        elif node_id == 'h10':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        elif node_id == 'a':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        elif node_id == 'b':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        elif node_id == 'c':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        elif node_id == 'd':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        elif node_id == 'e':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        elif node_id == 'f':
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        else:
+            data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
+                unknown_prefix)
+        return data_tring
+
+
+
 
     def onInterest_FlowRemoved(self, mainPrefix, interest, transport, registeredPrefixId):
 

@@ -79,9 +79,9 @@ class OFMSG(object):
         return interest
 
     #create a packetin message using unknown prefix. reture an Interest
-    def create_packetin_msg_interest(self,unknown_prefix):
-        packetin_name = self.add_of_head(self.prefix_controller,10) + "/--" + unknown_prefix
-                        #/ndn/ie/tcd/controller01/ofndn/--/n1.0/10/0/0/--/unknown_prefix
+    def create_packetin_msg_interest(self, unknown_prefix, node_id):
+        packetin_name = self.add_of_head(self.prefix_controller, 10) + "/--/" + node_id + "/--" + unknown_prefix
+        # /ndn/ie/tcd/controller01/ofndn/--/n1.0/10/0/0/--/h2--/unknown_prefix
         interest = Interest(packetin_name)
         interest.setMustBeFresh(True)
         interest.setInterestLifetimeMilliseconds(4000)

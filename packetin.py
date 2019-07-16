@@ -40,7 +40,7 @@ class PacketIn(object):
         self.outstanding = dict()  #a dictionary to keep track of outstanding Interests and retransmissions.
         #self.face = Face("127.0.0.1")
         self.face = Face()
-        #self.nodeid = OSCommand.getnodeid()
+        self.nodeid = OSCommand.getnodeid()
 
     def run(self, unknown_prefix="/abcd/dfgh/tcd"):
         try:
@@ -55,7 +55,7 @@ class PacketIn(object):
 
 
     def _sendPacketinInterest(self,unknown_prefix):
-        interest = self.ofmsg.create_packetin_msg_interest(unknown_prefix)
+        interest = self.ofmsg.create_packetin_msg_interest(unknown_prefix, self.nodeid)
         uri = interest.getName().toUri()
 
         if uri not in self.outstanding:

@@ -152,9 +152,9 @@ class NdnFlowTable(object):
         # /ndn/ie/tcd/controller01/ofndn/--/n1.0/10/0/0/--/unknown_prefix
 
         PacketIn_Interest_Name = original_Packetin_Interest.getName().toUri()
-        PacketIn_unknow_prefix = PacketIn_Interest_Name.split('--')[2]
+        PacketIn_prefix_list = PacketIn_Interest_Name.split('--')
 
-        return PacketIn_unknow_prefix  #return a string
+        return PacketIn_prefix_list[2], PacketIn_prefix_list[3]  # return node_id and unknown_prefix
 
 
 

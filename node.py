@@ -101,7 +101,7 @@ class Node(object):
         FeatureRes().run()
 
     def OF_Route(self):
-        time.sleep(12)
+        time.sleep(8)
         OF_Route_Processor().loglistener()
 
     def prefixinquire(self,unknown_prefix):
@@ -116,7 +116,7 @@ class Node(object):
         FlowRemovedMsg().run(removed_prefix)
 
     def _sendCtrlInfoReqMsg(self):
-        time.sleep(8)
+        time.sleep(5)
         CtrlInfoReq().run()  # here need other thread.
 
 
