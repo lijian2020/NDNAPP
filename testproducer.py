@@ -30,8 +30,6 @@ class Producer(object):
         first call setCommandSigningInfo.'''
         face.registerPrefix(prefix, self.onInterest, self.onRegisterFailed)
 
-        face.setInterestFilter(Name('/ndn/d-site/d/hello/ccc/ddd'), self.onInterest)
-
         print("Registering prefix", prefix.toUri())
 
         # Run the event loop forever. Use a short sleep to
