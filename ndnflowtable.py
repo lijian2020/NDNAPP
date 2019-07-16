@@ -99,12 +99,14 @@ class NdnFlowTable(object):
     def additem(Fulltable,parsedlist):  #add table item with the list including 5 elements
         # [EthernetPrefix(0), Face(1), Prefix(2), Priority(3),Counter(4),
         # Idle-Lifetime(5),Hard-lifetime(6),Action(7),Out-faces(8),Flag(9)]
-        print('####################\n')
-        print(parsedlist)
+
         try:
             Fulltable = np.row_stack((Fulltable, parsedlist))  # insert one line at the end
-            # OSCommand.addrouttoRIB(parsedlist[2], parsedlist[8])
-            print('{ New route <{}> has been added to RIB }'.format(parsedlist[2]))
+            OSCommand.addrouttoRIB(parsedlist[2], parsedlist[8])
+            print('################# Add New Route ################\n')
+            print("New route '{0}' has been added to RIB \n".format(parsedlist[2]))
+            print('################################################\n')
+
         except:
             return ("add faild")
         return (Fulltable)

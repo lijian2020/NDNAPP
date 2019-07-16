@@ -70,7 +70,7 @@ class Node(object):
         ctrlinfo_threed.start()
 
         ########   Advanced function  #######
-        time.sleep(3)
+        time.sleep(15)
         '''This section is used to send packetin msg if necessary'''
         unknown_prefix = "/abcd/dfgh/tcd"
         if(packetin):
@@ -101,7 +101,7 @@ class Node(object):
         FeatureRes().run()
 
     def OF_Route(self):
-        time.sleep(10)
+        time.sleep(12)
         OF_Route_Processor().loglistener()
 
     def prefixinquire(self,unknown_prefix):
@@ -116,7 +116,7 @@ class Node(object):
         FlowRemovedMsg().run(removed_prefix)
 
     def _sendCtrlInfoReqMsg(self):
-        time.sleep(10)
+        time.sleep(8)
         CtrlInfoReq().run()  # here need other thread.
 
 

@@ -110,7 +110,6 @@ class Controller_Listener(object):
         # hard_timeout(6), priority(7),buffer_id(8),out_face(9),flag(10), action(11)]
         flowmod_data = '*---*---{}---None---0x0000---3600---36000---1---None---255---0x0001---0x0000'.format(
             unknown_prefix)
-        print('####################\n' + flowmod_data)
         data = self.ofmsg.create_flowmod_data(interest,flowmod_data)
         transport.send(data.wireEncode().toBuffer())
 
