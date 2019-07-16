@@ -41,12 +41,12 @@ class Producer(object):
             time.sleep(0.01)
 
     def onInterest(self, prefix, interest, transport, registeredPrefixId):
-        print("--------received interest:" + interest.getName().toUri())  # for test
+        print("========= received [ interest ] ========= :\n" + interest.getName().toUri())  # for test
         interestName = interest.getName()
         appcontentstr = interest.getApplicationParameters()
 
         data = Data(interestName)
-        data.setContent("Hello, " + interestName.toUri() + '--->>>' + appcontentstr.toRawStr() + '\n--->>>')
+        data.setContent("Hello! This data come from producer-01.")
 
         # hourMilliseconds = 3600 * 1000
         hourMilliseconds = 0  # here I should set it 0 since it always need to fresh.
@@ -54,7 +54,7 @@ class Producer(object):
         data.getMetaInfo().setFreshnessPeriod(hourMilliseconds)
         self.keyChain.sign(data, self.keyChain.getDefaultCertificateName())
         transport.send(data.wireEncode().toBuffer())
-        print("Replied to: %s" % interestName.toUri())
+        print("\n ######## Replied [ data ] ########\n \n")
 
     def onRegisterFailed(self, prefix):
         print("Register failed for prefix", prefix.toUri())

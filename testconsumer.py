@@ -55,13 +55,16 @@ class Consumer(object):
             self.outstanding[uri] = 1
         self.face.expressInterest(interest, self._onData, self._onTimeout)
 
-        print("Sent Interest for %s" % uri)
+        print("========= Sent [ Interest ] ========= \n {0}\n \n".format(uri))
 
     def _onData(self, interest, data):
         payload = data.getContent()
         name = data.getName()
 
-        print("Received data: ", payload.toRawStr())
+        print("========== Received [ data ] ========== ")
+        print(payload.toRawStr())
+        print("=======================================\n")
+
         del self.outstanding[name.toUri()]
 
         self.isDone = True
