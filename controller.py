@@ -75,7 +75,7 @@ class Controller(object):
     #     self.controller_listener.ctrl_info_run()
 
     def monitoring_function(self):
-        self.controller_listener.run()  # other thread for hello msg
+        self.controller_listener.run()  # other thread for error/packetin/flowremoved msg
 
 
 
@@ -99,14 +99,14 @@ if __name__ == '__main__':    ##### Multiprocess must start from here (__name__ 
     try:
         #packetout = args.packetout
         controller = Controller()
-        t1 = Process(target=controller.hello_function)
+        t1 = Process(target=controller.hello_function)  # a separated process for hello
         t1.start()
 
         t2 = Process(target=controller.ctrl_info_function,
                      args=(args.ctrlinfo,))  # a separated process for ctrl_info function
         t2.start()
 
-        t3 = Process(target=controller.monitoring_function, )  # a separated process for ctrl_info function
+        t3 = Process(target=controller.monitoring_function, )  # other thread for error/packetin/flowremoved msg
         t3.start()
 
 
