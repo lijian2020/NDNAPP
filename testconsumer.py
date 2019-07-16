@@ -30,7 +30,7 @@ class Consumer(object):
     def run(self):
 
         nodeid = OSCommand.getnodeid()
-        subprocess.check_output(["export HOME=/tmp/minindn/{0} && nfdc route add / 261 ". \
+        subprocess.check_output(["export HOME=/tmp/minindn/{0} && nfdc route add / 260 ". \
                                 format(nodeid)], shell=True)
 
 
