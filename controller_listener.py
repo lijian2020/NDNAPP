@@ -188,7 +188,8 @@ class Controller_Listener(object):
 
     def onInterest_Hello(self, mainPrefix, interest, transport, registeredPrefixId):
         print(
-            "--------Received <<<HelloReq>>> Interest --------\n {0} \n".format(interest.getName().toUri()))  # for test
+            "\n --------Received <<<HelloReq>>> Interest --------\n {0} \n".format(
+                interest.getName().toUri()))  # for test
         print("--------Sent <<<HelloRes>>> Data -------- \n")
         hello_data = '[This is hello response data]'
         data = self.ofmsg.create_hello_res_data(interest,hello_data)
