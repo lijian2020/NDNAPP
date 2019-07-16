@@ -74,8 +74,8 @@ class PacketIn(object):
     def _onData(self, interest, data):
         payload = data.getContent()
         name = data.getName()
-        print("Received <<<<FlowMod data>>>>from Controller ")
         print('####################\n' + payload.toRawStr())
+        print("Received <<<<FlowMod data>>>>from Controller ")
         self.nodeid = OSCommand.getnodeid()
 
         FlowModDataList = NdnFlowTable.parse_FlowMod_Data(payload)
