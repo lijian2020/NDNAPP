@@ -18,6 +18,13 @@
 #
 
 
+'''This module is used for test. It works as a data consumer (Client) and sends Interest message to a specific prefix.
+the compulsive argument '-u' has to be set and followed by a prefix you want to send the interest to.
+You can use the command like this to run it:
+python3 testconsumer.py -u /ndn/aaaa/bbbb
+'''
+
+
 import sys
 import time
 import argparse

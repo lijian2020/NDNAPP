@@ -17,6 +17,7 @@
 # limitations under the License.
 #
 
+'''This module is used to send FlowRemoved message. '''
 
 import time
 from pyndn import Face

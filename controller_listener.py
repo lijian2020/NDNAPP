@@ -17,6 +17,11 @@
 # limitations under the License.
 #
 
+'''There are several controller listener used for listening incoming packets.
+This module is used to listen 'Error', 'PacketIn' and 'FlowRemoved' messages.
+And it also replies some message.
+'''
+
 
 import sys
 import time
@@ -115,6 +120,8 @@ class Controller_Listener(object):
         print('===== Send [ FlowMod Msg ] to {0}====='.format(node_id))
 
     def create_PacketIn_Data(self, node_id, unknown_prefix):
+        # This function is just used for demonstration to send exact flowmod message.
+
         if node_id == 'h1':
             data_tring = '*---*---{}---None---0x0000---3600---36000---1---None---267---0x0001---0x0000'.format(
                 unknown_prefix)

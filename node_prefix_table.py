@@ -17,13 +17,13 @@
 # limitations under the License.
 #
 
+'''This class is used for create a global tables(NPT) and includes some methods
+which are used for parsing original hello interest name.'''
 
 import numpy as np
 from featurereq import FeatureReq
 
-#This class is used for create a global tables(NPT) and includes some methods
-# which are used for parsing original hello interest name.
-# So this class is normally no need to be instantiated
+
 class NodePrefixTable(object):
     '''used to process and record Prefix by controller.  this table is a global table.'''
     NPT = np.empty(shape=[0, 4])  # a list including all nodes' advertised prefix

@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-
+'''This module is used to send Error message. '''
 
 import time
 from pyndn import Interest

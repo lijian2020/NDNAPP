@@ -17,6 +17,7 @@
 # limitations under the License.
 #
 
+'''This module is used to create different kinds of message, the purpose is just for convenience'''
 
 import sys
 from pyndn import Interest
@@ -25,14 +26,7 @@ from pyndn.security import KeyChain
 
 
 class OFMSG(object):
-    '''.'''
     prefix_controller = '/ndn/ie/tcd/controller01/ofndn/'
-    prefix_h1 = '/ndn/h1-site/h1/ofndn/'
-    prefix_h2 = '/ndn/h2-site/h2/ofndn/'
-    prefix_h3 = '/ndn/h3-site/h3/ofndn/'
-    prefix_h4 = '/ndn/h4-site/h4/ofndn/'
-    prefix_h5 = '/ndn/h5-site/h5/ofndn/'
-
 
     def __init__(self):
         self.keyChain = KeyChain()
@@ -153,15 +147,6 @@ class OFMSG(object):
         data.getMetaInfo().setFreshnessPeriod(hourMilliseconds)
         self.keyChain.sign(data, self.keyChain.getDefaultCertificateName())  #need to cheek if it works here.
         return(data)
-
-
-
-
-
-
-
-
-
 
 
 

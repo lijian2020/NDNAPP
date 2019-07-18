@@ -16,7 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
+'''This module handles the CtrlInfo message. '''
 
 import numpy as np
 from featurereq import FeatureReq
@@ -32,6 +32,7 @@ class CtrlInfo_Operation(object):
         pass
 
     def run(self, ctrlinfo_raw_data):
+        # The structure and and basic function just list here, other functions need to be added in future work.
         CtrlInfo_data_list = self.parse_CtrlInfo_Data(ctrlinfo_raw_data)
 
         if (CtrlInfo_data_list[0] == '0x0000'):  # FlowMod

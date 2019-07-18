@@ -17,6 +17,7 @@
 # limitations under the License.
 #
 
+'''This module is used to send PacketOut message. It also handles the return data'''
 
 import time
 from pyndn import Face

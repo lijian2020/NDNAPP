@@ -16,7 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
+'''This module is one controller listener used to listen Hello message specifically.'''
 
 import sys
 import time

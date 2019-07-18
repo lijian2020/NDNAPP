@@ -18,13 +18,14 @@
 #
 
 
+'''This class is used for creating two global tables and includes some methods
+which are used for parsing original feature content.
+'''
+
 import numpy as np
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)  #suppress future warnings globally
 
-#This class is used for create two global tables and includes some methods
-# which are used for parsing original feature content.
-# So this class is normally no need to be instantiated
 class FeatureDate(object):
     '''used to process and record all nodes' faces.These two tables are global variables which can be
     access according to [class name.variable name]'''

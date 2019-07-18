@@ -17,7 +17,10 @@
 # limitations under the License.
 #
 
-
+'''This module is the OF-SDN controller. It needs to be run before other node apps so that
+other nodes could communicate with this controller and report status.
+---This module used multiple processes to listen to different in-coming packets.
+---This module included some other functions, refer to its optional arguments'''
 
 import sys
 import time
@@ -46,7 +49,7 @@ class Controller(object):
         self.controller_listener_hello = Controller_Listener_Hello()
         self.controller_setter = Controller_Setter()
 
-    '''This hello function has to be imployment in a separated process, since it will
+    '''This hello function has to be implemented in a separated process, since it may
     conflict with other process if they are in the same thread/process'''
 
     def hello_function(self):
@@ -56,14 +59,12 @@ class Controller(object):
 
         self.controller_listener_hello.hello_run()  # other thread for hello msg
 
-
-
-    '''This ctrl_info function has to be imployment in a separated process, since it will
+    '''This ctrl_info function has to be implemented in a separated process, since it may
     conflict with other process if they are in the same thread/process'''
 
     def ctrl_info_function(self, ctrlinfo_parameter):  # a separated process for ctrl_info function
         if (ctrlinfo_parameter):
-            self.controller_listener_ctrlinfo.new_CtrlInfo_data = '0x0001--0x0001--355'
+            self.controller_listener_ctrlinfo.new_CtrlInfo_data = '0x0001--0x0001--355'  # just an example
             # facemod--destroy--faceid
         self.controller_listener_ctrlinfo.ctrl_info_run()
 

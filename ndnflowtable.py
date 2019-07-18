@@ -17,14 +17,13 @@
 # limitations under the License.
 #
 
+'''This class is used for create a global tables(NFT) and includes some methods
+which are used for parsing original hello interest name.'''
 
 import numpy as np
 from oscommand import OSCommand
 from featurereq import FeatureReq
 
-#This class is used for create a global tables(NFT) and includes some methods
-# which are used for parsing original hello interest name.
-# So this class is normally no need to be instantiated
 class NdnFlowTable(object):
     '''used to process and record Prefix by node.  this table is a global table.'''
     NFT = np.empty(shape=[0, 10])  # an array as flow table

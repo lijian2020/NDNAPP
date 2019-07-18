@@ -17,6 +17,14 @@
 # limitations under the License.
 #
 
+'''This module is used for test. It works as a data producer (Server). It listen to  incoming Interest message of
+a specific prefix send send back Data.
+the compulsive argument '-n' has to be set and followed by a prefix that you want to listen to. You can use the
+command like this to run is:
+python3 testproducer.py -n /ndn/aaaa/bbbb
+'''
+
+
 import sys
 import time
 import argparse

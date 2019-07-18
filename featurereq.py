@@ -18,7 +18,7 @@
 #
 
 
-
+'''This module is used to send FeatureReq message. It also handles the return data'''
 import sys
 import time
 import argparse

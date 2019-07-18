@@ -18,8 +18,7 @@
 #
 
 
-
-
+'''This module is used to send FaceMod message. '''
 
 import time
 from pyndn import Face

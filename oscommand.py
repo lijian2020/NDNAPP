@@ -17,6 +17,7 @@
 # limitations under the License.
 #
 
+'''This module is used to execute linux system commands, the purpose is just for convenience'''
 
 import subprocess
 

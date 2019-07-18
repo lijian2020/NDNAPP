@@ -17,6 +17,9 @@
 # limitations under the License.
 #
 
+'''This class process the case that NDN node has no next hop.
+    It is a trigger that invokes the open flow procedure to search
+    the local openflow table and send packet-in message to controller'''
 
 import os
 import time
@@ -29,9 +32,6 @@ from ndnflowtable import NdnFlowTable
 
 
 class OF_Route_Processor():
-    '''This class process the case that NDN node has no next hop.
-    It is a trigger that invokes the open flow procedure to search
-    the local openflow table and send packet-in message to controller'''
 
     def __init__(self):
         self.nodeid = OSCommand.getnodeid()
