@@ -20,7 +20,6 @@
 '''This module is the OF-SDN 'client', which needs to be run on every NDN node.
 Before running this code, the OF-SDN controller side should be run first, so that
 this node could report to the controller.
-before other node apps so that
 ---This module used multiple threads to handle different tasks.
 ---This module included some other functions, refer to its optional arguments
 '''
