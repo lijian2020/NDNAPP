@@ -69,3 +69,14 @@ class OSCommand(object):
 
         else:  # Wrong code
             return "Wrong FaceMod Option Id"
+
+    @staticmethod
+    def getRIBnexthop_of_prefix(prefix):
+        nodeid = OSCommand.getnodeid()
+        command_output = subprocess.check_output(["export HOME=/tmp/minindn/{0} && nfdc route | grep prefix={1} ". \
+                                                 format(nodeid, prefix)], shell=True)
+
+        command_output_list = command_output.split(' ')
+        nexthop_faceid = str(command_output_list[1]).replace('nexthop=', '')
+
+        return nexthop_faceid
