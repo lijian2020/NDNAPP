@@ -75,6 +75,7 @@ class OSCommand(object):
         nodeid = OSCommand.getnodeid()
         command_output = subprocess.check_output(["export HOME=/tmp/minindn/{0} && nfdc route | grep prefix={1} ". \
                                                  format(nodeid, prefix)], shell=True)
+        command_output = str(command_output)
         print('==================')
         print(command_output)
         print(type(command_output))
