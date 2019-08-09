@@ -54,8 +54,10 @@ class Consumer(object):
     def run(self):
 
         nodeid = OSCommand.getnodeid()
-        subprocess.check_output(["export HOME=/tmp/minindn/{0} && nfdc route add / 260 ". \
-                                format(nodeid)], shell=True)
+        # nexthop_to_controller_faceid = OSCommand.getRIBnexthop_of_prefix('/ndn/ie/tcd/controller01/')
+        nexthop_to_controller_faceid = OSCommand.getRIBnexthop_of_prefix('/ndn/h6-site/h6')  # just for demo
+        subprocess.check_output(["export HOME=/tmp/minindn/{0} && nfdc route add / {1} ". \
+                                format(nodeid, nexthop_to_controller_faceid)], shell=True)
 
 
         try:
