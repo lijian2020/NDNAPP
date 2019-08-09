@@ -43,36 +43,33 @@ class Status_Monitor(object):
         # record the old record, which is used to compare to the new gotten ones
         self.channels_status_record = ""
         self.faces_status_record = ""
-        # self.fib_status_record = ""
-        # self.rib_status_record = ""
+        self.fib_status_record = ""
+        self.rib_status_record = ""
 
         # count the flapping time
         self.channels_flapping_time = 0
         self.faces_flapping_time = 0
-        #self.fib_flapping_time = 0
-        #self.rib_flapping_time = 0
+        self.fib_flapping_time = 0
+        self.rib_flapping_time = 0
 
 
     def run(self):
         while True:
             if self.status_update_checker():
                 HelloReq().run(self.hello_version_number)
-                # if (HelloReq().run(self.hello_version_number)):
-                #     FeatureRes().run()
             time.sleep(1)
 
             # protect flapping case
-            if (self.channels_flapping_time > 5 or \
-                    self.faces_flapping_time > 5):
+            if (self.channels_flapping_time > 5 or
+                    self.faces_flapping_time > 5 or
+                    self.fib_flapping_time > 5 or
+                    self.rib_flapping_time > 5):
                 time.sleep(300)  # become silent for 5 min
 
                 self.channels_flapping_time = 0
                 self.faces_flapping_time = 0
-                #self.fib_flapping_time = 0
-                #self.rib_flapping_time = 0
-
-
-
+                self.fib_flapping_time = 0
+                self.rib_flapping_time = 0
 
 
     def status_update_checker(self):
@@ -80,8 +77,8 @@ class Status_Monitor(object):
         updated = False
         channels_status_record = Channels_status_getter().run()
         faces_status_record = Faces_status_getter().run()
-        #fib_status_record = Fib_status_getter().run()
-        #rib_status_record = Rib_status_getter().run()
+        fib_status_record = Fib_status_getter().run()
+        rib_status_record = Rib_status_getter().run()
 
         '''anything changes will return True'''
         if (self.channels_status_record != channels_status_record):
@@ -98,19 +95,19 @@ class Status_Monitor(object):
             if (self.faces_flapping_time > 0):
                 self.faces_flapping_time -= 1
 
-        # if (self.fib_status_record != fib_status_record):
-        #     updated = True
-        #     self.fib_flapping_time += 1
-        # else:
-        #     if (self.fib_flapping_time > 0):
-        #         self.fib_flapping_time -= 1
+        if (self.fib_status_record != fib_status_record):
+            updated = True
+            self.fib_flapping_time += 1
+        else:
+            if (self.fib_flapping_time > 0):
+                self.fib_flapping_time -= 1
 
-        # if (self.rib_status_record != rib_status_record):
-        #     updated = True
-        #     self.rib_flapping_time += 1
-        # else:
-        #     if (self.rib_flapping_time > 0):
-        #         self.rib_flapping_time -= 1
+        if (self.rib_status_record != rib_status_record):
+            updated = True
+            self.rib_flapping_time += 1
+        else:
+            if (self.rib_flapping_time > 0):
+                self.rib_flapping_time -= 1
 
         if (updated):
             print('\n ************* Node Status Changes *************\n')
@@ -118,8 +115,8 @@ class Status_Monitor(object):
             # update the record
             self.channels_status_record = channels_status_record
             self.faces_status_record = faces_status_record
-            #self.fib_status_record = fib_status_record
-            #self.rib_status_record = rib_status_record
+            self.fib_status_record = fib_status_record
+            self.rib_status_record = rib_status_record
 
         return updated
 

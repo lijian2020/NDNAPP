@@ -59,6 +59,13 @@ class Node(object):
                                         format(self.nodeid,NodePrefixString)],shell=True)
 
         ########   Basic function  #######
+
+        hello_threed = Thread(target=self.Hellorequest)  # send helloreq
+        hello_threed.start()
+
+        ctrlinfo_threed = Thread(target=self._sendCtrlInfoReqMsg)  # send ctrlinfo
+        ctrlinfo_threed.start()
+
         feature_threed = Thread(target=self.Feature_service)  # send reature_data
         feature_threed.start()
 
@@ -66,11 +73,6 @@ class Node(object):
         of_route_threed.start()
 
 
-        hello_threed = Thread(target=self.Hellorequest)  # send helloreq
-        hello_threed.start()
-
-        ctrlinfo_threed = Thread(target=self._sendCtrlInfoReqMsg)  # send ctrlinfo
-        ctrlinfo_threed.start()
 
         ########   Advanced function  #######
         time.sleep(15)

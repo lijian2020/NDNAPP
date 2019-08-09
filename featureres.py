@@ -97,8 +97,6 @@ class FeatureRes(object):
 
     def onInterest_Feature(self, mainPrefix, interest, transport, registeredPrefixId):
         print("++++++++ Received <<<FeatureReq>>> interest ++++++++ \n")
-
-
         feature_face = OSCommand.getface()
         feature_FIB = OSCommand.getFIB()
         nodeid = bytes(self.nodeid,'utf-8')

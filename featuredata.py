@@ -58,7 +58,8 @@ class FeatureDate(object):
         originFace_Data = result[1]
         originFIB_Data = result[2]
 
-        temp_Face_array = FeatureDate.parseOriginFace_Date(nodeid,originFace_Data) #get an array including new FIB items
+        temp_Face_array = FeatureDate.parseOriginFace_Date(nodeid,
+                                                           originFace_Data)  # get an array including new Face items
         if(nodeid in FeatureDate.Face_array[:,0:1]):
             pass
         FeatureDate.Face_array = np.row_stack((FeatureDate.Face_array, temp_Face_array))
