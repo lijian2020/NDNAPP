@@ -1,1 +1,9 @@
 
+The file "best-route-strategy2.cpp" is derived from NDN simulator and some contents are changed for this experiment. 
+So before implementing this experiment, you should first replace the /home/mininet/mini-ndn/NFD/daemon/fw/best-route-strategy2.cpp fire in
+the linux system with the file in this folder. Then recompile and install the NDN environment with following commands:
+
+$ cd /home/mininet/mini-ndn/NFD 
+$ sudo ./waf configure 
+$ sudo ./waf 
+$ sudo ./waf install
